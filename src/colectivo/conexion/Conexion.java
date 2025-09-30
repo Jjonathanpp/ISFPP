@@ -10,7 +10,7 @@ public class Conexion {
 
     public static Connection getConnection() throws SQLException {
         if (conn == null || conn.isClosed()) {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tu_base", "usuario", "contraseña");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/postgres", "postgres", "dosmil27");
         }
         return conn;
     }
