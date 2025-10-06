@@ -11,7 +11,7 @@ public class Conexion {
     //para conectar a la base de datos
     public static Connection getConnection() throws SQLException {
         if (conn == null || conn.isClosed()) {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/postgres", "postgres", "dosmil27");
+            conn = DriverManager.getConnection("jdbc:postgresql://host:5432/postgres", "postgres", "dosmil27");
         }
         return conn;
     }
