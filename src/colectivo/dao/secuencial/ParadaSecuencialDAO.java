@@ -2,6 +2,7 @@ package colectivo.dao.secuencial;
 
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
+import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import java.util.Map;
 import colectivo.modelo.Parada;
@@ -10,6 +11,8 @@ import java.util.*;
 
 public class ParadaSecuencialDAO implements ParadaDAO {
 
+
+    private Linea l; //Borrar para que quede bien
 
     @Override
     public void insertar(Parada parada) {
@@ -49,8 +52,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
                         direccion,
                         latitud,
                         longitud,
-                        new ArrayList<>(),
-                        new ArrayList<>()
+                        l = new Linea("1", "Linea 1", null, null, null) // Línea ficticia por ahora
                 );
 
                 resultado.put(codigoInt, p);

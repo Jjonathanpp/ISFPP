@@ -1,5 +1,6 @@
 package colectivo.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Linea {
@@ -15,12 +16,15 @@ public class Linea {
     private List<Parada> paradas;
 
     //Constructor
-    public Linea(String codigo, String nombre, List<Recorrido> recorridos, List<Frecuencia> frecuencias, List<Parada> paradas) {
+    public Linea(String codigo, String nombre, List<Recorrido> recorridos, Parada p1, Parada p2) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.recorridos = recorridos;
-        this.frecuencias = frecuencias;
-        this.paradas = paradas;
+        this.frecuencias = new ArrayList<>();
+        this.paradas = new ArrayList<>();
+
+        this.paradas.add(p1);
+        this.paradas.add(p2);
     }
 
     //getters y setters
@@ -62,5 +66,13 @@ public class Linea {
 
     public void setParadas(List<Parada> paradas) {
         this.paradas = paradas;
+    }
+
+    //metodos
+    public void agregarFrecuencia(Frecuencia frecuencia) {
+        this.frecuencias.add(frecuencia);
+    }
+    public void agregarParada(Parada parada) {
+        this.paradas.add(parada);
     }
 }

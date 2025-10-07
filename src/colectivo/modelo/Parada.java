@@ -1,5 +1,6 @@
 package colectivo.modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parada {
@@ -15,14 +16,15 @@ public class Parada {
 
 
     //Constructor
-    public Parada(String codigo, String direccion, double latitud, double longitud,
-                  List<Linea> lineas, List<Parada> paradasCaminando) {
+    public Parada(String codigo, String direccion, double latitud, double longitud, Linea linea) {
         this.codigo = codigo;
         this.direccion = direccion;
         this.latitud = latitud;
         this.longitud = longitud;
-        this.lineas = lineas;
-        this.paradasCaminando = paradasCaminando;
+        this.lineas = new ArrayList<>();
+        this.paradasCaminando = new ArrayList<>();
+
+        this.lineas.add(linea);
     }
 
 
@@ -73,5 +75,12 @@ public class Parada {
 
     public void setParadasCaminando(List<Parada> paradasCaminando) {
         this.paradasCaminando = paradasCaminando;
+    }
+
+    public void addLinea(Linea linea) {
+        this.lineas.add(linea);
+    }
+    public void addParadaCaminando(Parada parada) {
+        this.paradasCaminando.add(parada);
     }
 }

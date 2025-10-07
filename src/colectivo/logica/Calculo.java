@@ -19,7 +19,6 @@ public class Calculo {
     public  List<List<Recorrido>> calcularRecorrido(Parada paradaOrigen, Parada paradaDestino, int diaSemana,
                                                     LocalTime horaLlegadaParada, Map<String, Tramo> tramos) {
 
-      d
 
         // 1. Consultar los tramos y horarios desde DAO
         // 2. Buscar rutas directas

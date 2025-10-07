@@ -1,6 +1,7 @@
 package colectivo.modelo;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recorrido {
@@ -13,11 +14,16 @@ public class Recorrido {
     private List<Parada> paradas;
 
     //Constructor
-    public Recorrido(LocalTime horaSalida, int duracion, Linea linea, List<Parada> paradas) {
+    //Cambie el constructor para que reciba dos paradas y las agregue a la lista de paradas
+    //Hay que ver que estructura de datos es la mas conveniente para implementar la lista de paradas
+    //Por ahora use un ArrayList
+    public Recorrido(LocalTime horaSalida, int duracion, Linea linea, Parada p1, Parada p2) {
         this.horaSalida = horaSalida;
         this.duracion = duracion;
         this.linea = linea;
-        this.paradas = paradas;
+        this.paradas = new ArrayList<>();
+        this.paradas.add(p1);
+        this.paradas.add(p2);
     }
 
     //Getters y setters
@@ -51,5 +57,10 @@ public class Recorrido {
 
     public void setParadas(List<Parada> paradas) {
         this.paradas = paradas;
+    }
+
+    //Metodo para agregar una parada al recorrido
+    public void agregarParada(Parada parada) {
+        this.paradas.add(parada);
     }
 }
