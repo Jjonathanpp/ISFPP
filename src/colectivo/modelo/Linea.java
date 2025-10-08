@@ -19,7 +19,7 @@ public class Linea {
         this.nombre = nombre;
         this.frecuencias = new ArrayList<>();
 
-        if(paradas != null || paradas.size() < 2) {
+        if(paradas == null || paradas.size() < 2) {
             throw new IllegalArgumentException("Una línea debe tener al menos dos paradas");
         }
 
