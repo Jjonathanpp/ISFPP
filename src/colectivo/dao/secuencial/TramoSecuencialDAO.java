@@ -14,6 +14,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TramoSecuencialDAO implements TramoDAO {
+
+
     @Override
     public void insertar(Tramo tramo) {
 

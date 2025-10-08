@@ -13,8 +13,6 @@ import java.util.Map;
 
 public class Calculo {
 
-
-
     //metodo Calcular el recorrido
     public  List<List<Recorrido>> calcularRecorrido(Parada paradaOrigen, Parada paradaDestino, int diaSemana,
                                                     LocalTime horaLlegadaParada, Map<String, Tramo> tramos) {
