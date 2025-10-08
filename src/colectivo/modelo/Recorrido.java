@@ -7,7 +7,6 @@ import java.util.List;
 public class Recorrido {
     //Atributos
     private LocalTime horaSalida;
-    private int duracion;
 
     private Linea linea;
 
@@ -17,9 +16,8 @@ public class Recorrido {
     //Cambie el constructor para que reciba dos paradas y las agregue a la lista de paradas
     //Hay que ver que estructura de datos es la mas conveniente para implementar la lista de paradas
     //Por ahora use un ArrayList
-    public Recorrido(LocalTime horaSalida, int duracion, Linea linea, Parada p1, Parada p2) {
+    public Recorrido(LocalTime horaSalida, Linea linea, Parada p1, Parada p2) {
         this.horaSalida = horaSalida;
-        this.duracion = duracion;
         this.linea = linea;
         this.paradas = new ArrayList<>();
         this.paradas.add(p1);
@@ -33,14 +31,6 @@ public class Recorrido {
 
     public void setHoraSalida(LocalTime horaSalida) {
         this.horaSalida = horaSalida;
-    }
-
-    public int getDuracion() {
-        return duracion;
-    }
-
-    public void setDuracion(int duracion) {
-        this.duracion = duracion;
     }
 
     public Linea getLinea() {

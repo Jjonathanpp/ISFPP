@@ -16,15 +16,14 @@ public class Parada {
 
 
     //Constructor
-    public Parada(String codigo, String direccion, double latitud, double longitud, Linea linea) {
+    public Parada(String codigo, String direccion, double latitud, double longitud) {
         this.codigo = codigo;
         this.direccion = direccion;
         this.latitud = latitud;
         this.longitud = longitud;
+
         this.lineas = new ArrayList<>();
         this.paradasCaminando = new ArrayList<>();
-
-        this.lineas.add(linea);
     }
 
 

@@ -11,7 +11,7 @@ public class Frecuencia {
     private Linea linea;
 
     //Constructor
-    public Frecuencia(int diaSemana, LocalTime hora, Linea linea) {
+    public Frecuencia(Linea linea, int diaSemana, LocalTime hora) {
         this.diaSemana = diaSemana;
         this.hora = hora;
         this.linea = linea;

@@ -9,22 +9,21 @@ public class Linea {
     private String codigo;
     private String nombre;
 
-    private  List<Recorrido> recorridos;
-
     private List<Frecuencia> frecuencias;
 
     private List<Parada> paradas;
 
     //Constructor
-    public Linea(String codigo, String nombre, List<Recorrido> recorridos, Parada p1, Parada p2) {
+    public Linea(String codigo, String nombre, List<Parada> paradas) {
         this.codigo = codigo;
         this.nombre = nombre;
-        this.recorridos = recorridos;
         this.frecuencias = new ArrayList<>();
-        this.paradas = new ArrayList<>();
 
-        this.paradas.add(p1);
-        this.paradas.add(p2);
+        if(paradas != null || paradas.size() < 2) {
+            throw new IllegalArgumentException("Una línea debe tener al menos dos paradas");
+        }
+
+        this.paradas = new ArrayList<>(paradas);
     }
 
     //getters y setters
@@ -42,14 +41,6 @@ public class Linea {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public List<Recorrido> getRecorridos() {
-        return recorridos;
-    }
-
-    public void setRecorridos(List<Recorrido> recorridos) {
-        this.recorridos = recorridos;
     }
 
     public List<Frecuencia> getFrecuencias() {

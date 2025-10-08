@@ -10,8 +10,8 @@ public class Conexion {
 
     private static final String HOST =  System.getenv().getOrDefault("PGHOST", "ep-hidden-sun-ac0ofa40-pooler.sa-east-1.aws.neon.tech");
     private static final String DB   = System.getenv().getOrDefault("PGDATABASE", "neondb");
-    private static final String USER = System.getenv().getOrDefault("PGUSER", "app_reader");
-    private static final String PASS = System.getenv().getOrDefault("PGPASSWORD", "camisa_pelota_lapiz");
+    private static final String USER = System.getenv().getOrDefault("PGUSER", "neondb_owner");
+    private static final String PASS = System.getenv().getOrDefault("PGPASSWORD", "npg_8bDCMVOW6AKy");
     private static final String SSLMODE = System.getenv().getOrDefault("PGSSLMODE", "require"); // require/verify-full
 
     //para conectar a la base de datos
