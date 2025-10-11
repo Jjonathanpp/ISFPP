@@ -1,4 +1,4 @@
-package colectivo.test;
+package test;
 
 import colectivo.datos.CargaParametros;
 import colectivo.datos.Dato;
@@ -6,11 +6,9 @@ import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
-import org.junit.Before;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 import java.util.TreeMap;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,6 +29,7 @@ public class DatosTest {
             throw new RuntimeException(e);
         }
 
+
         //Cargar datos
         try{
             paradas = Dato.cargarParadas(CargaParametros.getArchivoParada());
@@ -40,6 +39,7 @@ public class DatosTest {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
     }
     @Test
     void testpParametrosLoades(){

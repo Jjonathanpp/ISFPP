@@ -1,4 +1,4 @@
-package colectivo.test;
+package test;
 
 import colectivo.logica.Calculo;
 import colectivo.modelo.*;

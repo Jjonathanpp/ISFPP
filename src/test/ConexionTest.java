@@ -1,13 +1,9 @@
-package colectivo.test;
+package test;
 
 import colectivo.conexion.Conexion;
-import org.junit.Before;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;

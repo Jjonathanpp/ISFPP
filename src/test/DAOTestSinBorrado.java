@@ -1,4 +1,4 @@
-package colectivo.test;
+package test;
 
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;

@@ -27,6 +27,7 @@ public class Dato {
             throw new FileNotFoundException("No se encontró el archivo en resources: " + nombreArchivo);
 
         Scanner read = new Scanner(input, "UTF-8");
+
         int contador = 0;
 
         while (read.hasNextLine()) {
@@ -38,21 +39,25 @@ public class Dato {
 
             String codigo = partes[0];
             String direccion = partes[1];
-            double latitud = Double.parseDouble(partes[2]);
-            double longitud = Double.parseDouble(partes[3]);
+            double latitud = Double.parseDouble(partes[2].replace(',', '.'));
+            double longitud = Double.parseDouble(partes[3].replace(',', '.'));
 
             paradas.put(codigo, new Parada(codigo, direccion, latitud, longitud));
             contador++;
         }
 
         read.close();
-        System.out.println("Paradas cargadas: " + contador);
         return paradas;
     }
 
     public static TreeMap<String, Linea> cargarLineas(String nombreArchivo) throws FileNotFoundException {
         lineas = new TreeMap<>();
-        Scanner read = new Scanner(new File(nombreArchivo));
+
+        InputStream input = Dato.class.getClassLoader().getResourceAsStream(nombreArchivo);
+        if (input == null)
+            throw new FileNotFoundException("No se encontró el archivo en resources: " + nombreArchivo);
+
+        Scanner read = new Scanner(input, "UTF-8");
 
         while(read.hasNextLine()) {
             String lineaTxt = read.nextLine().trim();
@@ -88,7 +93,13 @@ public class Dato {
 
     public static TreeMap<String, Tramo> cargarTramos(String nombreArchivo) throws FileNotFoundException {
         tramos = new TreeMap<>();
-        Scanner read = new Scanner(new File(nombreArchivo));
+
+        InputStream input = Dato.class.getClassLoader().getResourceAsStream(nombreArchivo);
+        if (input == null)
+            throw new FileNotFoundException("No se encontró el archivo en resources: " + nombreArchivo);
+
+        Scanner read = new Scanner(input, "UTF-8");
+
         read.useDelimiter("\\s*;\\s*");
         int tiempo, tipo;
         Parada inicio, fin;
@@ -111,7 +122,13 @@ public class Dato {
 
     public static TreeMap<String, Frecuencia> cargarFrecuencias(String nombreArchivo) throws FileNotFoundException {
         frecuencias = new TreeMap<>();
-        Scanner read = new Scanner(new File(nombreArchivo));
+
+        InputStream input = Dato.class.getClassLoader().getResourceAsStream(nombreArchivo);
+        if (input == null)
+            throw new FileNotFoundException("No se encontró el archivo en resources: " + nombreArchivo);
+
+        Scanner read = new Scanner(input, "UTF-8");
+
         read.useDelimiter("\\s*;\\s*");
 
         while(read.hasNext()) {
