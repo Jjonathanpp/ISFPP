@@ -1,0 +1,5 @@
+Código de línea;Nombre de línea;Códigos de Parada;
+
+L1I;Línea 1 Ida;88;97;44;43;47;58;37;74;77;25;24;5;52;14;61;35;34;89;
+
+El colectivo recorre las paradas de izquierda a derecha

@@ -1,0 +1,11 @@
+Parada inicio; Parada fin;Tiempo recorrido;Tipo de recorrido;
+
+88;97;60;1;
+
+El tiempo está expresado en segundos
+
+Tipo de recorrido:
+
+1 = Colectivo
+2 = Caminando
+
