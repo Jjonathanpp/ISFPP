@@ -1,5 +1,5 @@
-Código de Parada;Nombre de Parada;Latitud;Longitud;
+CÃ³digo de Parada;Nombre de Parada;Latitud;Longitud;
 
 1;1 De Marzo, 405;-42.766285;-65.040768;
 
-La latitud y longitud en grados decimales corresponde a la ubicación de la parada
+La latitud y longitud en grados decimales corresponde a la ubicaciÃ³n de la parada

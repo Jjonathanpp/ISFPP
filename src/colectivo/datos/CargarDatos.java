@@ -92,7 +92,7 @@ public class CargarDatos {
         return lineas;
     }
 
-    // Método auxiliar para cargar frecuencias
+    // metodo auxiliar para cargar frecuencias
     private static void cargarFrecuencias(String nombreArchivo, Map<String, Linea> lineas)
             throws FileNotFoundException {
         InputStream input = CargarDatos.class.getClassLoader().getResourceAsStream(nombreArchivo);
