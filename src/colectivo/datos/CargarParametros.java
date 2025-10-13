@@ -12,7 +12,7 @@ public class CargarParametros {
 
     public static void parametros() throws IOException {
         Properties prop = new Properties();
-        InputStream input = CargarParametros.class.getClassLoader().getResourceAsStream("config.properties");
+        InputStream input = CargarParametros.class.getClassLoader().getResourceAsStream("resources/config.properties");
 
         if (input == null) {
             throw new IOException("No se pudo encontrar config.properties");
