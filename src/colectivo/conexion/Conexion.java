@@ -4,26 +4,45 @@ package colectivo.conexion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Conexion {
-    private static Connection conn;
+    private static Conexion instancia;
+    private Connection conn;
 
-    private static final String HOST =  System.getenv().getOrDefault("PGHOST", "ep-hidden-sun-ac0ofa40-pooler.sa-east-1.aws.neon.tech");
-    private static final String DB   = System.getenv().getOrDefault("PGDATABASE", "neondb");
-    private static final String USER = System.getenv().getOrDefault("PGUSER", "neondb_owner");
-    private static final String PASS = System.getenv().getOrDefault("PGPASSWORD", "npg_8bDCMVOW6AKy");
-    private static final String SSLMODE = System.getenv().getOrDefault("PGSSLMODE", "require"); // require/verify-full
+    // Parámetros de conexión proporcionados:
+    private static final String HOST = "pgs.fi.mdn.unp.edu.ar";
+    private static final String PORT = "30000";
+    private static final String DB   = "bd1";
+    private static final String USER = "estudiante";
+    private static final String PASS = "estudiante";
 
-    //para conectar a la base de datos
-    public static Connection getConnection() throws SQLException {
-        String url = String.format("jdbc:postgresql://%s:5432/%s?sslmode=%s", HOST, DB, SSLMODE);
-        return DriverManager.getConnection(url, USER, PASS);
+    private Conexion() throws SQLException {
+        String url = String.format("jdbc:postgresql://%s:%s/%s", HOST, PORT, DB);
+        this.conn = DriverManager.getConnection(url, USER, PASS);
+
+        // Establecer el esquema por defecto
+        try (Statement st = conn.createStatement()) {
+            st.execute("SET search_path TO isfpp_poo_2025");
+        }
     }
 
-    //para cerrar conexión
-    public static void cerrar(Connection c) {
-        if (c != null) {
-            try { c.close(); } catch (SQLException ignored) {}
+    public static synchronized Conexion getInstancia() throws SQLException {
+        if (instancia == null || instancia.conn.isClosed()) {
+            instancia = new Conexion();
+        }
+        return instancia;
+    }
+
+    public Connection getConnection() {
+        return conn;
+    }
+
+    public static void cerrar() {
+        if (instancia != null && instancia.conn != null) {
+            try {
+                instancia.conn.close();
+            } catch (SQLException ignored) {}
         }
     }
 }

@@ -15,17 +15,18 @@ import java.util.Map;
 
 public class TramoSecuencialDAO implements TramoDAO {
 
-
     @Override
     public void insertar(Tramo tramo) {
-        String sql = "INSERT INTO tramo (id_parada_inicio, id_parada_fin, tiempo, tipo) VALUES ((SELECT id FROM parada WHERE codigo = ?), (SELECT id FROM parada WHERE codigo = ?), ?, ?)";
-        try (Connection conn = Conexion.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, tramo.getInicio().getCodigo());
-            ps.setString(2, tramo.getFin().getCodigo());
-            ps.setInt(3, tramo.getTiempo());
-            ps.setInt(4, tramo.getTipo());
-            ps.executeUpdate();
+        String sql = "INSERT INTO tramo (parada_origen, parada_destino, duracion_seg, tipo) VALUES (?, ?, ?, ?)";
+        try {
+            Connection conn = Conexion.getInstancia().getConnection();
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, tramo.getInicio().getCodigo());
+                ps.setString(2, tramo.getFin().getCodigo());
+                ps.setInt(3, tramo.getTiempo());
+                ps.setInt(4, tramo.getTipo());
+                ps.executeUpdate();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -33,15 +34,16 @@ public class TramoSecuencialDAO implements TramoDAO {
 
     @Override
     public void actualizar(Tramo tramo) {
-        // Aquí deberías identificar el tramo (por inicio y fin) y actualizar tiempo/tipo
-        String sql = "UPDATE tramo SET tiempo = ?, tipo = ? WHERE id_parada_inicio = (SELECT id FROM parada WHERE codigo = ?) AND id_parada_fin = (SELECT id FROM parada WHERE codigo = ?)";
-        try (Connection conn = Conexion.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setInt(1, tramo.getTiempo());
-            ps.setInt(2, tramo.getTipo());
-            ps.setString(3, tramo.getInicio().getCodigo());
-            ps.setString(4, tramo.getFin().getCodigo());
-            ps.executeUpdate();
+        String sql = "UPDATE tramo SET duracion_seg = ?, tipo = ? WHERE parada_origen = (SELECT id FROM parada WHERE id = ?) AND parada_destino = (SELECT id FROM parada WHERE id = ?)";
+        try {
+            Connection conn = Conexion.getInstancia().getConnection();
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setInt(1, tramo.getTiempo());
+                ps.setInt(2, tramo.getTipo());
+                ps.setString(3, tramo.getInicio().getCodigo());
+                ps.setString(4, tramo.getFin().getCodigo());
+                ps.executeUpdate();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -49,12 +51,14 @@ public class TramoSecuencialDAO implements TramoDAO {
 
     @Override
     public void borrar(Tramo tramo) {
-        String sql = "DELETE FROM tramo WHERE id_parada_inicio = (SELECT id FROM parada WHERE codigo = ?) AND id_parada_fin = (SELECT id FROM parada WHERE codigo = ?)";
-        try (Connection conn = Conexion.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, tramo.getInicio().getCodigo());
-            ps.setString(2, tramo.getFin().getCodigo());
-            ps.executeUpdate();
+        String sql = "DELETE FROM tramo WHERE parada_origen = (SELECT id FROM parada WHERE id = ?) AND parada_destino = (SELECT id FROM parada WHERE id = ?)";
+        try {
+            Connection conn = Conexion.getInstancia().getConnection();
+            try (PreparedStatement ps = conn.prepareStatement(sql)) {
+                ps.setString(1, tramo.getInicio().getCodigo());
+                ps.setString(2, tramo.getFin().getCodigo());
+                ps.executeUpdate();
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -66,23 +70,23 @@ public class TramoSecuencialDAO implements TramoDAO {
         ParadaDAO paradaDAO = new ParadaSecuencialDAO();
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
-        String sql = "SELECT t.id, p1.codigo as cod_inicio, p2.codigo as cod_fin, t.tiempo, t.tipo " +
-                "FROM tramo t " +
-                "JOIN parada p1 ON t.id_parada_inicio = p1.id " +
-                "JOIN parada p2 ON t.id_parada_fin = p2.id";
-        try (Connection conn = Conexion.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql);
-             ResultSet rs = ps.executeQuery()) {
-            while (rs.next()) {
-                String codInicio = rs.getString("cod_inicio");
-                String codFin = rs.getString("cod_fin");
-                int tiempo = rs.getInt("tiempo");
-                int tipo = rs.getInt("tipo");
-                Parada inicio = paradas.get(Integer.parseInt(codInicio));
-                Parada fin = paradas.get(Integer.parseInt(codFin));
-                if (inicio != null && fin != null) {
-                    Tramo t = new Tramo(tiempo, tipo, inicio, fin);
-                    resultado.put(codInicio + "-" + codFin, t);
+        String sql = "SELECT t.parada_origen, t.parada_destino, t.duracion_seg, t.tipo " +
+                "FROM tramo t";
+        try {
+            Connection conn = Conexion.getInstancia().getConnection();
+            try (PreparedStatement ps = conn.prepareStatement(sql);
+                 ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    int idInicio = rs.getInt("parada_origen");
+                    int idFin = rs.getInt("parada_destino");
+                    int tiempo = rs.getInt("duracion_seg");
+                    int tipo = rs.getInt("tipo");
+                    Parada inicio = paradas.get(idInicio);
+                    Parada fin = paradas.get(idFin);
+                    if (inicio != null && fin != null) {
+                        Tramo t = new Tramo(tiempo, tipo, inicio, fin);
+                        resultado.put(idInicio + "-" + idFin, t);
+                    }
                 }
             }
         } catch (SQLException e) {
@@ -90,5 +94,4 @@ public class TramoSecuencialDAO implements TramoDAO {
         }
         return resultado;
     }
-
 }

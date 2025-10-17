@@ -11,6 +11,7 @@ import java.util.stream.Collectors;
  */
 public class Calculo {
 
+    //LISTO
     public static List<List<Recorrido>> calcularRecorrido(Parada paradaOrigen, Parada paradaDestino,
                                                           int diaSemana, LocalTime horaLlegadaParada,
                                                           Map<String, Tramo> tramos) {
@@ -45,6 +46,7 @@ public class Calculo {
         return todosLosRecorridos;
     }
 
+    //Listo
     private static List<List<Recorrido>> buscarRutasDirectas(Parada origen, Parada destino, int diaSemana,
                                                              LocalTime horaLlegada, Map<String, Tramo> tramos) {
         List<List<Recorrido>> resultados = new ArrayList<>();
@@ -76,6 +78,7 @@ public class Calculo {
         return resultados;
     }
 
+    //LISTO
     private static List<List<Recorrido>> buscarRutasConTransbordo(Parada origen, Parada destino,
                                                                   int diaSemana, LocalTime horaLlegada,
                                                                   Map<String, Tramo> tramos) {
@@ -137,6 +140,7 @@ public class Calculo {
         resultados.addAll(mejoresRutasPorLinea.values());
         return resultados;
     }
+
 
     private static List<List<Recorrido>> buscarRutasConexionCaminando(Parada origen, Parada destino,
                                                                       int diaSemana, LocalTime horaLlegada,
@@ -203,6 +207,7 @@ public class Calculo {
     }
 
     // Calcula la duración (offset) desde la primera parada de la línea hasta la paradaInicio
+    //Listo
     private static int calcularDuracionHastaParada(Linea linea, Parada paradaInicio, Map<String, Tramo> tramos) {
         List<Parada> paradasLinea = linea.getParadas();
         int indiceInicio = buscarIndiceParada(paradasLinea, paradaInicio);
@@ -246,6 +251,7 @@ public class Calculo {
         return primerHorario;
     }
 
+    //Listo
     private static int buscarIndiceParada(List<Parada> paradas, Parada parada) {
         for (int i = 0; i < paradas.size(); i++) {
             if (paradas.get(i).getCodigo().equals(parada.getCodigo())) {
@@ -255,6 +261,7 @@ public class Calculo {
         return -1;
     }
 
+    //LIsto
     private static int calcularDuracionTramo(List<Parada> paradas, Map<String, Tramo> tramos) {
         int duracionTotal = 0;
 
@@ -270,6 +277,7 @@ public class Calculo {
         return duracionTotal;
     }
 
+    //Listo
     private static Recorrido crearRecorrido(LocalTime horaSalida, Linea linea, List<Parada> paradas, int duracion) {
         if (paradas.size() < 2) {
             throw new IllegalArgumentException("El recorrido debe tener al menos dos paradas");
