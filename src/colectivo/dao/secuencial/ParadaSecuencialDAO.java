@@ -2,6 +2,8 @@ package colectivo.dao.secuencial;
 
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
+import colectivo.excepciones.InstanciaExisteEnBDException;
+import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import java.util.Map;
@@ -12,8 +14,11 @@ import java.util.*;
 public class ParadaSecuencialDAO implements ParadaDAO {
 
     @Override
-    public void insertar(Parada parada) {
-        String sql = "INSERT INTO parada (id, direccion, latitud, longitud) VALUES (?, ?, ?, ?)";
+    public void insertar(Parada parada) throws InstanciaExisteEnBDException {
+        if (existe(parada.getCodigo())) {
+            throw new InstanciaExisteEnBDException("La parada con código " + parada.getCodigo() + " ya existe en la base de datos.");
+        }
+        String sql = "INSERT INTO parada (codigo, direccion, latitud, longitud) VALUES (?, ?, ?, ?)";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -30,7 +35,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
     @Override
     public void actualizar(Parada parada) {
-        String sql = "UPDATE parada SET direccion = ?, latitud = ?, longitud = ? WHERE id = ?";
+        String sql = "UPDATE parada SET direccion = ?, latitud = ?, longitud = ? WHERE codigo = ?";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -46,8 +51,11 @@ public class ParadaSecuencialDAO implements ParadaDAO {
     }
 
     @Override
-    public void borrar(Parada parada) {
-        String sql = "DELETE FROM parada WHERE id = ?";
+    public void borrar(Parada parada) throws InstanciaNoExisteEnBDException {
+        if (!existe(parada.getCodigo())) {
+            throw new InstanciaNoExisteEnBDException("La parada con código " + parada.getCodigo() + " no existe en la base de datos.");
+        }
+        String sql = "DELETE FROM parada WHERE codigo = ?";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -62,13 +70,13 @@ public class ParadaSecuencialDAO implements ParadaDAO {
     @Override
     public Map<Integer, Parada> buscarTodos() {
         Map<Integer, Parada> resultado = new HashMap<>();
-        String sql = "SELECT id, direccion, latitud, longitud FROM parada";
+        String sql = "SELECT codigo, direccion, latitud, longitud FROM parada";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql);
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    String codigo = rs.getString("id");
+                    String codigo = rs.getString("codigo");
                     String direccion = rs.getString("direccion");
                     double latitud = rs.getDouble("latitud");
                     double longitud = rs.getDouble("longitud");
@@ -80,6 +88,21 @@ public class ParadaSecuencialDAO implements ParadaDAO {
             e.printStackTrace();
         }
         return resultado;
+    }
+
+    // Verifica si ya existe la parada con ese código antes de insertar
+    private boolean existe(String codigo) {
+        String sql = "SELECT 1 FROM parada WHERE codigo = ?";
+        try (Connection conn = Conexion.getInstancia().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, codigo);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next(); // Si hay resultado, existe
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

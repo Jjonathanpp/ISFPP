@@ -3,6 +3,8 @@ package colectivo.dao.secuencial;
 import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
+import colectivo.excepciones.InstanciaExisteEnBDException;
+import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 
@@ -14,8 +16,12 @@ import java.util.Map;
 
 public class LineaSecuencialDAO implements LineaDAO {
     @Override
-    public void insertar(Linea linea) {
-        String sql = "INSERT INTO linea (id, nombre) VALUES (?, ?)";
+    public void insertar(Linea linea) throws InstanciaExisteEnBDException {
+        if (existe(linea.getCodigo())) {
+            throw new InstanciaExisteEnBDException("La línea con código " + linea.getCodigo() + " ya existe en la base de datos.");
+        }
+
+        String sql = "INSERT INTO linea (codigo, nombre) VALUES (?, ?)";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -31,7 +37,7 @@ public class LineaSecuencialDAO implements LineaDAO {
 
     @Override
     public void actualizar(Linea linea) {
-        String sql = "UPDATE linea SET nombre = ? WHERE id = ?";
+        String sql = "UPDATE linea SET nombre = ? WHERE codigo = ?";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -46,8 +52,12 @@ public class LineaSecuencialDAO implements LineaDAO {
     }
 
     @Override
-    public void borrar(Linea linea) {
-        String sql = "DELETE FROM linea WHERE id = ?";
+    public void borrar(Linea linea) throws InstanciaNoExisteEnBDException {
+        if (!existe(linea.getCodigo())) {
+            throw new InstanciaNoExisteEnBDException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
+        }
+        borrarLineaParada(linea);
+        String sql = "DELETE FROM linea WHERE codigo = ?";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -57,7 +67,6 @@ public class LineaSecuencialDAO implements LineaDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        borrarLineaParada(linea);
     }
 
     @Override
@@ -66,12 +75,12 @@ public class LineaSecuencialDAO implements LineaDAO {
         ParadaDAO paradaDAO = new ParadaSecuencialDAO();
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
-        String sqlLineas = "SELECT id, nombre FROM linea";
-        String sqlParadasLinea = "SELECT l.id as cod_linea, p.id as cod_parada " +
+        String sqlLineas = "SELECT codigo, nombre FROM linea";
+        String sqlParadasLinea = "SELECT l.codigo as cod_linea, p.codigo as cod_parada " +
                 "FROM linea_parada pl " +
-                "JOIN linea l ON pl.id_linea = l.id " +
-                "JOIN parada p ON pl.id_parada = p.id " +
-                "ORDER BY pl.id_linea, pl.orden";
+                "JOIN linea l ON pl.codigo_linea = l.codigo " +
+                "JOIN parada p ON pl.codigo_parada = p.codigo " +
+                "ORDER BY pl.codigo_linea, pl.orden";
 
         try {
             Connection conn = Conexion.getInstancia().getConnection();
@@ -95,7 +104,7 @@ public class LineaSecuencialDAO implements LineaDAO {
 
                 // Ahora armamos los objetos Linea con la lista de paradas
                 while (rsLineas.next()) {
-                    String codigo = rsLineas.getString("id");
+                    String codigo = rsLineas.getString("codigo");
                     String nombre = rsLineas.getString("nombre");
                     List<Parada> paradasLinea = lineasParadas.getOrDefault(codigo, new ArrayList<>());
                     if (paradasLinea.size() >= 2) {
@@ -110,9 +119,23 @@ public class LineaSecuencialDAO implements LineaDAO {
         return resultado;
     }
 
+    // Método auxiliar para verificar existencia
+    private boolean existe(String codigo) {
+        String sql = "SELECT 1 FROM linea WHERE codigo = ?";
+        try (Connection conn = Conexion.getInstancia().getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, codigo);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next(); // Si hay algún resultado, existe
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
     //================================= DAO DE LineaParada =================================
     private void insertarLineaParada(Linea linea) {
-        String sql = "INSERT INTO linea_parada (id_linea, id_parada, orden) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO linea_parada (codigo_linea, codigo_parada, orden) VALUES (?, ?, ?)";
         List<Parada> paradas = linea.getParadas();
         try {
             Connection conn = Conexion.getInstancia().getConnection();
@@ -136,7 +159,7 @@ public class LineaSecuencialDAO implements LineaDAO {
 
     }
     private void borrarLineaParada(Linea linea){
-        String sql = "DELETE FROM linea_parada WHERE id_linea = (SELECT id FROM linea WHERE id = ?)";
+        String sql = "DELETE FROM linea_parada WHERE codigo_linea = ?";
         try {
             Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {

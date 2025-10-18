@@ -1,6 +1,8 @@
 package colectivo.test;
 
 import colectivo.dao.secuencial.ParadaSecuencialDAO;
+import colectivo.excepciones.InstanciaExisteEnBDException;
+import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterEach;
@@ -17,7 +19,7 @@ public class TestParadaDAO {
     private static final double TEST_LAT = -42.0, TEST_LON = -65.0;
 
     @AfterEach
-    void cleanup() {
+    void cleanup() throws InstanciaNoExisteEnBDException {
         // Borra la parada de test si existe
         Parada p = new Parada(TEST_PARADA_ID, TEST_PARADA_NOMBRE, TEST_LAT, TEST_LON);
         paradaDAO.borrar(p);
@@ -25,7 +27,7 @@ public class TestParadaDAO {
 
 
     @Test
-    public void testInsertar() {
+    public void testInsertar() throws InstanciaExisteEnBDException, InstanciaNoExisteEnBDException {
         Parada p = new Parada(TEST_PARADA_ID, TEST_PARADA_NOMBRE, TEST_LAT, TEST_LON);
         paradaDAO.insertar(p);
         Assertions.assertTrue(paradaDAO.buscarTodos().containsKey(parseInt(TEST_PARADA_ID)));
@@ -33,7 +35,7 @@ public class TestParadaDAO {
     }
 
     @Test
-    public void testActualizar() {
+    public void testActualizar() throws InstanciaExisteEnBDException, InstanciaNoExisteEnBDException {
         Parada p = new Parada(TEST_PARADA_ID, TEST_PARADA_NOMBRE, TEST_LAT, TEST_LON);
         paradaDAO.insertar(p);
         p.setDireccion(TEST_PARADA_NOMBRE + " UPDATED");
@@ -43,7 +45,7 @@ public class TestParadaDAO {
     }
 
     @Test
-    public void testBuscarTodos() {
+    public void testBuscarTodos() throws InstanciaExisteEnBDException, InstanciaNoExisteEnBDException {
         Parada p = new Parada(TEST_PARADA_ID, TEST_PARADA_NOMBRE, TEST_LAT, TEST_LON);
         paradaDAO.insertar(p);
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
@@ -53,8 +55,9 @@ public class TestParadaDAO {
     }
 
     @Test
-    public void testBorrar() {
+    public void testBorrar() throws InstanciaNoExisteEnBDException, InstanciaExisteEnBDException {
         Parada p = new Parada(TEST_PARADA_ID, TEST_PARADA_NOMBRE, TEST_LAT, TEST_LON);
+        paradaDAO.insertar(p);
         paradaDAO.borrar(p);
         Assertions.assertFalse(paradaDAO.buscarTodos().containsKey(TEST_PARADA_ID));
     }
