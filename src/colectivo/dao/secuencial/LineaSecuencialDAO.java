@@ -1,14 +1,16 @@
 package colectivo.dao.secuencial;
 
+
+
 import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
-import colectivo.modelo.Linea;
-import colectivo.modelo.Parada;
+import colectivo.modelo.*;
 
 import java.sql.*;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -81,6 +83,7 @@ public class LineaSecuencialDAO implements LineaDAO {
                 "JOIN linea l ON pl.codigo_linea = l.codigo " +
                 "JOIN parada p ON pl.codigo_parada = p.codigo " +
                 "ORDER BY pl.codigo_linea, pl.orden";
+        String sqlFrecuencias = "Select codigo_linea, diasemana,hora from frecuencia";
 
         try {
             Connection conn = Conexion.getInstancia().getConnection();
@@ -88,6 +91,7 @@ public class LineaSecuencialDAO implements LineaDAO {
                  ResultSet rsLineas = psLineas.executeQuery()) {
 
                 Map<String, List<Parada>> lineasParadas = new HashMap<>();
+                Map<String, List<FrecuenciaData>> frecuenciasPorLinea = new HashMap<>();
 
                 // Primero armamos el mapa de paradas para cada línea
                 try (PreparedStatement psPL = conn.prepareStatement(sqlParadasLinea);
@@ -102,6 +106,21 @@ public class LineaSecuencialDAO implements LineaDAO {
                     }
                 }
 
+                // Luego cargamos las frecuencias para cada línea
+                try (PreparedStatement psFreq = conn.prepareStatement(sqlFrecuencias);
+                     ResultSet rsFreq = psFreq.executeQuery()) {
+                    while (rsFreq.next()) {
+                        String codLinea = rsFreq.getString("codigo_linea");
+                        int diaSemana = rsFreq.getInt("diasemana");
+                        Time hora = rsFreq.getTime("hora");
+                        if (hora != null) {
+                            frecuenciasPorLinea
+                                    .computeIfAbsent(codLinea, k -> new ArrayList<>())
+                                    .add(new FrecuenciaData(diaSemana, hora.toLocalTime()));
+                        }
+                    }
+                }
+
                 // Ahora armamos los objetos Linea con la lista de paradas
                 while (rsLineas.next()) {
                     String codigo = rsLineas.getString("codigo");
@@ -109,6 +128,12 @@ public class LineaSecuencialDAO implements LineaDAO {
                     List<Parada> paradasLinea = lineasParadas.getOrDefault(codigo, new ArrayList<>());
                     if (paradasLinea.size() >= 2) {
                         Linea l = new Linea(codigo, nombre, paradasLinea);
+                        List<FrecuenciaData> datosFrecuencias = frecuenciasPorLinea.get(codigo);
+                        if (datosFrecuencias != null) {
+                            for (FrecuenciaData datos : datosFrecuencias) {
+                                l.agregarFrecuencia(new Frecuencia(l, datos.diaSemana(), datos.hora()));
+                            }
+                        }
                         resultado.put(codigo, l);
                     }
                 }
@@ -169,6 +194,8 @@ public class LineaSecuencialDAO implements LineaDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    private record FrecuenciaData(int diaSemana, LocalTime hora) {
     }
 
 }

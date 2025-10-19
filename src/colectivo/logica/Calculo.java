@@ -1,8 +1,16 @@
 package colectivo.logica;
 
+import colectivo.dao.LineaDAO;
+import colectivo.dao.ParadaDAO;
+import colectivo.dao.TramoDAO;
+import colectivo.dao.secuencial.LineaSecuencialDAO;
+import colectivo.dao.secuencial.ParadaSecuencialDAO;
+import colectivo.dao.secuencial.TramoSecuencialDAO;
 import colectivo.modelo.*;
+
 import java.time.LocalTime;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -15,6 +23,25 @@ public class Calculo {
     public static List<List<Recorrido>> calcularRecorrido(Parada paradaOrigen, Parada paradaDestino,
                                                           int diaSemana, LocalTime horaLlegadaParada,
                                                           Map<String, Tramo> tramos) {
+        DatosRed datos = cargarDatosDesdeBD(tramos);
+
+        if (datos == null) {
+            return Collections.emptyList();
+        }
+
+        Parada origen = datos.paradasPorCodigo().get(paradaOrigen.getCodigo());
+        Parada destino = datos.paradasPorCodigo().get(paradaDestino.getCodigo());
+
+        if (origen == null || destino == null) {
+            return Collections.emptyList();
+        }
+
+        return calcularRecorridoDesdeDatos(origen, destino, diaSemana, horaLlegadaParada, datos.tramos());
+    }
+
+    private static List<List<Recorrido>> calcularRecorridoDesdeDatos(Parada paradaOrigen, Parada paradaDestino,
+                                                                     int diaSemana, LocalTime horaLlegadaParada,
+                                                                     Map<String, Tramo> tramos) {
 
         List<List<Recorrido>> todosLosRecorridos = new ArrayList<>();
 
@@ -44,6 +71,68 @@ public class Calculo {
         todosLosRecorridos.addAll(rutasConexionCaminando);
 
         return todosLosRecorridos;
+    }
+    private static DatosRed cargarDatosDesdeBD(Map<String, Tramo> tramosDestino) {
+        try {
+            ParadaDAO paradaDAO = new ParadaSecuencialDAO();
+            LineaDAO lineaDAO = new LineaSecuencialDAO();
+            TramoDAO tramoDAO = new TramoSecuencialDAO();
+
+            Map<Integer, Parada> paradasPorId = paradaDAO.buscarTodos();
+            Map<String, Parada> paradasPorCodigo = paradasPorId.values().stream()
+                    .collect(Collectors.toMap(Parada::getCodigo, Function.identity()));
+
+            Map<String, Linea> lineas = lineaDAO.buscarTodos();
+
+            for (Linea linea : lineas.values()) {
+                List<Parada> paradasReemplazadas = linea.getParadas().stream()
+                        .map(parada -> paradasPorCodigo.get(parada.getCodigo()))
+                        .filter(Objects::nonNull)
+                        .collect(Collectors.toList());
+                linea.setParadas(paradasReemplazadas);
+                for (Parada parada : paradasReemplazadas) {
+                    if (parada != null) {
+                        parada.addLinea(linea);
+                    }
+                }
+            }
+
+            Map<String, Tramo> tramosDesdeDAO = tramoDAO.buscarTodos();
+            Map<String, Tramo> tramos = tramosDestino != null ? tramosDestino : new HashMap<>();
+
+            if (tramosDestino != null) {
+                tramosDestino.clear();
+            }
+
+            for (Map.Entry<String, Tramo> entry : tramosDesdeDAO.entrySet()) {
+                Tramo tramo = entry.getValue();
+                Parada inicio = paradasPorCodigo.get(tramo.getInicio().getCodigo());
+                Parada fin = paradasPorCodigo.get(tramo.getFin().getCodigo());
+
+                if (inicio != null && fin != null) {
+                    tramo.setInicio(inicio);
+                    tramo.setFin(fin);
+                    tramos.put(entry.getKey(), tramo);
+
+                    if (tramo.getTipo() == 2) {
+                        if (inicio.getParadasCaminando().stream().noneMatch(p -> p.getCodigo().equals(fin.getCodigo()))) {
+                            inicio.addParadaCaminando(fin);
+                        }
+                        if (fin.getParadasCaminando().stream().noneMatch(p -> p.getCodigo().equals(inicio.getCodigo()))) {
+                            fin.addParadaCaminando(inicio);
+                        }
+                    }
+                }
+            }
+
+            return new DatosRed(paradasPorCodigo, tramos);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private record DatosRed(Map<String, Parada> paradasPorCodigo, Map<String, Tramo> tramos) {
     }
 
     //Listo
