@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.*;
 
-class TestcalcularRecorrido {
+class TestcalcularRecorridoBD {
 
     private Map<String, Parada> paradas;
     private Map<String, Tramo> tramos;
