@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ParadaSecuencialDAO implements ParadaDAO {
+public class ParadaPostgresqlDAO implements ParadaDAO {
 
     @Override
     public void insertar(Parada parada) throws InstanciaExisteEnBDException {

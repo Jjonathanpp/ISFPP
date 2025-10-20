@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class LineaSecuencialDAO implements LineaDAO {
+public class LineaPostgresqlDAO implements LineaDAO {
     @Override
     public void insertar(Linea linea) throws InstanciaExisteEnBDException {
         if (existe(linea.getCodigo())) {

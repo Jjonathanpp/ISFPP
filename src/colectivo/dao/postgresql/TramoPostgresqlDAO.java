@@ -16,7 +16,7 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TramoSecuencialDAO implements TramoDAO {
+public class TramoPostgresqlDAO implements TramoDAO {
 
     @Override
     public void insertar(Tramo tramo) throws InstanciaNoExisteEnBDException, InstanciaExisteEnBDException {
