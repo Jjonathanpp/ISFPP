@@ -8,7 +8,9 @@ import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.time.LocalTime;
 import java.util.*;
 
@@ -26,7 +28,7 @@ public class LineaSecuencialDAO implements LineaDAO {
     // ===================== Privados reutilizables =====================
 
     /**
-     * Lee todo el archivo de líneas y devuelve Map<codigo, Linea>
+     * Lee todo el archivo de líneas y devuelve Map<codigo, Linea> (sin frecuencias).
      */
     private Map<String, Linea> leerDesdeArchivo() {
         Map<String, Linea> mapa = new HashMap<>();
@@ -101,17 +103,25 @@ public class LineaSecuencialDAO implements LineaDAO {
 
     @Override
     public Map<String, Linea> buscarTodos() {
-        Map<String, List<Frecuencia>> freqsMapa = leerFrecuenciasDesdeArchivo();
-        for (Linea l : mapa.values()) {
-            List<Frecuencia> fList = freqsMapa.get(l.getCodigo());
-            if (fList != null) {
-                for (Frecuencia f : fList) {
-                    // crear Frecuencia vinculada a la Linea real
-                    l.agregarFrecuencia(new Frecuencia(l, f.getDiaSemana(), f.getHora()));
+        // 1) Leemos las líneas y sus paradas (sin frecuencias)
+        Map<String, Linea> mapa = leerDesdeArchivo();
+
+        // 2) Leemos mapa de frecuencias desde archivo (clave: codigoLinea -> lista de (dia,hora))
+        Map<String, List<FrecuenciaData>> frecuenciasMapa = leerFrecuenciasDesdeArchivo();
+
+        // 3) Asociamos las frecuencias a las instancias reales de Linea
+        for (Map.Entry<String, Linea> e : mapa.entrySet()) {
+            String codigoLinea = e.getKey();
+            Linea linea = e.getValue();
+            List<FrecuenciaData> datos = frecuenciasMapa.get(codigoLinea);
+            if (datos != null) {
+                for (FrecuenciaData fd : datos) {
+                    linea.agregarFrecuencia(new Frecuencia(linea, fd.diaSemana(), fd.hora()));
                 }
             }
         }
-        return leerDesdeArchivo();
+
+        return mapa;
     }
 
     @Override
@@ -155,28 +165,59 @@ public class LineaSecuencialDAO implements LineaDAO {
         System.out.println(" Línea borrada: " + linea.getCodigo());
     }
 
-    //BORRAR
-    private Map<String, List<colectivo.modelo.Frecuencia>> leerFrecuenciasDesdeArchivo() {
-        Map<String, List<colectivo.modelo.Frecuencia>> mapa = new HashMap<>();
-        ResourceBundle rb = ResourceBundle.getBundle("config");
-        String nombreArchivo = rb.getString("frecuencia"); // por ejemplo "frecuencia.txt"
-        try (Scanner in = new Scanner(new File("src/resources/" + nombreArchivo), "UTF-8")) {
-            in.useDelimiter("\\s*;\\s*");
-            while (in.hasNext()) {
-                String codLinea = in.next();
-                int dia = in.nextInt();
-                String horaStr = in.next();
-                LocalTime hora = LocalTime.parse(horaStr); // formato HH:mm
-                // La Frecuencia necesita la Linea para construirse; guardamos data temporal
-                mapa.computeIfAbsent(codLinea, k -> new ArrayList<>()).add(new colectivo.modelo.Frecuencia(null, dia, hora));
-                if (in.hasNextLine()) in.nextLine();
+    // ===================== Frecuencias desde archivo =====================
+
+    // Estructura interna para datos temporales de frecuencia
+    private record FrecuenciaData(int diaSemana, LocalTime hora) {}
+
+    /**
+     * Lee un archivo de frecuencias y devuelve un mapa: codigoLinea -> lista de FrecuenciaData.
+     * Formato por línea (separador ';'):
+     *   COD_LINEA;DIA_SEMANA;HH:mm
+     * Ejemplo:
+     *   L3I;1;10:00
+     *   L3I;1;11:30
+     *
+     * El nombre del archivo se obtiene de config.properties (clave "frecuencia").
+     */
+    private Map<String, List<FrecuenciaData>> leerFrecuenciasDesdeArchivo() {
+        Map<String, List<FrecuenciaData>> mapa = new HashMap<>();
+        try {
+            ResourceBundle rb = ResourceBundle.getBundle("config");
+            String nombreArchivo = rb.getString("frecuencia").trim(); // p.e. "frecuencia.txt"
+            File f = new File("src/resources/" + nombreArchivo);
+            if (!f.exists()) {
+                // archivo opcional: si no existe devolvemos mapa vacío
+                return mapa;
+            }
+
+            try (BufferedReader br = new BufferedReader(new FileReader(f))) {
+                String linea;
+                while ((linea = br.readLine()) != null) {
+                    linea = linea.trim();
+                    if (linea.isEmpty() || linea.startsWith("#")) continue;
+                    String[] parts = linea.split("\\s*;\\s*");
+                    if (parts.length < 3) continue;
+                    String codLinea = parts[0].trim();
+                    int dia;
+                    try {
+                        dia = Integer.parseInt(parts[1].trim());
+                    } catch (NumberFormatException nfe) {
+                        continue;
+                    }
+                    String horaStr = parts[2].trim();
+                    LocalTime hora;
+                    try {
+                        hora = LocalTime.parse(horaStr);
+                    } catch (Exception ex) {
+                        continue;
+                    }
+                    mapa.computeIfAbsent(codLinea, k -> new ArrayList<>()).add(new FrecuenciaData(dia, hora));
+                }
             }
         } catch (Exception e) {
             System.err.println("Error leyendo frecuencias: " + e.getMessage());
         }
         return mapa;
     }
-
-
-
 }
