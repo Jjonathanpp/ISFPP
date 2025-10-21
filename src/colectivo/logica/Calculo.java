@@ -1,5 +1,6 @@
 package colectivo.logica;
 
+import colectivo.conexion.Factory;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
@@ -23,7 +24,7 @@ public class Calculo {
     public static List<List<Recorrido>> calcularRecorrido(Parada paradaOrigen, Parada paradaDestino,
                                                           int diaSemana, LocalTime horaLlegadaParada,
                                                           Map<String, Tramo> tramos) {
-        DatosRed datos = cargarDatosDesdeBD(tramos);
+        DatosRed datos = cargarDatosFactory(tramos);
 
         if (datos == null) {
             return Collections.emptyList();
@@ -382,5 +383,78 @@ public class Calculo {
         recorrido.setDuracion(duracion);
 
         return recorrido;
+    }
+
+    //============================ CARGAR DATOS ============================//
+
+    private static DatosRed cargarDatosFactory(Map<String, Tramo> tramosDestino) {
+        try {
+            ParadaDAO paradaDAO;
+            LineaDAO lineaDAO;
+            TramoDAO tramoDAO;
+
+            try {
+                paradaDAO = (ParadaDAO) Factory.getInstancia("PARADA");
+                lineaDAO = (LineaDAO) Factory.getInstancia("LINEA");
+                tramoDAO = (TramoDAO) Factory.getInstancia("TRAMO");
+            } catch (RuntimeException e) {
+                System.err.println("Factory devolvió una clase que no implementa la interfaz esperada: " + e.getMessage());
+                e.printStackTrace();
+                return null;
+            } catch (Exception e) {
+                System.err.println("Error al obtener instancias desde Factory: " + e.getMessage());
+                e.printStackTrace();
+                return null;
+            }
+
+            Map<Integer, Parada> paradasPorId = paradaDAO.buscarTodos();
+            Map<String, Parada> paradasPorCodigo = paradasPorId.values().stream()
+                    .collect(Collectors.toMap(Parada::getCodigo, Function.identity()));
+            Map<String, Linea> lineas = lineaDAO.buscarTodos();
+
+            for(Linea linea : lineas.values()) {
+                List<Parada> paradasReemplazadas = linea.getParadas().stream()
+                        .map(parada -> paradasPorCodigo.get(parada.getCodigo()))
+                        .filter(Objects::nonNull)
+                        .collect(Collectors.toList());
+                linea.setParadas(paradasReemplazadas);
+                for(Parada parada : paradasReemplazadas) {
+                    if(parada != null) {
+                        parada.addLinea(linea);
+                    }
+                }
+            }
+
+            Map<String, Tramo> tramosDesdeDAO = tramoDAO.buscarTodos();
+            Map<String, Tramo> tramos = tramosDestino != null ? tramosDestino : new HashMap<>();
+            if (tramosDestino != null) {
+                tramosDestino.clear();
+            }
+
+            for (Map.Entry<String, Tramo> entry : tramosDesdeDAO.entrySet()) {
+                Tramo tramo = entry.getValue();
+                Parada inicio = paradasPorCodigo.get(tramo.getInicio().getCodigo());
+                Parada fin = paradasPorCodigo.get(tramo.getFin().getCodigo());
+
+                if (inicio != null && fin != null) {
+                    tramo.setInicio(inicio);
+                    tramo.setFin(fin);
+                    tramos.put(entry.getKey(), tramo);
+
+                    if (tramo.getTipo() == 2) {
+                        if (inicio.getParadasCaminando().stream().noneMatch(p -> p.getCodigo().equals(fin.getCodigo()))) {
+                            inicio.addParadaCaminando(fin);
+                        }
+                        if (fin.getParadasCaminando().stream().noneMatch(p -> p.getCodigo().equals(inicio.getCodigo()))) {
+                            fin.addParadaCaminando(inicio);
+                        }
+                    }
+                }
+            }
+            return new DatosRed(paradasPorCodigo, tramos);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

@@ -3,7 +3,7 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/colectivo/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/test/resources" type="java-resource" />

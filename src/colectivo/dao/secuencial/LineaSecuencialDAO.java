@@ -4,10 +4,12 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 
 import java.io.File;
+import java.time.LocalTime;
 import java.util.*;
 
 public class LineaSecuencialDAO implements LineaDAO {
@@ -99,6 +101,16 @@ public class LineaSecuencialDAO implements LineaDAO {
 
     @Override
     public Map<String, Linea> buscarTodos() {
+        Map<String, List<Frecuencia>> freqsMapa = leerFrecuenciasDesdeArchivo();
+        for (Linea l : mapa.values()) {
+            List<Frecuencia> fList = freqsMapa.get(l.getCodigo());
+            if (fList != null) {
+                for (Frecuencia f : fList) {
+                    // crear Frecuencia vinculada a la Linea real
+                    l.agregarFrecuencia(new Frecuencia(l, f.getDiaSemana(), f.getHora()));
+                }
+            }
+        }
         return leerDesdeArchivo();
     }
 
@@ -142,4 +154,29 @@ public class LineaSecuencialDAO implements LineaDAO {
         escribirArchivo(mapa);
         System.out.println(" Línea borrada: " + linea.getCodigo());
     }
+
+    //BORRAR
+    private Map<String, List<colectivo.modelo.Frecuencia>> leerFrecuenciasDesdeArchivo() {
+        Map<String, List<colectivo.modelo.Frecuencia>> mapa = new HashMap<>();
+        ResourceBundle rb = ResourceBundle.getBundle("config");
+        String nombreArchivo = rb.getString("frecuencia"); // por ejemplo "frecuencia.txt"
+        try (Scanner in = new Scanner(new File("src/resources/" + nombreArchivo), "UTF-8")) {
+            in.useDelimiter("\\s*;\\s*");
+            while (in.hasNext()) {
+                String codLinea = in.next();
+                int dia = in.nextInt();
+                String horaStr = in.next();
+                LocalTime hora = LocalTime.parse(horaStr); // formato HH:mm
+                // La Frecuencia necesita la Linea para construirse; guardamos data temporal
+                mapa.computeIfAbsent(codLinea, k -> new ArrayList<>()).add(new colectivo.modelo.Frecuencia(null, dia, hora));
+                if (in.hasNextLine()) in.nextLine();
+            }
+        } catch (Exception e) {
+            System.err.println("Error leyendo frecuencias: " + e.getMessage());
+        }
+        return mapa;
+    }
+
+
+
 }
