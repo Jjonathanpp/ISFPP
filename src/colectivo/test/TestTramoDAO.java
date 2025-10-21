@@ -16,8 +16,8 @@ import java.util.Map;
 public class TestTramoDAO {
     TramoSecuencialDAO tramoDAO = new TramoSecuencialDAO();
     ParadaSecuencialDAO paradaDAO = new ParadaSecuencialDAO();
-    private static final String TEST_PARADA_ID1 = "203";
-    private static final String TEST_PARADA_ID2 = "204";
+    private static final String TEST_PARADA_ID1 = "210";
+    private static final String TEST_PARADA_ID2 = "224";
     private static final String TEST_TRAMO_KEY = TEST_PARADA_ID1 + "-" + TEST_PARADA_ID2;
     Tramo t = new Tramo(100, 1,
             new Parada(TEST_PARADA_ID1, "P1", -42.3, -65.3),
