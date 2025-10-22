@@ -2,6 +2,7 @@ package colectivo.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Linea {
 
@@ -65,5 +66,25 @@ public class Linea {
     }
     public void agregarParada(Parada parada) {
         this.paradas.add(parada);
+    }
+
+
+    // equals/hashCode basados en 'codigo' (identificador lógico)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Linea)) return false;
+        Linea linea = (Linea) o;
+        return Objects.equals(codigo, linea.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    @Override
+    public String toString() {
+        return "Linea{" + "codigo='" + codigo + '\'' + ", nombre='" + nombre + '\'' + '}';
     }
 }
