@@ -2,6 +2,7 @@ package colectivo.modelo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Parada {
     //atributos
@@ -81,5 +82,24 @@ public class Parada {
     }
     public void addParadaCaminando(Parada parada) {
         this.paradasCaminando.add(parada);
+    }
+
+    // equals/hashCode basados en 'codigo' (identificador lógico)
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Parada)) return false;
+        Parada parada = (Parada) o;
+        return Objects.equals(codigo, parada.codigo);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codigo);
+    }
+
+    @Override
+    public String toString() {
+        return "Parada{" + "codigo='" + codigo + '\'' + ", direccion='" + direccion + '\'' + '}';
     }
 }
