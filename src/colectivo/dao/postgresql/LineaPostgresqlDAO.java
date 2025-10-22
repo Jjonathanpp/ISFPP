@@ -4,7 +4,6 @@ package colectivo.dao.postgresql;
 import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
-import colectivo.dao.secuencial.ParadaSecuencialDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Frecuencia;
@@ -76,7 +75,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
     @Override
     public Map<String, Linea> buscarTodos() {
         Map<String, Linea> resultado = new HashMap<>();
-        ParadaDAO paradaDAO = new ParadaSecuencialDAO();
+        ParadaDAO paradaDAO = new ParadaPostgresqlDAO();
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
         String sqlLineas = "SELECT codigo, nombre FROM linea";
