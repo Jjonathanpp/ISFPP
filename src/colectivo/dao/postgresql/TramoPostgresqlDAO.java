@@ -82,7 +82,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
     @Override
     public Map<String, Tramo> buscarTodos() {
         Map<String, Tramo> resultado = new HashMap<>();
-        ParadaDAO paradaDAO = new ParadaSecuencialDAO();
+        ParadaDAO paradaDAO = new ParadaPostgresqlDAO();
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
         String sql = "SELECT t.inicio, t.destino, t.tiempo, t.tipo " +
