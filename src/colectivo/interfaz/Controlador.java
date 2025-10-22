@@ -1,5 +1,9 @@
 package colectivo.interfaz;
 
+import colectivo.conexion.Factory;
+import colectivo.dao.LineaDAO;
+import colectivo.dao.ParadaDAO;
+import colectivo.dao.TramoDAO;
 import colectivo.datos.CargarDatos;
 import colectivo.datos.CargarParametros;
 import colectivo.modelo.Linea;
@@ -35,10 +39,16 @@ public class Controlador {
     public void init() {
         try {
             // 1 Carga de Datos
-            CargarParametros.parametros();
-            paradas = CargarDatos.cargarParadas(CargarParametros.getArchivoParada());
-            lineas  = CargarDatos.cargarLineas(CargarParametros.getArchivoLinea(),CargarParametros.getArchivoFrecuencia(),paradas );
-            tramos  = CargarDatos.cargarTramos(CargarParametros.getArchivoTramo(), paradas);
+//            CargarParametros.parametros();
+//            paradas = CargarDatos.cargarParadas(CargarParametros.getArchivoParada());
+//            lineas  = CargarDatos.cargarLineas(CargarParametros.getArchivoLinea(),CargarParametros.getArchivoFrecuencia(),paradas );
+//            tramos  = CargarDatos.cargarTramos(CargarParametros.getArchivoTramo(), paradas);
+
+            paradas = ((ParadaDAO) Factory.getInstancia("PARADA")).buscarTodos();
+
+            tramos = ((TramoDAO) Factory.getInstancia("TRAMO")).buscarTodos();
+
+            lineas = ((LineaDAO) Factory.getInstancia("LINEA")).buscarTodos();
 
             // 2 Inicialización de la Interfaz
             var lista = new ArrayList<>(paradas.values());
@@ -69,7 +79,7 @@ public class Controlador {
         String horaStr = view.getTxtHora().getText();
 
         if (origen == null || destino == null || diaStr == null || horaStr.isBlank()) {
-            view.getLblEstado().setText("❗ Complete todos los campos.");
+            view.getLblEstado().setText("❗Complete todos los campos.");
             return;
         }
 
@@ -117,7 +127,7 @@ public class Controlador {
     }
 
 
-    /** Muestra el listado completo de rutas (lista de listas) en un diálogo con scroll */
+    /** Muestra el listado completo de rutas (lista de listas) en un diálogo */
     private void mostrarRutasEnDialogo(List<List<Recorrido>> rutas) {
         String texto = formatearRutas(rutas);
 
@@ -134,7 +144,7 @@ public class Controlador {
         a.showAndWait();
     }
 
-    /** Convierte la lista de listas en un bloque de texto legible. */
+    /** Convierte la lista de listas en un bloque de texto. */
     private String formatearRutas(List<List<Recorrido>> rutas) {
         if (rutas == null || rutas.isEmpty()) {
             return "No se encontraron rutas.";
@@ -156,7 +166,7 @@ public class Controlador {
         return sb.toString();
     }
 
-    /** Convierte un Recorrido en una línea textual amigable. */
+    /** Convierte un Recorrido en una línea textual */
     private String formatearRecorrido(Recorrido r) {
         // Línea o “CAMINAR” cuando la línea sea null
         String nombreLinea = (r.getLinea() == null) ? "CAMINAR" : r.getLinea().getCodigo();
