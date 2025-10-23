@@ -68,7 +68,6 @@ public class Linea {
         this.paradas.add(parada);
     }
 
-
     // equals/hashCode basados en 'codigo' (identificador lógico)
     @Override
     public boolean equals(Object o) {

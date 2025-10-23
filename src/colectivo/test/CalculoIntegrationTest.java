@@ -8,10 +8,7 @@ import org.junit.jupiter.api.*;
 
 import java.lang.reflect.Field;
 import java.time.LocalTime;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -127,6 +124,16 @@ public class CalculoIntegrationTest {
         for (colectivo.modelo.Linea l : lineas.values()) {
             assertNotNull(l.getFrecuencias(), "Linea " + l.getCodigo() + " tiene getFrecuencias() == null");
             assertFalse(l.getFrecuencias().isEmpty(), "Linea " + l.getCodigo() + " NO tiene frecuencias cargadas");
+        }
+
+    }
+
+    @Test
+    public void testFactoryClassNamesExist() {
+        ResourceBundle rb = ResourceBundle.getBundle("factory");
+        for (String key : Arrays.asList("LINEA","PARADA","TRAMO")) {
+            String cls = rb.getString(key).trim();
+            assertDoesNotThrow(() -> Class.forName(cls), "No se encontró la clase: " + cls);
         }
     }
 }
