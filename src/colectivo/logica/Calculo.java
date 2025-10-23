@@ -108,11 +108,16 @@ public class Calculo {
 
             t.setInicio(inicio);
             t.setFin(fin);
-            tramos.put(entry.getKey(), t);
+
+            String clave = inicio.getCodigo() + "-" + fin.getCodigo();
+            tramos.put(clave, t);
 
             if (t.getTipo() == 2) { // conexión caminando
                 inicio.addParadaCaminando(fin);
                 fin.addParadaCaminando(inicio);
+
+                String claveInversa = fin.getCodigo() + "-" + inicio.getCodigo();
+                tramos.putIfAbsent(claveInversa, new Tramo(t.getTiempo(), t.getTipo(), fin, inicio));
             }
         }
         return tramos;
