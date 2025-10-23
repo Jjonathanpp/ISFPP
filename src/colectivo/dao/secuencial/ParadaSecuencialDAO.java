@@ -27,8 +27,19 @@ public class ParadaSecuencialDAO implements ParadaDAO {
             while (inFile.hasNextInt()) {
                 String codigo = String.valueOf(inFile.nextInt());
                 String direccion = inFile.next();
-                double latitud = inFile.nextDouble();
-                double longitud = inFile.nextDouble();
+                String latitudToken = inFile.next();
+                String longitudToken = inFile.next();
+
+                double latitud;
+                double longitud;
+                try {
+                    latitud = parseDecimal(latitudToken);
+                    longitud = parseDecimal(longitudToken);
+                } catch (NumberFormatException ex) {
+                    System.err.println(" Error al parsear coordenadas de la parada " + codigo + ": " + ex.getMessage());
+                    if (inFile.hasNextLine()) inFile.nextLine();
+                    continue;
+                }
 
                 Parada parada = new Parada(codigo, direccion, latitud, longitud);
                 mapa.put(Integer.parseInt(codigo), parada);
@@ -41,6 +52,11 @@ public class ParadaSecuencialDAO implements ParadaDAO {
         }
 
         return mapa;
+    }
+
+    private double parseDecimal(String token) {
+        String normalizado = token.trim().replace(',', '.');
+        return Double.parseDouble(normalizado);
     }
 
     private void escribirArchivo(Map<Integer, Parada> mapa) {
