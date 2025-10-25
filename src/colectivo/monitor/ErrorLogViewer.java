@@ -1,5 +1,5 @@
 package colectivo.monitor;
-
+import colectivo.util.LoggingConfig;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.beans.property.SimpleStringProperty;
@@ -193,6 +193,7 @@ public class ErrorLogViewer extends Application {
     }
 
     public static void main(String[] args) {
+        LoggingConfig.initLogging();
         launch(args);
     }
 

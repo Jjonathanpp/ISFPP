@@ -1,7 +1,7 @@
 package colectivo.aplicacion;
 import colectivo.interfaz.Controlador;
 import colectivo.interfaz.InterfazView;
-
+import colectivo.util.LoggingConfig;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -19,5 +19,8 @@ public class App extends Application {
         stage.show();
     }
 
-    public static void main(String[] args) { launch(args); }
+    public static void main(String[] args) {
+        LoggingConfig.initLogging();
+        launch(args);
+    }
 }
