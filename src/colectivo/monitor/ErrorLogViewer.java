@@ -1,4 +1,6 @@
 package colectivo.monitor;
+
+
 import colectivo.util.LoggingConfig;
 import javafx.application.Application;
 import javafx.application.Platform;
@@ -50,7 +52,7 @@ public class ErrorLogViewer extends Application {
     private static final DateTimeFormatter DISPLAY_FORMATTER = DateTimeFormatter.ofPattern("dd/MM HH:mm:ss");
 
     private final ObservableList<LogEntry> entries = FXCollections.observableArrayList();
-    private final StringProperty statusMessage = new SimpleStringProperty("Esperando registros de error...");
+    private final StringProperty statusMessage = new SimpleStringProperty("Esperando advertencias o errores...");
 
     private WatchService watchService;
     private ExecutorService watcherExecutor;
@@ -72,7 +74,7 @@ public class ErrorLogViewer extends Application {
     public void start(Stage stage) {
         TableView<LogEntry> tableView = createTable();
 
-        Label subtitle = new Label("Errores recientes detectados por Log4j");
+        Label subtitle = new Label("Advertencias y errores recientes detectados por Log4j");
         subtitle.getStyleClass().add("subtitle");
 
         Button refreshButton = new Button("Actualizar");
@@ -137,7 +139,7 @@ public class ErrorLogViewer extends Application {
     private void loadEntries() {
         if (!Files.exists(ERROR_LOG_PATH)) {
             entries.clear();
-            statusMessage.set("No se encontró el archivo de errores aún.");
+            statusMessage.set("No se encontró el archivo de advertencias/errores aún.");
             return;
         }
 
@@ -162,8 +164,8 @@ public class ErrorLogViewer extends Application {
             }
             entries.setAll(refreshed);
             statusMessage.set(refreshed.isEmpty()
-                    ? "No hay errores registrados en el archivo dedicado."
-                    : "Mostrando " + refreshed.size() + " errores registrados.");
+                    ? "No hay advertencias ni errores registrados en el archivo dedicado."
+                    : "Mostrando " + refreshed.size() + " advertencias/errores registrados.");
         } catch (IOException e) {
             entries.clear();
             statusMessage.set("No se pudo leer el archivo de errores (" + e.getMessage() + ").");

@@ -1,4 +1,5 @@
 package colectivo.aplicacion;
+
 import colectivo.interfaz.Controlador;
 import colectivo.interfaz.InterfazView;
 import colectivo.util.LoggingConfig;
