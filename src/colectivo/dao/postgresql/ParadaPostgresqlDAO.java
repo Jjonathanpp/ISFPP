@@ -5,6 +5,8 @@ import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
+import org.apache.log4j.Logger;
+
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +16,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParadaPostgresqlDAO implements ParadaDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(ParadaPostgresqlDAO.class);
 
     @Override
     public void insertar(Parada parada) throws InstanciaExisteEnBDException {
@@ -31,7 +35,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error insertando parada " + parada.getCodigo(), e);
         }
     }
 
@@ -48,7 +52,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error actualizando parada " + parada.getCodigo(), e);
         }
     }
 
@@ -65,7 +69,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error borrando parada " + parada.getCodigo(), e);
         }
     }
 
@@ -87,7 +91,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error buscando paradas", e);
         }
         return resultado;
     }
@@ -102,7 +106,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 return rs.next(); // Si hay resultado, existe
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error verificando existencia de la parada " + codigo, e);
         }
         return false;
     }

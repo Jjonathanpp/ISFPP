@@ -1,0 +1,29 @@
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.label.subtitle {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.table-view {
+    -fx-border-color: #d0d0d0;
+    -fx-border-radius: 4px;
+    -fx-padding: 5px;
+}
+
+.table-column {
+    -fx-alignment: CENTER-LEFT;
+}
+
+.tool-bar {
+    -fx-padding: 10px;
+    -fx-background-color: linear-gradient(to bottom, #f7f7f7, #e6e6e6);
+    -fx-border-color: #c0c0c0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.button {
+    -fx-font-weight: bold;
+}

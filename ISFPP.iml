@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/colectivo/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/test/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/Resources" type="java-resource" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -51,5 +52,7 @@
     <orderEntry type="library" name="junit.jupiter" level="project" />
     <orderEntry type="library" name="junit" level="project" />
     <orderEntry type="library" name="lib" level="application" />
+    <orderEntry type="library" name="lib2" level="project" />
+    <orderEntry type="library" name="log4j-1.2.17" level="project" />
   </component>
 </module>

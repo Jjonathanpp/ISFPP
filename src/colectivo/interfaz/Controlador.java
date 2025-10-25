@@ -14,6 +14,7 @@ import colectivo.modelo.Recorrido;
 
 import javafx.collections.FXCollections;
 import javafx.util.StringConverter;
+import org.apache.log4j.Logger;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -25,6 +26,7 @@ import java.util.*;
 
 public class Controlador {
 
+    private static final Logger LOGGER = Logger.getLogger(Controlador.class);
 
     private final InterfazView view;
     private Map<Integer, Parada> paradas;
@@ -68,7 +70,12 @@ public class Controlador {
             //3 Manejo del evento Buscar
             view.getBtnBuscar().setOnAction(e -> onBuscar());
 
-        } catch (Exception ignored) { }
+            LOGGER.info("Controlador inicializado con " + paradas.size() + " paradas, "
+                    + tramos.size() + " tramos y " + lineas.size() + " líneas");
+
+        } catch (Exception e) {
+            LOGGER.error("Error inicializando el controlador de la interfaz", e);
+        }
     }
 
     /**Metodo para buscar rutas*/
@@ -89,6 +96,10 @@ public class Controlador {
         // 1) Llamás a tu cálculo (como ya lo hacías)
         List<List<Recorrido>> rutas = Calculo.calcularRecorrido(origen, destino, dia, hora, tramos);
 
+        LOGGER.debug("Búsqueda de rutas " + origen.getCodigo() + " -> " + destino.getCodigo()
+                + " para el día " + dia + " a las " + hora + " devolvió "
+                + (rutas == null ? 0 : rutas.size()) + " opciones");
+
         // 2) Mostrás todo en un diálogo scrollable (sin tocar la vista)
         mostrarRutasEnDialogo(rutas);
 
@@ -107,7 +118,7 @@ public class Controlador {
             DateTimeFormatter formato = DateTimeFormatter.ofPattern("HH:mm");
             return LocalTime.parse(horaStr.trim(), formato);
         } catch (DateTimeParseException e) {
-            System.out.println("Error: formato de hora inválido -> " + horaStr);
+            LOGGER.warn("Formato de hora inválido: " + horaStr, e);
             return null;
         }
     }
