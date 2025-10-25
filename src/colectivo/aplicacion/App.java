@@ -9,6 +9,12 @@ import javafx.stage.Stage;
 
 public class App extends Application {
 
+
+    @Override
+    public void init() {
+        LoggingConfig.initLogging();
+    }
+
     @Override
     public void start(Stage stage) {
         InterfazView view = new InterfazView();
@@ -21,7 +27,6 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
-        LoggingConfig.initLogging();
         launch(args);
     }
 }

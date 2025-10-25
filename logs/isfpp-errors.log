@@ -1,0 +1,11 @@
+2025-10-25 11:26:19.053 [JavaFX Application Thread] ERROR colectivo.interfaz.Controlador - Error inicializando el controlador de la interfaz
+java.lang.NullPointerException: Cannot invoke "java.util.Map.values()" because "this.paradas" is null
+	at colectivo.interfaz.Controlador.init(Controlador.java:56)
+	at colectivo.aplicacion.App.start(App.java:22)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
