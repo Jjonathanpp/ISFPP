@@ -9,6 +9,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextArea;
+import org.apache.log4j.Logger;
+
 
 import java.time.Duration;
 import java.time.LocalTime;
@@ -23,6 +25,9 @@ import java.util.Map;
  *  - parsear hora y delegar a buscar(...)
  */
 public class Controler {
+
+    private static final Logger LOGGER = Logger.getLogger(Controler.class);
+
 
     private final VistaInterfaz vista;
     private final RecorridoDesacoplador recorridoDesacoplador;
@@ -66,10 +71,13 @@ public class Controler {
                         vista.setEstado("Por favor, complete todos los campos."); //Hacerlo multi-lenguaje
                         return;
                     }
+                    LOGGER.info("Búsqueda iniciada: origen=" + origen + ", destino=" + destino + ", día=" + dia + ", hora=" + hora);
                     buscarYMostrar(origen, destino, dia, hora);
+                    LOGGER.info("Búsqueda completada con éxito.");
 
                 } catch (Exception e) {
                     vista.setEstado("Error al buscar rutas: " + e.getMessage()); //Hacerlo multi-lenguaje
+                    LOGGER.error("Error al procesar la búsqueda de recorridos", e);
                 }
             }
         });
@@ -94,8 +102,10 @@ public class Controler {
         int diaInt = convertirIntaDia(dia);
         List<List<Recorrido>> rutas = recorridoDesacoplador.buscarRecorridos(origen, destino, diaInt, hora, cordinador.getTramos());
 
+        LOGGER.debug("Invocando buscarRecorridos con parámetros: dia=" + diaInt + ", hora=" + hora);
         // Actualizar estado breve
         vista.setEstado("Rutas encontradas: " + (rutas == null ? 0 : rutas.size()));
+        LOGGER.info("Se encontraron " + (rutas == null ? 0 : rutas.size()) + " rutas posibles.");
 
         // Mostrar diálogo con detalle (como en tu versión anterior)
         mostrarRutasEnDialogo(origen, destino, hora, rutas);

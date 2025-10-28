@@ -3,11 +3,11 @@ package colectivo.dao.postgresql;
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
-import colectivo.dao.secuencial.ParadaSecuencialDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,6 +17,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TramoPostgresqlDAO implements TramoDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(TramoPostgresqlDAO.class);
 
     @Override
     public void insertar(Tramo tramo) throws InstanciaNoExisteEnBDException, InstanciaExisteEnBDException {
@@ -37,9 +39,10 @@ public class TramoPostgresqlDAO implements TramoDAO {
                 ps.setInt(3, tramo.getTiempo());
                 ps.setInt(4, tramo.getTipo());
                 ps.executeUpdate();
+                LOGGER.info("Tramo insertado en PostgreSQL: " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al insertar el tramo " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo(), e);
         }
     }
 
@@ -54,9 +57,10 @@ public class TramoPostgresqlDAO implements TramoDAO {
                 ps.setString(3, tramo.getInicio().getCodigo());
                 ps.setString(4, tramo.getFin().getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Tramo actualizado en PostgreSQL: " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al actualizar el tramo " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo(), e);
         }
     }
 
@@ -73,9 +77,10 @@ public class TramoPostgresqlDAO implements TramoDAO {
                 ps.setString(1, tramo.getInicio().getCodigo());
                 ps.setString(2, tramo.getFin().getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Tramo borrado en PostgreSQL: " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al borrar el tramo " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo(), e);
         }
     }
 
@@ -101,11 +106,13 @@ public class TramoPostgresqlDAO implements TramoDAO {
                     if (inicio != null && destino != null) {
                         Tramo t = new Tramo(tiempo, tipo, inicio, destino);
                         resultado.put(codigoInicio + "-" + codigoDestino, t);
+                    } else {
+                        LOGGER.warn("Paradas faltantes para tramo " + codigoInicio  + "->" + codigoDestino + ": inicio=" + inicio + ", destino=" + destino);
                     }
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al buscar todos los tramos", e);
         }
         return resultado;
     }
@@ -120,7 +127,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
                 return rs.next();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al verificar existencia de la parada " + codigoParada, e);
         }
         return false;
     }
@@ -137,7 +144,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
                 return rs.next();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al verificar existencia del tramo " + inicio + "->" + destino, e);
         }
         return false;
     }

@@ -9,6 +9,7 @@ import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
+import org.apache.log4j.Logger;
 
 import java.sql.*;
 import java.time.LocalTime;
@@ -18,6 +19,9 @@ import java.util.List;
 import java.util.Map;
 
 public class LineaPostgresqlDAO implements LineaDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(LineaPostgresqlDAO.class);
+
     @Override
     public void insertar(Linea linea) throws InstanciaExisteEnBDException {
         if (existe(linea.getCodigo())) {
@@ -31,9 +35,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 ps.setString(1, linea.getCodigo());
                 ps.setString(2, linea.getNombre());
                 ps.executeUpdate();
+                LOGGER.info("Línea insertada en PostgreSQL: " + linea.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al insertar la línea " + linea.getCodigo(), e);
         }
         insertarLineaParada(linea);
     }
@@ -47,9 +52,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 ps.setString(1, linea.getNombre());
                 ps.setString(2, linea.getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Línea actualizada en PostgreSQL: " + linea.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al actualizar la línea " + linea.getCodigo(), e);
         }
         actualizarLineaParada(linea);
     }
@@ -66,9 +72,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Línea borrada en PostgreSQL: " + linea.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.info("Línea borrada en PostgreSQL: " + linea.getCodigo());
         }
     }
 
@@ -140,7 +147,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al buscar todas las líneas", e);
         }
         return resultado;
     }
@@ -155,7 +162,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 return rs.next(); // Si hay algún resultado, existe
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al verificar existencia de la línea " + codigo, e);
         }
         return false;
     }
@@ -175,7 +182,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al insertar paradas para la línea " + linea.getCodigo(), e);
         }
     }
 
@@ -193,7 +200,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 ps.executeUpdate();
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al borrar paradas para la línea " + linea.getCodigo(), e);
         }
     }
     private record FrecuenciaData(int diaSemana, LocalTime hora) {

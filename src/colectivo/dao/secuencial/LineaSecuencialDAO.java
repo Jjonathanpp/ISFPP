@@ -7,6 +7,7 @@ import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
+import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,6 +16,8 @@ import java.time.LocalTime;
 import java.util.*;
 
 public class LineaSecuencialDAO implements LineaDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(LineaSecuencialDAO.class);
 
     private final String name;
     private final ParadaDAO paradaDAO;  // para resolver IDs -> Parada
@@ -51,7 +54,7 @@ public class LineaSecuencialDAO implements LineaDAO {
                     if (p != null) {
                         paradas.add(p);
                     } else {
-                        System.err.println(" Parada " + idParada + " no encontrada para línea " + codigo);
+                        LOGGER.warn("Parada " + idParada + " no encontrada para línea " + codigo);
                     }
                 }
                 if (in.hasNextLine()) in.nextLine();
@@ -61,11 +64,11 @@ public class LineaSecuencialDAO implements LineaDAO {
                     Linea l = new Linea(codigo, nombre, paradas);
                     mapa.put(codigo, l);
                 } else {
-                    System.err.println(" Línea " + codigo + " ignorada: menos de 2 paradas");
+                    LOGGER.warn("Línea " + codigo + " ignorada: menos de 2 paradas");
                 }
             }
         } catch (Exception e) {
-            System.err.println(" Error al leer archivo de líneas: " + e.getMessage());
+            LOGGER.error("Error al leer archivo de líneas", e);
         }
 
         return mapa;
@@ -90,8 +93,7 @@ public class LineaSecuencialDAO implements LineaDAO {
                         out.format("%s%n", sb.toString());
                     });
         } catch (Exception e) {
-            System.err.println(" Error al escribir archivo de líneas: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Error al escribir archivo de líneas", e);
         }
     }
 
@@ -135,23 +137,23 @@ public class LineaSecuencialDAO implements LineaDAO {
         Map<String, Linea> mapa = leerDesdeArchivo();
         mapa.put(linea.getCodigo(), linea);
         escribirArchivo(mapa);
-        System.out.println(" Línea insertada: " + linea.getCodigo());
+        LOGGER.info("Línea insertada: " + linea.getCodigo());
     }
 
     @Override
     public void actualizar(Linea linea) {
         if (!existeLinea(linea.getCodigo())) {
-            System.err.println(" No existe la línea " + linea.getCodigo() + " para actualizar.");
+            LOGGER.warn("No existe la línea " + linea.getCodigo() + " para actualizar");
             return;
         }
         if (linea.getParadas() == null || linea.getParadas().size() < 2) {
-            System.err.println(" La línea " + linea.getCodigo() + " debe tener al menos dos paradas.");
+            LOGGER.warn("La línea " + linea.getCodigo() + " debe tener al menos dos paradas");
             return;
         }
         Map<String, Linea> mapa = leerDesdeArchivo();
         mapa.put(linea.getCodigo(), linea);
         escribirArchivo(mapa);
-        System.out.println(" Línea actualizada: " + linea.getCodigo());
+        LOGGER.info("Línea actualizada: " + linea.getCodigo());
     }
 
     @Override
@@ -162,7 +164,7 @@ public class LineaSecuencialDAO implements LineaDAO {
         Map<String, Linea> mapa = leerDesdeArchivo();
         mapa.remove(linea.getCodigo());
         escribirArchivo(mapa);
-        System.out.println(" Línea borrada: " + linea.getCodigo());
+        LOGGER.info("Línea borrada: " + linea.getCodigo());
     }
 
     // ===================== Frecuencias desde archivo =====================
@@ -216,7 +218,7 @@ public class LineaSecuencialDAO implements LineaDAO {
                 }
             }
         } catch (Exception e) {
-            System.err.println("Error leyendo frecuencias: " + e.getMessage());
+            LOGGER.error("Error leyendo frecuencias", e);
         }
         return mapa;
     }

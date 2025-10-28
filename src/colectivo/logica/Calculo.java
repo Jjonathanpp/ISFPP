@@ -5,6 +5,7 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
 import colectivo.modelo.*;
+import org.apache.log4j.Logger;
 
 import java.time.LocalTime;
 import java.util.*;
@@ -16,6 +17,8 @@ import java.util.stream.Collectors;
  * Soporta rutas directas, con transbordo y con conexión caminando.
  */
 public class Calculo {
+
+    private static final Logger LOGGER = Logger.getLogger(Calculo.class);
 
     // Método principal (API pública)
     public static List<List<Recorrido>> calcularRecorrido(
@@ -77,8 +80,7 @@ public class Calculo {
             return new DatosRed(paradasPorCodigo, tramos);
 
         } catch (Exception e) {
-            System.err.println("❌ Error cargando datos desde Factory: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Error cargando datos desde Factory", e);
             return null;
         }
     }

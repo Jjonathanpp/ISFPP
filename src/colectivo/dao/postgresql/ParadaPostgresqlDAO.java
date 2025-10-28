@@ -5,6 +5,7 @@ import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
+import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ParadaPostgresqlDAO implements ParadaDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(ParadaPostgresqlDAO.class);
 
     @Override
     public void insertar(Parada parada) throws InstanciaExisteEnBDException {
@@ -29,9 +32,10 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.setDouble(3, parada.getLatitud());
                 ps.setDouble(4, parada.getLongitud());
                 ps.executeUpdate();
+                LOGGER.info("Parada insertada en PostgreSQL: " + parada.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al insertar la parada " + parada.getCodigo(), e);
         }
     }
 
@@ -46,9 +50,10 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.setDouble(3, parada.getLongitud());
                 ps.setString(4, parada.getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Parada actualizada en PostgreSQL: " + parada.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al actualizar la parada " + parada.getCodigo(), e);
         }
     }
 
@@ -63,9 +68,10 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, parada.getCodigo());
                 ps.executeUpdate();
+                LOGGER.info("Parada borrada en PostgreSQL: " + parada.getCodigo());
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al borrar la parada " + parada.getCodigo(), e);
         }
     }
 
@@ -87,7 +93,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al buscar todas las paradas", e);
         }
         return resultado;
     }
@@ -102,7 +108,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 return rs.next(); // Si hay resultado, existe
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            LOGGER.error("Error al verificar existencia de la parada " + codigo, e);
         }
         return false;
     }

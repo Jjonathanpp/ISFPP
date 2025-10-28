@@ -5,6 +5,7 @@ import colectivo.dao.TramoDAO;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.util.Comparator;
@@ -15,6 +16,8 @@ import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class TramoSecuencialDAO implements TramoDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(TramoSecuencialDAO.class);
 
     private final String name;
     private final ParadaDAO paradaDAO;  // para resolver id -> Parada
@@ -60,13 +63,13 @@ public class TramoSecuencialDAO implements TramoDAO {
                     Tramo t = new Tramo(tiempo, tipo, pIni, pFin);
                     mapa.put(keyFromIds(idIni, idFin, tipo), t);
                 } else {
-                    System.err.println("Tramo ignorado: paradas inexistentes (" + idIni + " → " + idFin + ")");
+                    LOGGER.warn("Tramo ignorado: paradas inexistentes (" + idIni + " → " + idFin + ")");
                 }
 
                 if (in.hasNextLine()) in.nextLine();
             }
         } catch (Exception e) {
-            System.err.println("Error al leer archivo de tramos: " + e.getMessage());
+            LOGGER.error("Error al leer archivo de tramos", e);
         }
         return mapa;
     }
@@ -87,8 +90,7 @@ public class TramoSecuencialDAO implements TramoDAO {
                         out.format("%d;%d;%d;%d;%n", idIni, idFin, t.getTiempo(), t.getTipo());
                     });
         } catch (Exception e) {
-            System.err.println("Error al escribir archivo de tramos: " + e.getMessage());
-            e.printStackTrace();
+            LOGGER.error("Error al escribir archivo de tramos", e);
         }
     }
 
@@ -118,18 +120,18 @@ public class TramoSecuencialDAO implements TramoDAO {
         int tipo      = tramo.getTipo();
 
         if (!existeParada(codIni) || !existeParada(codFin)) {
-            System.err.println("No se puede insertar: alguna parada no existe (" + codIni + " → " + codFin + ")");
+            LOGGER.warn("No se puede insertar: alguna parada no existe (" + codIni + " → " + codFin + ")");
             return;
         }
         if (existeTramo(codIni, codFin, tipo)) {
-            System.err.println("Tramo ya existente (" + codIni + " → " + codFin + ", tipo " + tipo + ")");
+            LOGGER.warn("Tramo ya existente (" + codIni + " → " + codFin + ", tipo " + tipo + ")");
             return;
         }
 
         Map<String, Tramo> mapa = leerDesdeArchivo();
         mapa.put(keyFromParadas(codIni, codFin, tipo), tramo);
         escribirArchivo(mapa);
-        System.out.println("Tramo insertado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
+        LOGGER.info("Tramo insertado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
     }
 
     @Override
@@ -139,18 +141,18 @@ public class TramoSecuencialDAO implements TramoDAO {
         int tipo      = tramo.getTipo();
 
         if (!existeParada(codIni) || !existeParada(codFin)) {
-            System.err.println("No se puede actualizar: alguna parada no existe (" + codIni + " → " + codFin + ")");
+            LOGGER.warn("No se puede actualizar: alguna parada no existe (" + codIni + " → " + codFin + ")");
             return;
         }
         if (!existeTramo(codIni, codFin, tipo)) {
-            System.err.println("No existe el tramo para actualizar (" + codIni + " → " + codFin + ", tipo " + tipo + ")");
+            LOGGER.warn("No existe el tramo para actualizar (" + codIni + " → " + codFin + ", tipo " + tipo + ")");
             return;
         }
 
         Map<String, Tramo> mapa = leerDesdeArchivo();
         mapa.put(keyFromParadas(codIni, codFin, tipo), tramo);
         escribirArchivo(mapa);
-        System.out.println("Tramo actualizado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
+        LOGGER.info("Tramo actualizado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
     }
 
     @Override
@@ -170,7 +172,7 @@ public class TramoSecuencialDAO implements TramoDAO {
 
         mapa.remove(k);
         escribirArchivo(mapa);
-        System.out.println("Tramo borrado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
+        LOGGER.info("Tramo borrado: " + codIni + " → " + codFin + " (tipo " + tipo + ")");
     }
 
     @Override

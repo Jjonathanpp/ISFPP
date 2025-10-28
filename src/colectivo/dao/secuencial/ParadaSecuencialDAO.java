@@ -4,12 +4,15 @@ import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
 import colectivo.modelo.Parada;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.util.Map;
 import java.util.*;
 
 public class ParadaSecuencialDAO implements ParadaDAO {
+
+    private static final Logger LOGGER = Logger.getLogger(ParadaSecuencialDAO.class);
 
     private final String name;
 
@@ -36,7 +39,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
                     latitud = parseDecimal(latitudToken);
                     longitud = parseDecimal(longitudToken);
                 } catch (NumberFormatException ex) {
-                    System.err.println(" Error al parsear coordenadas de la parada " + codigo + ": " + ex.getMessage());
+                    LOGGER.warn("Error al parsear coordenadas de la parada " + codigo + ": " + ex.getMessage());
                     if (inFile.hasNextLine()) inFile.nextLine();
                     continue;
                 }
@@ -48,7 +51,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
             }
 
         } catch (Exception e) {
-            System.err.println(" Error al leer archivo de paradas: " + e.getMessage());
+            LOGGER.error("Error al leer archivo de paradas", e);
         }
 
         return mapa;
@@ -68,8 +71,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
                                 p.getCodigo(), p.getDireccion(), p.getLatitud(), p.getLongitud());
                     });
         } catch (Exception e) {
-            System.err.println(" Error al escribir archivo de paradas.");
-            e.printStackTrace();
+            LOGGER.error("Error al escribir archivo de paradas", e);
         }
     }
 
@@ -84,14 +86,14 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
         mapa.put(id, parada);
         escribirArchivo(mapa);
-        System.out.println(" Parada insertada correctamente: " + parada.getCodigo());
+        LOGGER.info("Parada insertada correctamente: " + parada.getCodigo());
     }
 
 
     @Override
     public void actualizar(Parada parada) {
         if (!existe(parada.getCodigo())) {
-            System.err.println(" No existe la parada con código " + parada.getCodigo() + " para actualizar.");
+            LOGGER.warn("No existe la parada con código " + parada.getCodigo() + " para actualizar");
             return;
         }
 
@@ -100,7 +102,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
         mapa.put(id, parada);
         escribirArchivo(mapa);
-        System.out.println(" Parada actualizada correctamente: " + parada.getCodigo());
+        LOGGER.info("Parada actualizada correctamente: " + parada.getCodigo());
     }
 
     @Override
@@ -114,7 +116,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
         mapa.remove(id);
         escribirArchivo(mapa);
-        System.out.println(" Parada borrada correctamente: " + parada.getCodigo());
+        LOGGER.info("Parada borrada correctamente: " + parada.getCodigo());
     }
 
     @Override
