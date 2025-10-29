@@ -1,6 +1,10 @@
 package colectivo.logica;
 
 import colectivo.aplicacion.Coordinador;
+import colectivo.conexion.Factory;
+import colectivo.dao.LineaDAO;
+import colectivo.dao.ParadaDAO;
+import colectivo.dao.TramoDAO;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
@@ -8,6 +12,7 @@ import org.apache.log4j.Logger;
 
 
 import java.util.List;
+import java.util.Map;
 
 public class Empresa {
 
@@ -15,9 +20,10 @@ public class Empresa {
     private Coordinador coordinador;
     private static final Logger LOGGER = Logger.getLogger(Empresa.class);
     private String nombre;
-    private List<Linea> lineas;
-    private List<Parada> paradas;
-    private List<Tramo> tramos;
+    //DAO
+    private Map<Integer, Parada> paradas;
+    private Map<String, Linea> lineas;
+    private Map<String, Tramo> tramos;
 
     public static Empresa getEmpresa(){
         if(empresa == null){
@@ -28,42 +34,42 @@ public class Empresa {
 
     private Empresa(){
         super();
-        lineas = null;
-        paradas = null;
-        tramos = null;
+        paradas = ((ParadaDAO) Factory.getInstancia("PARADA")).buscarTodos();
+        tramos  = ((TramoDAO)  Factory.getInstancia("TRAMO")).buscarTodos();
+        lineas  = ((LineaDAO)  Factory.getInstancia("LINEA")).buscarTodos();
     }
 
     public void agregarLinea(Linea linea){
-        if(lineas.contains(linea)) {
+        if(lineas.get(linea.getCodigo()) != null) {
             LOGGER.warn("La línea ya existe: " + linea.getCodigo());
             return;
         }
-        lineas.add(linea);
+        lineas.put(linea.getCodigo(), linea);
         LOGGER.info("Línea agregada correctamente: " + linea.getCodigo());
     }
     public void modificarLinea(Linea linea){
-        int index = lineas.indexOf(linea);
-        lineas.set(index, linea);
+        if(lineas.get(linea.getCodigo()) == null) {
+            LOGGER.warn("No se puede modificar la línea porque no existe: " + linea.getCodigo());
+            return;
+        }
+        lineas.replace(linea.getCodigo(), linea);
         LOGGER.info("Línea modificada correctamente: " + linea.getCodigo());
     }
     public void eliminarLinea(Linea linea) throws Exception {
-        for(Parada l : paradas)
-            if (l.getLineas().equals(linea)) {
-                LOGGER.error("No se puede eliminar la línea " + linea.getCodigo() + " porque tiene paradas asociadas.");
-                throw new Exception("La línea tiene paradas asociadas"); //CAMBIAR A UNA EXCEPCION CREADA POR NOSOTROS
-            }
-        Linea l = buscarLinea(linea);
-        lineas.remove(l);
+        if(lineas.get(linea.getCodigo()) == null) {
+            LOGGER.warn("No se puede eliminar la línea porque no existe: " + linea.getCodigo());
+            return;
+        }
+        lineas.remove(linea.getCodigo());
         LOGGER.info("Línea eliminada correctamente: " + linea.getCodigo());
     }
 
     public Linea buscarLinea(Linea linea){
-        int pos = lineas.indexOf(linea);
-        if(pos == -1) {
-            LOGGER.warn("No se encontro la linea: " + linea.getCodigo());
-            return null;
+        if (lineas.get(linea) != null) {
+            return lineas.get(linea.getCodigo());
         }
-        return lineas.get(pos);
+        LOGGER.warn("La línea a buscar es nula.");
+        return null;
     }
 
     //-----------------------------
@@ -74,14 +80,17 @@ public class Empresa {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public List<Linea> getLineas() {
-        return lineas;
+
+    //Recuperar los datos de DAO
+
+    public Map<String, Tramo> getTramos() {
+        return tramos;
     }
-    public List<Parada> getParadas() {
+    public Map<Integer, Parada> getParadas() {
         return paradas;
     }
-    public List<Tramo> getTramos() {
-        return tramos;
+    public Map<String, Linea> getLineas() {
+        return lineas;
     }
     public void setCoordinador(Coordinador coordinador) {
         this.coordinador = coordinador;

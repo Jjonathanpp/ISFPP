@@ -1,9 +1,10 @@
 package colectivo.interfaz;
 
 import colectivo.aplicacion.Coordinador;
-import colectivo.logica.RecorridoDesacoplador;
+import colectivo.logica.Calculo;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
+import colectivo.util.Tiempo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import org.apache.log4j.Logger;
@@ -13,6 +14,7 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Controler (controlador de la vista). Ahora hace internamente:
@@ -26,22 +28,20 @@ public class Controler {
 
 
     private final VistaInterfaz vista;
-    private final RecorridoDesacoplador recorridoDesacoplador;
     private final Coordinador cordinador;
 
     //Formato de la hora
     private final DateTimeFormatter HORA_FORMATO = DateTimeFormatter.ofPattern("HH:mm");
 
-    public Controler(VistaInterfaz vista, RecorridoDesacoplador recorridoDesacoplador, Coordinador cordinador) {
+    public Controler(VistaInterfaz vista, Coordinador cordinador) {
         this.vista = vista;
-        this.recorridoDesacoplador = recorridoDesacoplador;
         this.cordinador = cordinador;
     }
 
     public void inicializar() {
 
         //Inicializa la vista, pobla los combos desde el coordinador
-        List<Parada> paradas = cordinador.listarParadas();
+        Map<Integer, Parada> paradas = cordinador.listarParadas();
         vista.setOrigenes(paradas);
         vista.setDestinos(paradas);
         vista.configurarComboBox();
@@ -97,7 +97,8 @@ public class Controler {
 
     private void buscarYMostrar(Parada origen, Parada destino, String dia, LocalTime hora) {
         int diaInt = convertirIntaDia(dia);
-        List<List<Recorrido>> rutas = recorridoDesacoplador.buscarRecorridos(origen, destino, diaInt, hora, cordinador.getTramos());
+        //List<List<Recorrido>> rutas = recorridoDesacoplador.buscarRecorridos(origen, destino, diaInt, hora, cordinador.getTramos());
+        List<List<Recorrido>> rutas = Calculo.calcularRecorrido(origen, destino, diaInt, hora, cordinador.listarTramos());
 
         LOGGER.debug("Invocando buscarRecorridos con parámetros: dia=" + diaInt + ", hora=" + hora);
         // Actualizar estado breve
@@ -162,7 +163,7 @@ public class Controler {
                 sb.append("============================\n");
             }
 
-            sb.append("Duración total: ").append(formatearDuracion(totalSeg));
+            sb.append("Duración total: ").append(Tiempo.segundosATiempo(totalSeg));
             if (reloj != null) {
                 sb.append("  /  Hora de llegada: ").append(reloj);
             } else if (horaLlegadaParada != null) {
@@ -195,7 +196,7 @@ public class Controler {
         sb.append("Hora de salida: ").append(horaSalida).append("\n");
 
         int durSeg = Math.max(0, r.getDuracion());
-        sb.append("Duración: ").append(formatearDuracion(durSeg));
+        sb.append("Duración: ").append(Tiempo.segundosATiempo(durSeg));
 
         return sb.toString();
     }
@@ -207,13 +208,5 @@ public class Controler {
         return (ruta.size() == 1) ? "Directo" : "Con conexión";
     }
 
-    private String formatearDuracion(int totalSeg) {
-        if (totalSeg < 0) totalSeg = 0;
-        int h = totalSeg / 3600;
-        int m = (totalSeg % 3600) / 60;
-        int s = totalSeg % 60;
-
-        return String.format("%02d:%02d:%02d", h, m, s);
-    }
 
 }

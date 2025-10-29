@@ -9,6 +9,7 @@ import javafx.scene.control.ListCell;
 import javafx.util.StringConverter;
 
 import java.util.List;
+import java.util.Map;
 
 public class VistaInterfaz {
 
@@ -50,13 +51,15 @@ public class VistaInterfaz {
     }
 
     //Setters que va a usar el controlador del MVC
-    public void setOrigenes(List<Parada> origenes) {
+    public void setOrigenes(Map<Integer, Parada> origenes) {
         cbOrigen.getItems().clear();
-        cbOrigen.getItems().addAll(origenes);
+        List<Parada> listaOrigenes = origenes.values().stream().toList();
+        cbOrigen.getItems().addAll(listaOrigenes);
     }
-    public void setDestinos(List<Parada> destinos) {
+    public void setDestinos(Map<Integer, Parada> destinos) {
         cbDestino.getItems().clear();
-        cbDestino.getItems().addAll(destinos);
+        List<Parada> listaDestinos = destinos.values().stream().toList();
+        cbDestino.getItems().addAll(listaDestinos);
     }
 
     /** Muestra el resultado de las rutas en un cuadro de diálogo */

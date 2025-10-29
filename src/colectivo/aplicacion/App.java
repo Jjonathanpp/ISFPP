@@ -16,17 +16,13 @@ public class App extends Application {
             // 1) Crear coordinador y cargar datos
             Coordinador coordinador = new Coordinador();
             coordinador.setEmpresa(Empresa.getEmpresa()); //Porque usa singleton
-            coordinador.cargarDatos();
 
             // 2) Hacer que el coordinador construya (arme) la vista
             coordinador.construirVista();
             VistaInterfaz vista = coordinador.getVista();
 
-            // 3) Preparar la lógica desacoplada
-            RecorridoDesacoplador recorridoService = coordinador.getRecorridoDesacoplador();
-
             // 4) Crear y configurar el controlador
-            Controler controlador = new Controler(vista, recorridoService, coordinador);
+            Controler controlador = new Controler(vista, coordinador);
             controlador.inicializar();
 
             // 5) App gestiona la ventana

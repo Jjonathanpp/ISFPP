@@ -13,3 +13,12 @@
 2025-10-29 18:03:16,822 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='24', direccion='Bartolomé Mitre, 401'}, día=Jueves, hora=12:30
 2025-10-29 18:03:16,887 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-10-29 18:03:51,532 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-29 18:37:24,251 INFO  [colectivo.interfaz.Controler] - BÃºsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, dÃ­a=Jueves, hora=08:00
+2025-10-29 18:37:24,299 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-29 18:37:31,359 INFO  [colectivo.interfaz.Controler] - BÃºsqueda completada con Ã©xito.
+2025-10-29 18:44:54,356 INFO  [colectivo.interfaz.Controler] - BÃºsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, dÃ­a=Jueves, hora=08:00
+2025-10-29 18:44:54,389 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-29 18:45:13,410 INFO  [colectivo.interfaz.Controler] - BÃºsqueda completada con Ã©xito.
+2025-10-29 18:45:30,477 INFO  [colectivo.interfaz.Controler] - BÃºsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, dÃ­a=Jueves, hora=08:00
+2025-10-29 18:45:30,500 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-29 18:47:25,881 INFO  [colectivo.interfaz.Controler] - BÃºsqueda completada con Ã©xito.

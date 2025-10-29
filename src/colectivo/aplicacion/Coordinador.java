@@ -22,10 +22,6 @@ public class Coordinador {
     VistaInterfaz vista = new VistaInterfaz();
     //Logica
     RecorridoDesacoplador recorrido = new RecorridoDesacopladorImpl();
-    //DAO
-    private Map<Integer, Parada> paradas;
-    private Map<String, Linea> lineas;
-    private Map<String, Tramo> tramos;
     //Empresa
     private Empresa empresa;
 
@@ -44,24 +40,6 @@ public class Coordinador {
         return recorrido;
     }
 
-    //Cargar los datos de DAO
-
-    public void cargarDatos(){
-        paradas = ((ParadaDAO) Factory.getInstancia("PARADA")).buscarTodos();
-        tramos  = ((TramoDAO)  Factory.getInstancia("TRAMO")).buscarTodos();
-        lineas  = ((LineaDAO)  Factory.getInstancia("LINEA")).buscarTodos();
-    }
-    //Recuperar los datos de DAO
-
-    public Map<String, Tramo> getTramos() {
-        return tramos;
-    }
-    public Map<Integer, Parada> getParadas() {
-        return paradas;
-    }
-    public Map<String, Linea> getLineas() {
-        return lineas;
-    }
     //Cosas de empresa ¿¿
 
     public Empresa getEmpresa() {
@@ -70,23 +48,12 @@ public class Coordinador {
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
     }
-    public List<Linea> listarLineas() {
-        return empresa.getLineas();
-    }
-    public List<Parada> listarParadas() {
-        // 1) si empresa tiene lista poblada, devuelvela
-        if (empresa != null && empresa.getParadas() != null) {
-            return empresa.getParadas();
-        }
-        // 2) si coordinador cargó el mapa de paradas, conviértelo a lista
-        if (paradas != null && !paradas.isEmpty()) {
-            return new ArrayList<>(paradas.values());
-        }
-        // 3) fallback vacío para evitar NPE
-        return new ArrayList<>();
+
+    public Map<Integer, Parada> listarParadas() {
+        return empresa.getParadas();
     }
 
-    public List<Tramo> listarTramos() {
+    public Map<String, Tramo> listarTramos() {
         return empresa.getTramos();
     }
     public Linea buscarLinea(Linea linea){
