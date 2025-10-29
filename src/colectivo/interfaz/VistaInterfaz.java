@@ -3,11 +3,10 @@ package colectivo.interfaz;
 import colectivo.modelo.Parada;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.control.ListCell;
+import javafx.util.StringConverter;
 
 import java.util.List;
 
@@ -59,6 +58,22 @@ public class VistaInterfaz {
         cbDestino.getItems().clear();
         cbDestino.getItems().addAll(destinos);
     }
+
+    /** Muestra el resultado de las rutas en un cuadro de diálogo */
+    public void mostrarResultadoRutas(String texto) {
+        TextArea area = new TextArea(texto);
+        area.setEditable(false);
+        area.setWrapText(true);
+        area.setPrefColumnCount(60);
+        area.setPrefRowCount(25);
+
+        Alert a = new Alert(Alert.AlertType.INFORMATION, "", ButtonType.OK);
+        a.setTitle("Resultados");
+        a.setHeaderText("Rutas encontradas");
+        a.getDialogPane().setContent(area);
+        a.showAndWait();
+    }
+
     public Parent getRoot() { return root; }
     public void setEstado(String txt) { lblEstado.setText(txt); }
 
@@ -69,5 +84,41 @@ public class VistaInterfaz {
     public TextField getTxtHora() { return txtHora; }
     public Button getBtnBuscar() { return btnbtnBuscar; }
     public Label getLblEstado() { return lblEstado; }
+
+    public  void configurarComboBox() {
+        // Ordenar los elementos por dirección (ignorando mayúsculas/minúsculas)
+        cbOrigen.getItems().sort(java.util.Comparator.comparing(Parada::getDireccion, String.CASE_INSENSITIVE_ORDER));
+        cbDestino.getItems().sort(java.util.Comparator.comparing(Parada::getDireccion, String.CASE_INSENSITIVE_ORDER));
+
+        // Converter: texto mostrado cuando el combo está cerrado
+        StringConverter<Parada> conv = new StringConverter<>() {
+            @Override
+            public String toString(Parada p) {
+                return (p == null) ? "" : p.getDireccion();
+            }
+            @Override
+            public Parada fromString(String s) {
+                return null; // no editable
+            }
+        };
+        cbOrigen.setConverter(conv);
+        cbDestino.setConverter(conv);
+
+        // CellFactory: texto mostrado en el desplegable
+        cbOrigen.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Parada p, boolean empty) {
+                super.updateItem(p, empty);
+                setText(empty || p == null ? "" : p.getDireccion());
+            }
+        });
+        cbDestino.setCellFactory(lv -> new ListCell<>() {
+            @Override
+            protected void updateItem(Parada p, boolean empty) {
+                super.updateItem(p, empty);
+                setText(empty || p == null ? "" : p.getDireccion());
+            }
+        });
+    }
 
 }

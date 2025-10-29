@@ -6,9 +6,6 @@ import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.TextArea;
 import org.apache.log4j.Logger;
 
 
@@ -16,7 +13,6 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Controler (controlador de la vista). Ahora hace internamente:
@@ -48,6 +44,7 @@ public class Controler {
         List<Parada> paradas = cordinador.listarParadas();
         vista.setOrigenes(paradas);
         vista.setDestinos(paradas);
+        vista.configurarComboBox();
 
         vista.getBtnBuscar().setOnAction(new EventHandler<ActionEvent>() {
             @Override
@@ -116,18 +113,7 @@ public class Controler {
                                        LocalTime horaLlegadaParada,
                                        List<List<Recorrido>> rutas) {
         String texto = formatearRutas(origen, destino, horaLlegadaParada, rutas);
-
-        TextArea area = new TextArea(texto);
-        area.setEditable(false);
-        area.setWrapText(true);
-        area.setPrefColumnCount(60);
-        area.setPrefRowCount(25);
-
-        Alert a = new Alert(Alert.AlertType.INFORMATION, "", ButtonType.OK);
-        a.setTitle("Resultados");
-        a.setHeaderText("Rutas encontradas");
-        a.getDialogPane().setContent(area);
-        a.showAndWait();
+        vista.mostrarResultadoRutas(texto);
     }
 
     private String formatearRutas(Parada origen,
@@ -227,9 +213,6 @@ public class Controler {
         int m = (totalSeg % 3600) / 60;
         int s = totalSeg % 60;
 
-        if (s == 0) {
-            return String.format("%02d:%02d", h, m);
-        }
         return String.format("%02d:%02d:%02d", h, m, s);
     }
 

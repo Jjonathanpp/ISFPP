@@ -1,3 +1,15 @@
 2025-10-28 19:44:09,759 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=22:00
 2025-10-28 19:44:09,865 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-10-28 19:44:22,874 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-29 17:47:36,245 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='28 De Julio, 200'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Viernes, hora=12:30
+2025-10-29 17:47:36,326 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-10-29 17:47:55,877 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-29 17:54:59,591 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='40', direccion='El Jariyal, 1725'}, día=Miércoles, hora=12:30
+2025-10-29 17:54:59,668 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-10-29 17:55:02,563 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-29 18:03:10,134 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='27', direccion='Bouchard, 1285'}, día=Jueves, hora=12:30
+2025-10-29 18:03:10,230 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-10-29 18:03:13,276 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-29 18:03:16,822 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='24', direccion='Bartolomé Mitre, 401'}, día=Jueves, hora=12:30
+2025-10-29 18:03:16,887 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-29 18:03:51,532 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
