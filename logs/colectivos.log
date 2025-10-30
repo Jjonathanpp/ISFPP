@@ -68,3 +68,14 @@
 2025-10-30 14:28:33,598 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-10-30 14:28:36,747 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-10-30 14:28:37,765 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 14:44:58,392 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:04:03,934 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:04:10,280 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:14:54,066 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:17:57,251 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:18:30,056 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='6', direccion='28 De Julio, 311'}, día=Jueves, hora=12:30
+2025-10-30 16:18:30,787 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-10-30 16:18:34,669 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 16:18:46,077 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:21:22,241 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 16:39:40,919 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.

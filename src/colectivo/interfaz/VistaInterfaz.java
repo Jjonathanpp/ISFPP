@@ -17,7 +17,12 @@ public class VistaInterfaz {
     private final ComboBox<Parada> cbDestino = new ComboBox<>();
     private final ComboBox<String> cbDia     = new ComboBox<>();
     private final TextField txtHora          = new TextField();
-    private final Button btnbtnBuscar        = new Button("Buscar recorridos"); //CAMBIAR PARA QUE SEA ABIERTO A NUEVOS IDIOMAS
+    private final Button btnBuscar        = new Button("Buscar recorridos"); //CAMBIAR PARA QUE SEA ABIERTO A NUEVOS IDIOMAS
+    private final Button btnInsertar = new Button("Insertar Parada");
+    private final Button btnActualizar = new Button("Actualizar Parada");
+    private final Button btnBorrar = new Button("Borrar Parada");
+
+
     private final Label lblEstado            = new Label();
     private VBox root;
 
@@ -35,8 +40,17 @@ public class VistaInterfaz {
         cbDia.getItems().addAll("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"); //Hacerlo multi-lenguaje,
                                                                                                         // no se me ocurrio como hacerlo
         txtHora.setPromptText("HH:mm (ej: 10:35)");
-        btnbtnBuscar.setPrefWidth(200);
-        btnbtnBuscar.setDefaultButton(true);
+        btnBuscar.setPrefWidth(200);
+        btnBuscar.setDefaultButton(true);
+
+        btnInsertar.setPrefWidth(150);
+        btnInsertar.setDefaultButton(true);
+
+        btnActualizar.setPrefWidth(150);
+        btnActualizar.setDefaultButton(true);
+
+        btnBorrar.setPrefWidth(150);
+        btnBorrar.setDefaultButton(true);
 
         root = new VBox(12,
                 titulo,
@@ -44,8 +58,7 @@ public class VistaInterfaz {
                 new Label("Destino:"), cbDestino,
                 new Label("Día de la semana:"), cbDia,
                 new Label("Hora de llegada:"), txtHora,
-                btnbtnBuscar,
-                lblEstado
+                btnBuscar,lblEstado,btnInsertar,btnActualizar,btnBorrar
         );
         root.setPadding(new Insets(20));
     }
@@ -76,17 +89,6 @@ public class VistaInterfaz {
         a.getDialogPane().setContent(area);
         a.showAndWait();
     }
-
-    public Parent getRoot() { return root; }
-    public void setEstado(String txt) { lblEstado.setText(txt); }
-
-    //Por si el controlador del MVC necesita acceso directo
-    public ComboBox<Parada> getCbOrigen() { return cbOrigen; }
-    public ComboBox<Parada> getCbDestino() { return cbDestino; }
-    public ComboBox<String> getCbDia() { return cbDia; }
-    public TextField getTxtHora() { return txtHora; }
-    public Button getBtnBuscar() { return btnbtnBuscar; }
-    public Label getLblEstado() { return lblEstado; }
 
     public  void configurarComboBox() {
         // Ordenar los elementos por dirección (ignorando mayúsculas/minúsculas)
@@ -123,5 +125,21 @@ public class VistaInterfaz {
             }
         });
     }
+
+    public Parent getRoot() { return root; }
+    public void setEstado(String txt) { lblEstado.setText(txt); }
+
+    //Por si el controlador del MVC necesita acceso directo
+    public ComboBox<Parada> getCbOrigen() { return cbOrigen; }
+    public ComboBox<Parada> getCbDestino() { return cbDestino; }
+    public ComboBox<String> getCbDia() { return cbDia; }
+    public TextField getTxtHora() { return txtHora; }
+    public Button getBtnBuscar() { return btnBuscar; }
+    public Button getBtnInsertar(){return btnInsertar;}
+    public Button getBtnActualizar(){return btnActualizar;}
+    public Button getBtnBorrar(){return btnBorrar;}
+
+    public Label getLblEstado() { return lblEstado; }
+
 
 }
