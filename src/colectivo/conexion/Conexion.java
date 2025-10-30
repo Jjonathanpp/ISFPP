@@ -1,12 +1,16 @@
 package colectivo.conexion;
 
 
+import org.apache.log4j.Logger;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
 public class Conexion {
+    private static final Logger LOGGER = Logger.getLogger(Conexion.class);
+
     private static Conexion instancia;
     private Connection conn;
 
@@ -38,12 +42,20 @@ public class Conexion {
         return conn;
     }
 
+    //Cerrar la conexión si esta abierta, es seguro llamarlo varias veces
     public static void cerrar() {
-        if (instancia != null && instancia.conn != null) {
+        if(instancia == null) return;
+        if(instancia.conn != null){
             try {
-                instancia.conn.close();
-            } catch (SQLException ignored) {}
+                if(!instancia.conn.isClosed()){
+                    instancia.conn.close();
+                    LOGGER.info("Cerrando la conexión a la base de datos.");
+                }
+            } catch (SQLException e) {
+                LOGGER.error("Error al verificar el estado de la conexión.", e);
+            }
         }
+        instancia = null;
     }
 }
 

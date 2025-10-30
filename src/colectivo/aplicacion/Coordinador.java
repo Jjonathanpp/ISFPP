@@ -1,27 +1,33 @@
 package colectivo.aplicacion;
 
-import colectivo.conexion.Factory;
-import colectivo.dao.LineaDAO;
-import colectivo.dao.ParadaDAO;
-import colectivo.dao.TramoDAO;
+import colectivo.interfaz.Controler;
 import colectivo.interfaz.VistaInterfaz;
+import colectivo.logica.Calculo;
 import colectivo.logica.Empresa;
-import colectivo.logica.RecorridoDesacoplador;
-import colectivo.logica.RecorridoDesacopladorImpl;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
+import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.LocalTime;
 import java.util.Map;
 
 public class Coordinador {
     //==================================ATRIBUTOS==================================
+    //Logger
+    private static final Logger LOGGER = Logger.getLogger(Coordinador.class);
+
     //Interfaz
+    /*
+    PREGUNTAR: la vista de la interfaz, tiene que hacerla el coordinador o el controlador? Tiene que haber un contacto del
+    coordinador con la vista? actualmente solo la crea y no hace nada mas. Se usa unicamente en App para pasarla al controlador
+     */
     VistaInterfaz vista = new VistaInterfaz();
+    Controler controlerMVC = new Controler(vista, this);
+
     //Logica
-    RecorridoDesacoplador recorrido = new RecorridoDesacopladorImpl();
+    //Se crea un metodo directamente porque la clase Calculo contiene todas clases privadas y la unica publica es static
+
     //Empresa
     private Empresa empresa;
 
@@ -29,18 +35,24 @@ public class Coordinador {
     //==================================METODOS==================================
     //Interfaz
         //Construir vista
-    public void construirVista() {
-        vista.construirVista();
+    public void construirVistaConControler() {
+        getControlerMVC().construirVista();
     }
     public VistaInterfaz getVista() {
         return vista;
     }
+    public Controler getControlerMVC() {
+        return controlerMVC;
+    }
     //Construir el desacoplador de la logica
-    public RecorridoDesacoplador getRecorridoDesacoplador() {
-        return recorrido;
+    public void desacopladorLogica(Parada origen, Parada destino, int dia, LocalTime hora) {
+        LOGGER.debug("Invocando buscarRecorridos con parÃ¡metros: dia=" + dia + ", hora=" + hora);
+        getControlerMVC().buscarYMostrar(Calculo.calcularRecorrido(origen, destino, dia, hora, empresa.getTramos()),
+                origen, destino, hora);
     }
 
-    //Cosas de empresa ¿¿
+
+    //Cosas de empresa Â¿Â¿
 
     public Empresa getEmpresa() {
         return empresa;

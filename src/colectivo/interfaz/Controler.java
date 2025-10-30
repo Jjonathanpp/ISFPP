@@ -69,7 +69,7 @@ public class Controler {
                         return;
                     }
                     LOGGER.info("Búsqueda iniciada: origen=" + origen + ", destino=" + destino + ", día=" + dia + ", hora=" + hora);
-                    buscarYMostrar(origen, destino, dia, hora);
+                    cordinador.desacopladorLogica(origen, destino, convertirIntaDia(dia), hora);
                     LOGGER.info("Búsqueda completada con éxito.");
 
                 } catch (Exception e) {
@@ -95,15 +95,14 @@ public class Controler {
 
     //====================== SALIDA ====================
 
-    private void buscarYMostrar(Parada origen, Parada destino, String dia, LocalTime hora) {
-        int diaInt = convertirIntaDia(dia);
-        //List<List<Recorrido>> rutas = recorridoDesacoplador.buscarRecorridos(origen, destino, diaInt, hora, cordinador.getTramos());
-        List<List<Recorrido>> rutas = Calculo.calcularRecorrido(origen, destino, diaInt, hora, cordinador.listarTramos());
+    /*
+    Este metodo tendria que pasar a ser publico para que coordinador lo llame y le mande toda la data que tomo agarrada de calulo
+     */
+    public void buscarYMostrar(List<List<Recorrido>> rutas, Parada origen, Parada destino, LocalTime hora) {
+        LOGGER.info("Se encontraron " + (rutas == null ? 0 : rutas.size()) + " rutas posibles.");
 
-        LOGGER.debug("Invocando buscarRecorridos con parámetros: dia=" + diaInt + ", hora=" + hora);
         // Actualizar estado breve
         vista.setEstado("Rutas encontradas: " + (rutas == null ? 0 : rutas.size()));
-        LOGGER.info("Se encontraron " + (rutas == null ? 0 : rutas.size()) + " rutas posibles.");
 
         // Mostrar diálogo con detalle (como en tu versión anterior)
         mostrarRutasEnDialogo(origen, destino, hora, rutas);
@@ -206,6 +205,15 @@ public class Controler {
         boolean algunCaminado = ruta.stream().anyMatch(r -> r.getLinea() == null);
         if (algunCaminado) return "Conexión caminando";
         return (ruta.size() == 1) ? "Directo" : "Con conexión";
+    }
+
+    //=====================Inicializar====================
+
+    public void construirVista() {
+        getVista().construirVista();
+    }
+    public VistaInterfaz getVista() {
+        return vista;
     }
 
 

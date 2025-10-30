@@ -29,4 +29,5 @@ public class Factory {
             throw new RuntimeException("Error creando instancia para: " + objName, ex);
         }
     }
+
 }
