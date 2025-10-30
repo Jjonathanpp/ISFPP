@@ -1,12 +1,14 @@
 package colectivo.aplicacion;
-import colectivo.interfaz.Controler;
 
+import colectivo.interfaz.Controler;
 import colectivo.interfaz.VistaInterfaz;
 import colectivo.logica.Empresa;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.apache.log4j.Logger;
+
+import java.util.ResourceBundle;
 
 public class App extends Application {
 
@@ -26,7 +28,12 @@ public class App extends Application {
             controlador.inicializar();
 
             // 5) App gestiona la ventana
-            stage.setTitle("ISFPP - Interfaz de Recorridos");
+            Configuracion configuracion = Configuracion.getInstance();
+            ResourceBundle bundle = configuracion.getBundle();
+            stage.setTitle(bundle.getString("app.windowTitle"));
+            configuracion.localeProperty().addListener((obs, oldLocale, newLocale) ->
+                    stage.setTitle(configuracion.getBundle().getString("app.windowTitle"))
+            );
             stage.setScene(new Scene(vista.getRoot(), 520, 600));
             stage.show();
         } catch (Exception e) {
