@@ -1,7 +1,7 @@
 package colectivo.interfaz;
 
+import colectivo.aplicacion.Configuracion;
 import colectivo.aplicacion.Coordinador;
-import colectivo.logica.Calculo;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
 import colectivo.util.Tiempo;
@@ -9,12 +9,13 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import org.apache.log4j.Logger;
 
-
+import java.text.MessageFormat;
 import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 /**
  * Controler (controlador de la vista). Ahora hace internamente:
@@ -26,11 +27,11 @@ public class Controler {
 
     private static final Logger LOGGER = Logger.getLogger(Controler.class);
 
-
     private final VistaInterfaz vista;
     private final Coordinador cordinador;
+    private final Configuracion configuracion = Configuracion.getInstance();
 
-    //Formato de la hora
+    // Formato de la hora
     private final DateTimeFormatter HORA_FORMATO = DateTimeFormatter.ofPattern("HH:mm");
 
     public Controler(VistaInterfaz vista, Coordinador cordinador) {
@@ -39,8 +40,7 @@ public class Controler {
     }
 
     public void inicializar() {
-
-        //Inicializa la vista, pobla los combos desde el coordinador
+        // Inicializa la vista, pobla los combos desde el coordinador
         Map<Integer, Parada> paradas = cordinador.listarParadas();
         vista.setOrigenes(paradas);
         vista.setDestinos(paradas);
@@ -52,59 +52,43 @@ public class Controler {
                 try {
                     Parada origen = vista.getCbOrigen().getValue();
                     Parada destino = vista.getCbDestino().getValue();
-                    String dia = vista.getCbDia().getValue();
+                    Integer dia = vista.getDiaSeleccionado();
+                    String diaTexto = vista.getCbDia().getValue();
                     String horaStr = vista.getTxtHora().getText();
 
                     LocalTime hora = null;
-                    if(horaStr != null && !horaStr.isBlank()){
+                    if (horaStr != null && !horaStr.isBlank()) {
                         try {
                             hora = LocalTime.parse(horaStr, HORA_FORMATO);
                         } catch (Exception e) {
-                            vista.setEstado("Formato de hora inválido. Use HH:mm (ej. 10:35"); //Hacerlo multi-lenguaje
+                            vista.setEstado(tr("error.invalidTime"));
                             return;
                         }
                     }
                     if (origen == null || destino == null || dia == null) {
-                        vista.setEstado("Por favor, complete todos los campos."); //Hacerlo multi-lenguaje
+                        vista.setEstado(tr("error.completeAllFields"));
                         return;
                     }
-                    LOGGER.info("Búsqueda iniciada: origen=" + origen + ", destino=" + destino + ", día=" + dia + ", hora=" + hora);
-                    cordinador.desacopladorLogica(origen, destino, convertirIntaDia(dia), hora);
+                    LOGGER.info("Búsqueda iniciada: origen=" + origen + ", destino=" + destino + ", día=" + diaTexto + ", hora=" + hora);
+                    cordinador.desacopladorLogica(origen, destino, dia, hora);
                     LOGGER.info("Búsqueda completada con éxito.");
-
                 } catch (Exception e) {
-                    vista.setEstado("Error al buscar rutas: " + e.getMessage()); //Hacerlo multi-lenguaje
+                    vista.setEstado(tr("error.searchRoutes", e.getMessage()));
                     LOGGER.error("Error al procesar la búsqueda de recorridos", e);
                 }
             }
         });
     }
 
-    private int convertirIntaDia(String dia) { //CREO que hay que hacerlo multi-lenguaje
-        return switch (dia) {
-            case "Lunes" -> 1;
-            case "Martes" -> 2;
-            case "Miércoles" -> 3;
-            case "Jueves" -> 4;
-            case "Viernes" -> 5;
-            case "Sábado" -> 6;
-            case "Domingo" -> 7;
-            default -> -1;
-        };
-    }
+    // ====================== SALIDA ======================
 
-    //====================== SALIDA ====================
-
-    /*
-    Este metodo tendria que pasar a ser publico para que coordinador lo llame y le mande toda la data que tomo agarrada de calulo
+    /**
+     * Este método tendría que pasar a ser público para que Coordinador lo llame
+     * y le mande toda la data obtenida de Calculo.
      */
     public void buscarYMostrar(List<List<Recorrido>> rutas, Parada origen, Parada destino, LocalTime hora) {
         LOGGER.info("Se encontraron " + (rutas == null ? 0 : rutas.size()) + " rutas posibles.");
-
-        // Actualizar estado breve
-        vista.setEstado("Rutas encontradas: " + (rutas == null ? 0 : rutas.size()));
-
-        // Mostrar diálogo con detalle (como en tu versión anterior)
+        vista.setEstado(tr("status.routesFound", rutas == null ? 0 : rutas.size()));
         mostrarRutasEnDialogo(origen, destino, hora, rutas);
     }
 
@@ -120,23 +104,23 @@ public class Controler {
                                   Parada destino,
                                   LocalTime horaLlegadaParada,
                                   List<List<Recorrido>> rutas) {
+        ResourceBundle bundle = configuracion.getBundle();
         StringBuilder sb = new StringBuilder();
 
-        sb.append("Parada origen:  ").append(origen).append("\n");
-        sb.append("Parada destino: ").append(destino).append("\n");
-        sb.append("Llega a la parada: ")
-                .append(horaLlegadaParada == null ? "--:--" : horaLlegadaParada.toString())
-                .append("\n\n");
+        sb.append(MessageFormat.format(bundle.getString("route.origin"), origen)).append("\n");
+        sb.append(MessageFormat.format(bundle.getString("route.destination"), destino)).append("\n");
+        String llegada = horaLlegadaParada == null ? bundle.getString("route.noTime") : horaLlegadaParada.toString();
+        sb.append(MessageFormat.format(bundle.getString("route.arrivalAtStop"), llegada)).append("\n\n");
 
         if (rutas == null || rutas.isEmpty()) {
-            sb.append("No hay un recorrido recomendado.\n");
+            sb.append(bundle.getString("route.noRoutes")).append("\n");
             return sb.toString();
         }
 
         int nroRuta = 1;
         for (List<Recorrido> ruta : rutas) {
-            String tipo = determinarTipoRuta(ruta);
-            sb.append("=== Ruta ").append(nroRuta++).append(" (").append(tipo).append(") ===\n");
+            String tipo = determinarTipoRuta(ruta, bundle);
+            sb.append(MessageFormat.format(bundle.getString("route.routeHeader"), nroRuta++, tipo)).append("\n");
 
             int totalSeg = 0;
             LocalTime reloj = horaLlegadaParada;
@@ -158,15 +142,15 @@ public class Controler {
                     reloj = reloj.plusSeconds(segTramo);
                 }
 
-                sb.append(formatearRecorrido(r)).append("\n");
-                sb.append("============================\n");
+                sb.append(formatearRecorrido(r, bundle)).append("\n");
+                sb.append(bundle.getString("route.separator")).append("\n");
             }
 
-            sb.append("Duración total: ").append(Tiempo.segundosATiempo(totalSeg));
+            sb.append(MessageFormat.format(bundle.getString("route.totalDuration"), Tiempo.segundosATiempo(totalSeg)));
             if (reloj != null) {
-                sb.append("  /  Hora de llegada: ").append(reloj);
+                sb.append(MessageFormat.format(bundle.getString("route.arrivalTimeSuffix"), reloj));
             } else if (horaLlegadaParada != null) {
-                sb.append("  /  Hora de llegada: ").append(horaLlegadaParada.plusSeconds(totalSeg));
+                sb.append(MessageFormat.format(bundle.getString("route.arrivalTimeSuffix"), horaLlegadaParada.plusSeconds(totalSeg)));
             }
             sb.append("\n\n");
         }
@@ -174,47 +158,50 @@ public class Controler {
         return sb.toString();
     }
 
-    private String formatearRecorrido(Recorrido r) {
+    private String formatearRecorrido(Recorrido r, ResourceBundle bundle) {
         boolean caminando = (r.getLinea() == null);
 
         StringBuilder sb = new StringBuilder();
         if (caminando) {
-            sb.append("Caminado");
+            sb.append(bundle.getString("route.walking"));
         } else {
-            sb.append("Línea: ").append(r.getLinea().getCodigo());
+            sb.append(MessageFormat.format(bundle.getString("route.line"), r.getLinea().getCodigo()));
         }
         sb.append("\n");
 
         List<Parada> ps = r.getParadas();
         String paradasTxt = (ps == null || ps.isEmpty())
-                ? "(sin paradas)"
+                ? bundle.getString("route.noStops")
                 : String.join(" -> ", ps.stream().map(Parada::toString).toList());
-        sb.append("Paradas: ").append(paradasTxt).append("\n");
+        sb.append(MessageFormat.format(bundle.getString("route.stops"), paradasTxt)).append("\n");
 
-        String horaSalida = (r.getHoraSalida() == null) ? "--:--" : r.getHoraSalida().toString();
-        sb.append("Hora de salida: ").append(horaSalida).append("\n");
+        String horaSalida = (r.getHoraSalida() == null) ? bundle.getString("route.noTime") : r.getHoraSalida().toString();
+        sb.append(MessageFormat.format(bundle.getString("route.departure"), horaSalida)).append("\n");
 
         int durSeg = Math.max(0, r.getDuracion());
-        sb.append("Duración: ").append(Tiempo.segundosATiempo(durSeg));
+        sb.append(MessageFormat.format(bundle.getString("route.duration"), Tiempo.segundosATiempo(durSeg)));
 
         return sb.toString();
     }
 
-    private String determinarTipoRuta(List<Recorrido> ruta) {
-        if (ruta == null || ruta.isEmpty()) return "Sin recorrido";
+    private String determinarTipoRuta(List<Recorrido> ruta, ResourceBundle bundle) {
+        if (ruta == null || ruta.isEmpty()) return bundle.getString("route.type.none");
         boolean algunCaminado = ruta.stream().anyMatch(r -> r.getLinea() == null);
-        if (algunCaminado) return "Conexión caminando";
-        return (ruta.size() == 1) ? "Directo" : "Con conexión";
+        if (algunCaminado) return bundle.getString("route.type.walkingConnection");
+        return (ruta.size() == 1) ? bundle.getString("route.type.direct") : bundle.getString("route.type.connection");
     }
 
-    //=====================Inicializar====================
-
+    // ===================== Inicializar =====================
     public void construirVista() {
         getVista().construirVista();
     }
+
     public VistaInterfaz getVista() {
         return vista;
     }
 
-
+    private String tr(String key, Object... args) {
+        String pattern = configuracion.getString(key);
+        return MessageFormat.format(pattern, args);
+    }
 }
