@@ -64,3 +64,7 @@
 2025-10-30 14:12:43,528 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-10-30 14:12:47,848 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-10-30 14:12:49,366 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 14:28:33,399 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='2', direccion='1 De Marzo, 499'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Miércoles, hora=12:00
+2025-10-30 14:28:33,598 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-30 14:28:36,747 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 14:28:37,765 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
