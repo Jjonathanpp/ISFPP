@@ -1,101 +1,238 @@
 package colectivo.interfaz;
 
+import colectivo.aplicacion.Configuracion;
 import colectivo.modelo.Parada;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.control.ListCell;
 import javafx.util.StringConverter;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 
 public class VistaInterfaz {
 
-    private final ComboBox<Parada> cbOrigen  = new ComboBox<>();
+    private static final List<String> DIAS_KEYS = List.of(
+            "weekday.monday",
+            "weekday.tuesday",
+            "weekday.wednesday",
+            "weekday.thursday",
+            "weekday.friday",
+            "weekday.saturday",
+            "weekday.sunday"
+    );
+
+    private final ComboBox<Parada> cbOrigen = new ComboBox<>();
     private final ComboBox<Parada> cbDestino = new ComboBox<>();
-    private final ComboBox<String> cbDia     = new ComboBox<>();
-    private final TextField txtHora          = new TextField();
-    private final Button btnBuscar        = new Button("Buscar recorridos"); //CAMBIAR PARA QUE SEA ABIERTO A NUEVOS IDIOMAS
-    private final Button btnInsertar = new Button("Insertar Parada");
-    private final Button btnActualizar = new Button("Actualizar Parada");
-    private final Button btnBorrar = new Button("Borrar Parada");
+    private final ComboBox<String> cbDia = new ComboBox<>();
+    private final ComboBox<LanguageOption> cbIdioma = new ComboBox<>();
+    private final TextField txtHora = new TextField();
 
+    private final Button btnBuscar = new Button();
+    private final Button btnInsertar = new Button();
+    private final Button btnActualizar = new Button();
+    private final Button btnBorrar = new Button();
 
-    private final Label lblEstado            = new Label();
+    private final Label lblEstado = new Label();
     private VBox root;
 
-    //Genericos (seguramente un par se tienen que hacer multi-lenguaje
-    private Label titulo; //Hacer su getter y setter
+    private Label titulo;
+    private Label lblIdioma;
+    private Label lblOrigen;
+    private Label lblDestino;
+    private Label lblDiaSemana;
+    private Label lblHora;
+
+    private final Configuracion configuracion = Configuracion.getInstance();
+    private final List<LanguageOption> languageOptions = List.of(
+            new LanguageOption(new Locale("es"), "language.spanish"),
+            new LanguageOption(Locale.ENGLISH, "language.english")
+    );
 
     public VistaInterfaz() {
-        this.titulo = new Label("🚌 Consulta de Recorridos");
+        this.titulo = new Label();
         this.root = new VBox();
     }
 
-    //Build que se llama desde el controlador del MVC
     public void construirVista() {
         titulo.setStyle("-fx-font-size:18px; -fx-font-weight:bold;");
-        cbDia.getItems().addAll("Lunes","Martes","Miércoles","Jueves","Viernes","Sábado","Domingo"); //Hacerlo multi-lenguaje,
-                                                                                                        // no se me ocurrio como hacerlo
-        txtHora.setPromptText("HH:mm (ej: 10:35)");
+
+        lblIdioma = new Label();
+        lblOrigen = new Label();
+        lblDestino = new Label();
+        lblDiaSemana = new Label();
+        lblHora = new Label();
+
+        configurarSelectorIdiomas();
+
+        HBox selectorIdioma = new HBox(8, lblIdioma, cbIdioma);
+        selectorIdioma.setSpacing(8);
+
+        HBox accionesCrud = new HBox(10, btnInsertar, btnActualizar, btnBorrar);
+        accionesCrud.setSpacing(10);
+
+        root = new VBox(12,
+                selectorIdioma,
+                titulo,
+                lblOrigen, cbOrigen,
+                lblDestino, cbDestino,
+                lblDiaSemana, cbDia,
+                lblHora, txtHora,
+                btnBuscar,
+                lblEstado,
+                accionesCrud
+        );
+        root.setPadding(new Insets(20));
+
+        actualizarTextos(configuracion.getBundle());
+
+        configuracion.localeProperty().addListener((obs, oldLocale, newLocale) -> {
+            actualizarTextos(configuracion.getBundle());
+            seleccionarIdioma(newLocale);
+        });
+        seleccionarIdioma(configuracion.getLocale());
+    }
+
+    private void configurarSelectorIdiomas() {
+        cbIdioma.getItems().setAll(languageOptions);
+        cbIdioma.valueProperty().addListener((obs, oldOption, newOption) -> {
+            if (newOption != null) {
+                configuracion.setLocale(newOption.locale());
+            }
+        });
+    }
+
+    private void actualizarTextos(ResourceBundle bundle) {
+        titulo.setText(bundle.getString("view.title"));
+        lblIdioma.setText(bundle.getString("view.languageLabel"));
+        lblOrigen.setText(bundle.getString("view.origin"));
+        lblDestino.setText(bundle.getString("view.destination"));
+        lblDiaSemana.setText(bundle.getString("view.weekday"));
+        lblHora.setText(bundle.getString("view.arrivalTime"));
+
+        btnBuscar.setText(bundle.getString("view.searchButton"));
         btnBuscar.setPrefWidth(200);
         btnBuscar.setDefaultButton(true);
+        txtHora.setPromptText(bundle.getString("view.timePrompt"));
 
+        btnInsertar.setText(bundle.getString("view.insertButton"));
         btnInsertar.setPrefWidth(150);
         btnInsertar.setDefaultButton(true);
 
+        btnActualizar.setText(bundle.getString("view.updateButton"));
         btnActualizar.setPrefWidth(150);
         btnActualizar.setDefaultButton(true);
 
+        btnBorrar.setText(bundle.getString("view.deleteButton"));
         btnBorrar.setPrefWidth(150);
         btnBorrar.setDefaultButton(true);
 
-        root = new VBox(12,
-                titulo,
-                new Label("Origen:"),  cbOrigen,
-                new Label("Destino:"), cbDestino,
-                new Label("Día de la semana:"), cbDia,
-                new Label("Hora de llegada:"), txtHora,
-                btnBuscar,lblEstado,btnInsertar,btnActualizar,btnBorrar
-        );
-        root.setPadding(new Insets(20));
+        int selectedIndex = cbDia.getSelectionModel().getSelectedIndex();
+        List<String> nuevosDias = new ArrayList<>();
+        for (String key : DIAS_KEYS) {
+            nuevosDias.add(bundle.getString(key));
+        }
+        cbDia.getItems().setAll(nuevosDias);
+        if (selectedIndex >= 0 && selectedIndex < cbDia.getItems().size()) {
+            cbDia.getSelectionModel().select(selectedIndex);
+        }
+
+        configurarComboIdioma(bundle);
     }
 
-    //Setters que va a usar el controlador del MVC
+    private void configurarComboIdioma(ResourceBundle bundle) {
+        StringConverter<LanguageOption> converter = new StringConverter<>() {
+            @Override
+            public String toString(LanguageOption option) {
+                if (option == null) return "";
+                return bundle.getString(option.bundleKey());
+            }
+
+            @Override
+            public LanguageOption fromString(String string) {
+                return null;
+            }
+        };
+
+        cbIdioma.setConverter(converter);
+        cbIdioma.setCellFactory(list -> new ListCell<>() {
+            @Override
+            protected void updateItem(LanguageOption option, boolean empty) {
+                super.updateItem(option, empty);
+                setText(empty || option == null ? "" : bundle.getString(option.bundleKey()));
+            }
+        });
+
+        if (cbIdioma.getValue() != null) {
+            cbIdioma.setValue(cbIdioma.getValue());
+        }
+    }
+
+    private void seleccionarIdioma(Locale locale) {
+        if (locale == null) return;
+        for (LanguageOption option : languageOptions) {
+            if (option.locale().getLanguage().equals(locale.getLanguage())) {
+                cbIdioma.setValue(option);
+                return;
+            }
+        }
+    }
+
     public void setOrigenes(Map<Integer, Parada> origenes) {
         cbOrigen.getItems().clear();
         List<Parada> listaOrigenes = origenes.values().stream().toList();
         cbOrigen.getItems().addAll(listaOrigenes);
     }
+
     public void setDestinos(Map<Integer, Parada> destinos) {
         cbDestino.getItems().clear();
         List<Parada> listaDestinos = destinos.values().stream().toList();
         cbDestino.getItems().addAll(listaDestinos);
     }
 
-    /** Muestra el resultado de las rutas en un cuadro de diálogo */
     public void mostrarResultadoRutas(String texto) {
+        ResourceBundle bundle = configuracion.getBundle();
         TextArea area = new TextArea(texto);
         area.setEditable(false);
         area.setWrapText(true);
         area.setPrefColumnCount(60);
         area.setPrefRowCount(25);
 
-        Alert a = new Alert(Alert.AlertType.INFORMATION, "", ButtonType.OK);
-        a.setTitle("Resultados");
-        a.setHeaderText("Rutas encontradas");
+        ButtonType okButton = new ButtonType(bundle.getString("dialog.ok"), ButtonBar.ButtonData.OK_DONE);
+        Alert a = new Alert(Alert.AlertType.INFORMATION, "", okButton);
+        a.setTitle(bundle.getString("dialog.results.title"));
+        a.setHeaderText(bundle.getString("dialog.results.header"));
         a.getDialogPane().setContent(area);
         a.showAndWait();
     }
 
-    public  void configurarComboBox() {
-        // Ordenar los elementos por dirección (ignorando mayúsculas/minúsculas)
+    public Parent getRoot() { return root; }
+    public void setEstado(String txt) { lblEstado.setText(txt); }
+
+    public ComboBox<Parada> getCbOrigen() { return cbOrigen; }
+    public ComboBox<Parada> getCbDestino() { return cbDestino; }
+    public ComboBox<String> getCbDia() { return cbDia; }
+    public TextField getTxtHora() { return txtHora; }
+    public Button getBtnBuscar() { return btnBuscar; }
+    public Button getBtnInsertar() { return btnInsertar; }
+    public Button getBtnActualizar() { return btnActualizar; }
+    public Button getBtnBorrar() { return btnBorrar; }
+    public Label getLblEstado() { return lblEstado; }
+
+    public Integer getDiaSeleccionado() {
+        int index = cbDia.getSelectionModel().getSelectedIndex();
+        return index >= 0 ? index + 1 : null;
+    }
+
+    public void configurarComboBox() {
         cbOrigen.getItems().sort(java.util.Comparator.comparing(Parada::getDireccion, String.CASE_INSENSITIVE_ORDER));
         cbDestino.getItems().sort(java.util.Comparator.comparing(Parada::getDireccion, String.CASE_INSENSITIVE_ORDER));
 
-        // Converter: texto mostrado cuando el combo está cerrado
         StringConverter<Parada> conv = new StringConverter<>() {
             @Override
             public String toString(Parada p) {
@@ -103,13 +240,12 @@ public class VistaInterfaz {
             }
             @Override
             public Parada fromString(String s) {
-                return null; // no editable
+                return null;
             }
         };
         cbOrigen.setConverter(conv);
         cbDestino.setConverter(conv);
 
-        // CellFactory: texto mostrado en el desplegable
         cbOrigen.setCellFactory(lv -> new ListCell<>() {
             @Override
             protected void updateItem(Parada p, boolean empty) {
@@ -126,20 +262,5 @@ public class VistaInterfaz {
         });
     }
 
-    public Parent getRoot() { return root; }
-    public void setEstado(String txt) { lblEstado.setText(txt); }
-
-    //Por si el controlador del MVC necesita acceso directo
-    public ComboBox<Parada> getCbOrigen() { return cbOrigen; }
-    public ComboBox<Parada> getCbDestino() { return cbDestino; }
-    public ComboBox<String> getCbDia() { return cbDia; }
-    public TextField getTxtHora() { return txtHora; }
-    public Button getBtnBuscar() { return btnBuscar; }
-    public Button getBtnInsertar(){return btnInsertar;}
-    public Button getBtnActualizar(){return btnActualizar;}
-    public Button getBtnBorrar(){return btnBorrar;}
-
-    public Label getLblEstado() { return lblEstado; }
-
-
+    private record LanguageOption(Locale locale, String bundleKey) { }
 }
