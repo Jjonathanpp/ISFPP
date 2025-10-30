@@ -51,7 +51,8 @@ public class VistaInterfaz {
     private final Configuracion configuracion = Configuracion.getInstance();
     private final List<LanguageOption> languageOptions = List.of(
             new LanguageOption(new Locale("es"), "language.spanish"),
-            new LanguageOption(Locale.ENGLISH, "language.english")
+            new LanguageOption(Locale.ENGLISH, "language.english"),
+            new LanguageOption(Locale.ITALIAN, "language.italian")
     );
 
     public VistaInterfaz() {
