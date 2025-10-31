@@ -84,3 +84,121 @@
 2025-10-30 18:12:42,023 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-10-30 18:12:44,424 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
 2025-10-30 18:37:53,553 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 19:57:07,062 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='2', direccion='1 De Marzo, 499'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Martes, hora=08:00
+2025-10-30 19:57:07,563 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-30 19:57:15,599 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 19:57:19,433 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='2', direccion='1 De Marzo, 499'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Tuesday, hora=08:00
+2025-10-30 19:57:19,626 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-30 19:57:22,521 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 19:57:27,008 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='2', direccion='1 De Marzo, 499'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Martedì, hora=08:00
+2025-10-30 19:57:27,258 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-30 19:57:30,088 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 19:57:32,076 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 19:58:38,860 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:12:39,456 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:16:46,158 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:21:51,390 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:23:19,249 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:24:08,735 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:31:22,966 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:33:00,755 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 20:33:29,220 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 21:04:42,075 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 21:05:23,120 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 21:42:34,981 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-10-30 21:42:35,423 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-30 21:42:39,920 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-30 21:42:40,893 INFO  [colectivo.conexion.Conexion] - Cerrando la conexión a la base de datos.
+2025-10-30 23:33:03,954 INFO  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea insertada: TLINEA
+2025-10-30 23:33:03,966 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:03,967 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:03,967 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:03,967 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - No existe la línea TLINEA para actualizar
+2025-10-30 23:33:03,970 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:03,970 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:03,970 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,008 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:04,008 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:04,008 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,026 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:04,027 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:04,027 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,029 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:04,029 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:04,029 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,031 INFO  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea insertada: TLINEA
+2025-10-30 23:33:04,034 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:04,034 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:04,034 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,064 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 201 no encontrada para línea TLINEA
+2025-10-30 23:33:04,064 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 202 no encontrada para línea TLINEA
+2025-10-30 23:33:04,064 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea TLINEA ignorada: menos de 2 paradas
+2025-10-30 23:33:04,086 INFO  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Parada insertada correctamente: 201
+2025-10-30 23:33:04,105 INFO  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Parada insertada correctamente: 202
+2025-10-30 23:33:04,147 INFO  [colectivo.dao.secuencial.LineaSecuencialDAO] - Línea borrada: TLINEA
+2025-10-30 23:33:04,150 INFO  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Parada borrada correctamente: 201
+2025-10-30 23:33:04,162 INFO  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Parada borrada correctamente: 202
+2025-10-30 23:35:53,255 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 1
+2025-10-30 23:35:53,257 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 2
+2025-10-30 23:35:53,257 INFO  [colectivo.logica.Empresa] - Tramo agregado correctamente: 1-2
+2025-10-30 23:35:53,259 INFO  [colectivo.logica.Empresa] - Tramo modificado correctamente: 1-2
+2025-10-30 23:35:53,259 INFO  [colectivo.logica.Empresa] - Tramo eliminado correctamente: 1-2
+2025-10-30 23:35:53,628 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 10
+2025-10-30 23:35:53,629 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 20
+2025-10-30 23:35:53,629 INFO  [colectivo.logica.Empresa] - Línea agregada correctamente: L1
+2025-10-30 23:35:53,630 INFO  [colectivo.logica.Empresa] - Línea modificada correctamente: L1
+2025-10-30 23:35:53,630 INFO  [colectivo.logica.Empresa] - Línea eliminada correctamente: L1
+2025-10-30 23:35:54,014 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 100
+2025-10-30 23:35:54,014 WARN  [colectivo.logica.Empresa] - No se puede modificar la parada porque no existe: 100
+2025-10-30 23:35:54,014 WARN  [colectivo.logica.Empresa] - No se puede eliminar la parada porque no existe: 100
+2025-10-30 23:42:25,231 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 1
+2025-10-30 23:42:25,232 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 2
+2025-10-30 23:42:25,233 INFO  [colectivo.logica.Empresa] - Tramo agregado correctamente: 1-2
+2025-10-30 23:42:25,234 INFO  [colectivo.logica.Empresa] - Tramo modificado correctamente: 1-2
+2025-10-30 23:42:25,234 INFO  [colectivo.logica.Empresa] - Tramo eliminado correctamente: 1-2
+2025-10-30 23:42:25,830 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 10
+2025-10-30 23:42:25,831 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 20
+2025-10-30 23:42:25,831 INFO  [colectivo.logica.Empresa] - Línea agregada correctamente: L1
+2025-10-30 23:42:25,832 INFO  [colectivo.logica.Empresa] - Línea modificada correctamente: L1
+2025-10-30 23:42:25,832 INFO  [colectivo.logica.Empresa] - Línea eliminada correctamente: L1
+2025-10-30 23:42:26,265 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 100
+2025-10-30 23:42:26,265 INFO  [colectivo.logica.Empresa] - Parada modificada correctamente: 100
+2025-10-30 23:42:26,265 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 100
+2025-10-31 00:01:55,090 INFO  [colectivo.dao.postgresql.LineaPostgresqlDAO] - Línea actualizada en PostgreSQL: L4I
+2025-10-31 00:01:55,280 INFO  [colectivo.dao.postgresql.LineaPostgresqlDAO] - Transacción de actualización de línea L4I completada.
+2025-10-31 00:01:55,280 INFO  [colectivo.logica.Empresa] - Línea modificada correctamente: L4I
+2025-10-31 00:02:31,031 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 303
+2025-10-31 00:02:31,031 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 303
+2025-10-31 00:02:42,361 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 201
+2025-10-31 00:02:42,361 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 201
+2025-10-31 00:02:52,423 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 203
+2025-10-31 00:02:52,423 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 203
+2025-10-31 00:03:06,526 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 304
+2025-10-31 00:03:06,526 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 304
+2025-10-31 00:03:17,430 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 202
+2025-10-31 00:03:17,430 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 202
+2025-10-31 00:03:37,341 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada borrada en PostgreSQL: 204
+2025-10-31 00:03:37,342 INFO  [colectivo.logica.Empresa] - Parada eliminada correctamente: 204
+2025-10-31 00:04:23,425 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-10-31 00:08:05,138 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Lunes, hora=12:00
+2025-10-31 00:08:05,704 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-31 00:08:08,426 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-31 00:08:10,494 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-10-31 01:19:12,678 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=08:00
+2025-10-31 01:19:13,075 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-10-31 01:19:14,598 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-31 01:23:34,347 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada insertada en PostgreSQL: 200
+2025-10-31 01:23:34,348 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 200
+2025-10-31 01:24:19,449 INFO  [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Parada insertada en PostgreSQL: 201
+2025-10-31 01:24:19,449 INFO  [colectivo.logica.Empresa] - Parada agregada correctamente: 201
+2025-10-31 01:26:01,938 INFO  [colectivo.dao.postgresql.LineaPostgresqlDAO] - Línea insertada en PostgreSQL: L7
+2025-10-31 01:26:01,996 INFO  [colectivo.dao.postgresql.LineaPostgresqlDAO] - Transacción de inserción de línea L7 completada.
+2025-10-31 01:26:01,997 INFO  [colectivo.logica.Empresa] - Línea agregada correctamente: L7
+2025-10-31 01:26:01,997 INFO  [colectivo.interfaz.Controler] - Refrescando líneas en vista (habilitaciones).
+2025-10-31 01:26:39,305 INFO  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Tramo insertado en PostgreSQL: 200->201
+2025-10-31 01:26:39,305 INFO  [colectivo.logica.Empresa] - Tramo agregado correctamente: 200-201
+2025-10-31 01:26:39,305 INFO  [colectivo.interfaz.Controler] - Refrescando tramos en vista (si corresponde).
+2025-10-31 01:26:42,210 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='200', direccion='carrefour'}, destino=Parada{codigo='201', direccion='cuevas'}, día=Martes, hora=08:00
+2025-10-31 01:26:43,226 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-10-31 01:26:57,339 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-10-31 01:31:10,883 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

@@ -44,12 +44,12 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        //Si se hace un singleton de conexion entonces esto sirve??
         //ESTO se supone que es el shutdown hook para cerrar la conexion a la BD (no se si habria que hacer algo mas con esto)
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             System.out.println("ShutdownHook: cerrando conexion BD...");
             try { colectivo.conexion.Conexion.cerrar(); } catch (Throwable t) { t.printStackTrace(); }
         }));
-        launch(args);
         launch(args);
     }
 }

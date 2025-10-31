@@ -32,12 +32,23 @@ public class VistaInterfaz {
     private final ComboBox<String> cbDia = new ComboBox<>();
     private final ComboBox<LanguageOption> cbIdioma = new ComboBox<>();
     private final TextField txtHora = new TextField();
+    //===============DML=================
+    private final MenuButton mbInsertar = new MenuButton();
+    private final MenuButton mbEliminar = new MenuButton();
+    private final MenuButton mbActualizar = new MenuButton();
 
+    private final MenuItem miInsertarParada = new MenuItem();
+    private final MenuItem miInsertarLinea = new MenuItem();
+    private final MenuItem miInsertarTramo = new MenuItem();
+
+    private final MenuItem miEliminarParada = new MenuItem();
+    private final MenuItem miEliminarLinea = new MenuItem();
+    private final MenuItem miEliminarTramo = new MenuItem();
+
+    private final MenuItem miActualizarParada = new MenuItem();
+    private final MenuItem miActualizarLinea = new MenuItem();
+    private final MenuItem miActualizarTramo = new MenuItem();
     private final Button btnBuscar = new Button();
-    private final Button btnInsertar = new Button();
-    private final Button btnActualizar = new Button();
-    private final Button btnBorrar = new Button();
-
     private final Label lblEstado = new Label();
     private VBox root;
 
@@ -58,6 +69,7 @@ public class VistaInterfaz {
     public VistaInterfaz() {
         this.titulo = new Label();
         this.root = new VBox();
+        configurarMenuButtons();
     }
 
     public void construirVista() {
@@ -74,7 +86,7 @@ public class VistaInterfaz {
         HBox selectorIdioma = new HBox(8, lblIdioma, cbIdioma);
         selectorIdioma.setSpacing(8);
 
-        HBox accionesCrud = new HBox(10, btnInsertar, btnActualizar, btnBorrar);
+        HBox accionesCrud = new HBox(10, mbInsertar, mbActualizar, mbEliminar);
         accionesCrud.setSpacing(10);
 
         root = new VBox(12,
@@ -99,6 +111,25 @@ public class VistaInterfaz {
         seleccionarIdioma(configuracion.getLocale());
     }
 
+    private void configurarMenuButtons(){
+        mbInsertar.getItems().setAll(
+                miInsertarParada,
+                miInsertarLinea,
+                miInsertarTramo
+        );
+        mbActualizar.getItems().setAll(
+                miActualizarParada,
+                miActualizarLinea,
+                miActualizarTramo
+        );
+        mbEliminar.getItems().setAll(
+                miEliminarParada,
+                miEliminarLinea,
+                miEliminarTramo
+        );
+    }
+
+
     private void configurarSelectorIdiomas() {
         cbIdioma.getItems().setAll(languageOptions);
         cbIdioma.valueProperty().addListener((obs, oldOption, newOption) -> {
@@ -121,17 +152,21 @@ public class VistaInterfaz {
         btnBuscar.setDefaultButton(true);
         txtHora.setPromptText(bundle.getString("view.timePrompt"));
 
-        btnInsertar.setText(bundle.getString("view.insertButton"));
-        btnInsertar.setPrefWidth(150);
-        btnInsertar.setDefaultButton(true);
+        mbInsertar.setText(bundle.getString("view.insert"));
+        mbActualizar.setText(bundle.getString("view.update"));
+        mbEliminar.setText(bundle.getString("view.delete"));
 
-        btnActualizar.setText(bundle.getString("view.updateButton"));
-        btnActualizar.setPrefWidth(150);
-        btnActualizar.setDefaultButton(true);
+        miInsertarLinea.setText(bundle.getString("entity.linea"));
+        miInsertarParada.setText(bundle.getString("entity.parada"));
+        miInsertarTramo.setText(bundle.getString("entity.tramo"));
 
-        btnBorrar.setText(bundle.getString("view.deleteButton"));
-        btnBorrar.setPrefWidth(150);
-        btnBorrar.setDefaultButton(true);
+        miActualizarLinea.setText(bundle.getString("entity.linea"));
+        miActualizarParada.setText(bundle.getString("entity.parada"));
+        miActualizarTramo.setText(bundle.getString("entity.tramo"));
+
+        miEliminarLinea.setText(bundle.getString("entity.linea"));
+        miEliminarParada.setText(bundle.getString("entity.parada"));
+        miEliminarTramo.setText(bundle.getString("entity.tramo"));
 
         int selectedIndex = cbDia.getSelectionModel().getSelectedIndex();
         List<String> nuevosDias = new ArrayList<>();
@@ -220,10 +255,17 @@ public class VistaInterfaz {
     public ComboBox<String> getCbDia() { return cbDia; }
     public TextField getTxtHora() { return txtHora; }
     public Button getBtnBuscar() { return btnBuscar; }
-    public Button getBtnInsertar() { return btnInsertar; }
-    public Button getBtnActualizar() { return btnActualizar; }
-    public Button getBtnBorrar() { return btnBorrar; }
     public Label getLblEstado() { return lblEstado; }
+
+    public MenuItem getMiInsertarParada() { return miInsertarParada; }
+    public MenuItem getMiInsertarLinea() { return miInsertarLinea; }
+    public MenuItem getMiInsertarTramo() { return miInsertarTramo; }
+    public MenuItem getMiEliminarParada() { return miEliminarParada; }
+    public MenuItem getMiEliminarLinea() { return miEliminarLinea; }
+    public MenuItem getMiEliminarTramo() { return miEliminarTramo; }
+    public MenuItem getMiActualizarParada() { return miActualizarParada; }
+    public MenuItem getMiActualizarLinea() { return miActualizarLinea; }
+    public MenuItem getMiActualizarTramo() { return miActualizarTramo; }
 
     public Integer getDiaSeleccionado() {
         int index = cbDia.getSelectionModel().getSelectedIndex();
@@ -264,4 +306,10 @@ public class VistaInterfaz {
     }
 
     private record LanguageOption(Locale locale, String bundleKey) { }
+
+    /**
+     * Las nuevas cosas añadidas son tres menuButtons de insertar, actualizar y eliminar. Son como los combo box.
+     * Cada menu button tiene tres menu items: parada, linea y tramo.
+     * Puse getters para cada menu item para que el controlador pueda acceder a ellos y asignarles acciones.
+     */
 }

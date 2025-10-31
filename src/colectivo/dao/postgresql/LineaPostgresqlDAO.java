@@ -18,6 +18,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Explicación de porque se repite en cada metodo la creación de un nuevo objeto Connection:
+ * Es claro y seguro para la concurrencia y evita fugas, si se tiene a Connection como atributo de clase hay que gestionar
+ * su ciclo de vida, sincronización y transacciones de forma explicita (y cerrar la conexión al final). Si no se hace bien
+ * puede llevar a inconsistencias, bloqueos, fugas y problemas de transacción.
+ * (PUEDE QUE CON ESTO SE REFIERE AL HILO DESCONECTOR DE LA BD)
+ */
+
 public class LineaPostgresqlDAO implements LineaDAO {
 
     private static final Logger LOGGER = Logger.getLogger(LineaPostgresqlDAO.class);
@@ -29,35 +37,59 @@ public class LineaPostgresqlDAO implements LineaDAO {
         }
 
         String sql = "INSERT INTO linea (codigo, nombre) VALUES (?, ?)";
+        Connection conn = null;
+        boolean prevuioAutoComit = true;
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            conn = Conexion.getInstancia().getConnection();
+            prevuioAutoComit = conn.getAutoCommit();
+            conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getCodigo());
                 ps.setString(2, linea.getNombre());
                 ps.executeUpdate();
                 LOGGER.info("Línea insertada en PostgreSQL: " + linea.getCodigo());
             }
+            insertarLineaParada(conn, linea);
+
+            conn.commit();
+            LOGGER.info("Transacción de inserción de línea " + linea.getCodigo() + " completada.");
         } catch (SQLException e) {
             LOGGER.error("Error al insertar la línea " + linea.getCodigo(), e);
+            if(conn!=null){
+                try {
+                    conn.rollback();
+                    LOGGER.info("Transacción de inserción de línea " + linea.getCodigo() + " revertida.");
+                } catch (SQLException ex) {
+                    LOGGER.error("Error al revertir la transacción de inserción de línea " + linea.getCodigo(), ex);
+                }
+            }
         }
-        insertarLineaParada(linea);
     }
 
     @Override
     public void actualizar(Linea linea) {
         String sql = "UPDATE linea SET nombre = ? WHERE codigo = ?";
+        Connection conn = null;
+        boolean previoAutoComit = true;
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            conn = Conexion.getInstancia().getConnection();
+            previoAutoComit = conn.getAutoCommit();
+            conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getNombre());
                 ps.setString(2, linea.getCodigo());
                 ps.executeUpdate();
                 LOGGER.info("Línea actualizada en PostgreSQL: " + linea.getCodigo());
             }
+            actualizarLineaParada(conn, linea);
+            conn.commit();
+            LOGGER.info("Transacción de actualización de línea " + linea.getCodigo() + " completada.");
         } catch (SQLException e) {
             LOGGER.error("Error al actualizar la línea " + linea.getCodigo(), e);
+            if (conn != null) {
+                try { conn.rollback(); } catch (SQLException ex) { LOGGER.error("Rollback falló", ex); }
+            }
         }
-        actualizarLineaParada(linea);
     }
 
     @Override
@@ -65,17 +97,26 @@ public class LineaPostgresqlDAO implements LineaDAO {
         if (!existe(linea.getCodigo())) {
             throw new InstanciaNoExisteEnBDException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
         }
-        borrarLineaParada(linea);
         String sql = "DELETE FROM linea WHERE codigo = ?";
+        Connection conn = null;
+        boolean previoAutoComit = true;
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            conn = Conexion.getInstancia().getConnection();
+            previoAutoComit = conn.getAutoCommit();
+            conn.setAutoCommit(false);
+            borrarLineaParada(conn, linea);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getCodigo());
                 ps.executeUpdate();
                 LOGGER.info("Línea borrada en PostgreSQL: " + linea.getCodigo());
             }
+            conn.commit();
+            LOGGER.info("Transacción borrar línea + relacion completada: " + linea.getCodigo());
         } catch (SQLException e) {
             LOGGER.info("Línea borrada en PostgreSQL: " + linea.getCodigo());
+            if (conn != null) {
+                try { conn.rollback(); } catch (SQLException ex) { LOGGER.error("Rollback falló", ex); }
+            }
         }
     }
 
@@ -167,11 +208,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
         return false;
     }
     //================================= DAO DE LineaParada =================================
-    private void insertarLineaParada(Linea linea) {
+    private void insertarLineaParada(Connection conn, Linea linea) {
         String sql = "INSERT INTO linea_parada (codigo_linea, codigo_parada, orden) VALUES (?, ?, ?)";
         List<Parada> paradas = linea.getParadas();
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
             for (int i = 0; i < paradas.size(); i++) {
                 Parada parada = paradas.get(i);
                 try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -186,15 +226,14 @@ public class LineaPostgresqlDAO implements LineaDAO {
         }
     }
 
-    private void actualizarLineaParada(Linea linea){
-        borrarLineaParada(linea);
-        insertarLineaParada(linea);
+    private void actualizarLineaParada(Connection conn, Linea linea){
+        borrarLineaParada(conn, linea);
+        insertarLineaParada(conn, linea);
 
     }
-    private void borrarLineaParada(Linea linea){
+    private void borrarLineaParada(Connection conn, Linea linea){
         String sql = "DELETE FROM linea_parada WHERE codigo_linea = ?";
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getCodigo());
                 ps.executeUpdate();
@@ -203,6 +242,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
             LOGGER.error("Error al borrar paradas para la línea " + linea.getCodigo(), e);
         }
     }
+
     private record FrecuenciaData(int diaSemana, LocalTime hora) {
     }
 
