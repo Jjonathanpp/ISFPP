@@ -205,3 +205,51 @@
 2025-10-31 20:50:56,275 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-10-31 20:51:04,237 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-10-31 20:51:05,182 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 11:07:05,314 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Lunes, hora=10:00
+2025-11-02 11:07:05,860 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 11:07:20,356 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:07:44,004 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='23', direccion='Avenida Julio Argentino Roca, 936'}, día=Lunes, hora=10:00
+2025-11-02 11:07:49,176 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-02 11:07:52,472 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:07:58,631 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='54', direccion='Hipólito Yrigoyen, 457'}, día=Lunes, hora=10:00
+2025-11-02 11:07:59,114 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 11:08:01,236 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:08:24,094 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='56', direccion='José Alberdi, 720'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Lunes, hora=10:00
+2025-11-02 11:08:26,507 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 11:08:27,660 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:08:49,769 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='102', direccion='Villegas, 700'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Lunes, hora=10:00
+2025-11-02 11:08:50,251 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-02 11:08:51,736 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:08:55,824 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='80', direccion='Pasaje 22 De Abril, 308'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Lunes, hora=10:00
+2025-11-02 11:08:56,191 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-02 11:08:57,905 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:09:01,222 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='101', direccion='Vicente López Y Planes, 315'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Lunes, hora=10:00
+2025-11-02 11:09:01,679 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-02 11:09:02,980 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:09:06,874 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='54', direccion='Hipólito Yrigoyen, 457'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Lunes, hora=10:00
+2025-11-02 11:09:07,223 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-02 11:09:08,625 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:09:13,581 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='54', direccion='Hipólito Yrigoyen, 457'}, destino=Parada{codigo='28', direccion='Bouchard, 400'}, día=Lunes, hora=10:00
+2025-11-02 11:09:13,976 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 11:09:15,790 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:09:24,378 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 11:12:36,487 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='20', direccion='Avenida Julio Argentino Roca, 1615'}, destino=Parada{codigo='26', direccion='Belgrano, 314'}, día=Wednesday, hora=15:00
+2025-11-02 11:12:37,062 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-02 11:12:44,183 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:15:05,237 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 11:16:07,377 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=10:00
+2025-11-02 11:16:07,790 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 11:16:08,543 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:17:43,853 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 11:20:47,814 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='14', direccion='Avenida Domec García Norte, 239'}, día=Martes, hora=10:00
+2025-11-02 11:20:48,157 INFO  [colectivo.interfaz.Controler] - Se encontraron 3 rutas posibles.
+2025-11-02 11:20:48,615 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 11:22:33,601 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 14:16:58,416 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Lunes, hora=10:00
+2025-11-02 14:16:58,753 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 14:16:59,434 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 14:19:17,992 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-02 14:22:44,405 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martedì, hora=10:35
+2025-11-02 14:22:44,991 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-02 14:22:45,709 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-02 14:27:34,982 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

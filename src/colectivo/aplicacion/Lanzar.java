@@ -24,7 +24,7 @@ public class Lanzar extends Application {
             configuracion.localeProperty().addListener((obs, oldLocale, newLocale) ->
                     stage.setTitle(configuracion.getBundle().getString("app.windowTitle"))
             );
-            stage.setScene(new Scene(vista.getRoot(), 520, 600));
+            stage.setScene(new Scene(vista.getRoot(), 900, 720));
             stage.show();
         } catch (Exception e) {
             LOGGER.error(e);

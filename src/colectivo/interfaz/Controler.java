@@ -105,7 +105,13 @@ public class Controler {
                                        LocalTime horaLlegadaParada,
                                        List<List<Recorrido>> rutas) {
         String texto = formatearRutas(origen, destino, horaLlegadaParada, rutas);
-        vista.mostrarResultadoRutas(texto);
+
+        // Muestra el mapa primero (sin bloquear)
+        List<Recorrido> primeraRuta = (rutas == null || rutas.isEmpty()) ? null : rutas.get(0);
+        vista.mostrarMapaRecorrido(origen, destino, primeraRuta);
+
+        // Muestra el texto en un diálogo aparte (no modal)
+        vista.mostrarResultadoRutasNoBloqueante(texto);
     }
 
     private String formatearRutas(Parada origen,

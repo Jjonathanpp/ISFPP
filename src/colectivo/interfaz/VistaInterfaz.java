@@ -2,18 +2,18 @@ package colectivo.interfaz;
 
 import colectivo.aplicacion.Configuracion;
 import colectivo.modelo.Parada;
+import colectivo.modelo.Recorrido;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
+
+import java.util.*;
 
 public class VistaInterfaz {
 
@@ -51,6 +51,7 @@ public class VistaInterfaz {
     private final Button btnBuscar = new Button();
     private final Label lblEstado = new Label();
     private VBox root;
+    private final MapRouteDialog mapDialog;
 
     private Label titulo;
     private Label lblIdioma;
@@ -69,6 +70,7 @@ public class VistaInterfaz {
     public VistaInterfaz() {
         this.titulo = new Label();
         this.root = new VBox();
+        this.mapDialog = new MapRouteDialog(configuracion.getBundle());
         configurarMenuButtons();
     }
 
@@ -179,6 +181,7 @@ public class VistaInterfaz {
         }
 
         configurarComboIdioma(bundle);
+        mapDialog.updateTexts(bundle);
     }
 
     private void configurarComboIdioma(ResourceBundle bundle) {
@@ -247,6 +250,10 @@ public class VistaInterfaz {
         a.showAndWait();
     }
 
+    public void mostrarMapaRecorrido(Parada origen, Parada destino, List<Recorrido> recorrido) {
+        mapDialog.showRoute(origen, destino, recorrido);
+    }
+
     public Parent getRoot() { return root; }
     public void setEstado(String txt) { lblEstado.setText(txt); }
 
@@ -312,4 +319,19 @@ public class VistaInterfaz {
      * Cada menu button tiene tres menu items: parada, linea y tramo.
      * Puse getters para cada menu item para que el controlador pueda acceder a ellos y asignarles acciones.
      */
+
+    public void mostrarResultadoRutasNoBloqueante(String texto) {
+        ResourceBundle bundle = configuracion.getBundle();
+        TextArea area = new TextArea(texto);
+        area.setEditable(false);
+        area.setWrapText(true);
+        area.setPrefColumnCount(60);
+        area.setPrefRowCount(25);
+
+        Stage stage = new Stage();
+        stage.setTitle(bundle.getString("dialog.results.title"));
+        stage.setScene(new Scene(area, 600, 400));
+        stage.show(); // No bloquea el hilo principal
+    }
+
 }
