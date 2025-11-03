@@ -15,10 +15,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.Set;
 
 /**
  * Componente reutilizable que muestra un mapa con los recorridos calculados.
@@ -81,21 +79,15 @@ public class MapRouteDialog {
 
             Coordinate originCoordinate = toCoordinate(origen);
             Coordinate destinationCoordinate = toCoordinate(destino);
-            Set<String> markedStops = new HashSet<>();
+
 
             if (originCoordinate != null) {
-                addMarker(originCoordinate);
+                addMarker(originCoordinate, getString("view.map.origin"));
                 extentCoordinates.add(originCoordinate);
-                if (origen != null) {
-                    markedStops.add(origen.getCodigo());
-                }
             }
             if (destinationCoordinate != null && (originCoordinate == null || !originCoordinate.equals(destinationCoordinate))) {
-                addMarker(destinationCoordinate);
+                addMarker(destinationCoordinate, getString("view.map.destination"));
                 extentCoordinates.add(destinationCoordinate);
-                if (destino != null) {
-                    markedStops.add(destino.getCodigo());
-                }
             }
 
             boolean hayRutas = rutas != null && !rutas.isEmpty();
@@ -122,9 +114,6 @@ public class MapRouteDialog {
 
                         extentCoordinates.add(coordinate);
 
-                        if (markedStops.add(parada.getCodigo())) {
-                            addMarker(coordinate);
-                        }
 
                         if (previous != null && !previous.equals(coordinate)) {
                             CoordinateLine segment = new CoordinateLine(List.of(previous, coordinate))
@@ -164,16 +153,27 @@ public class MapRouteDialog {
             mapView.removeMarker(marker);
         }
         activeMarkers.clear();
+        for (MapLabel label : activeLabels) {
+            mapView.removeLabel(label);
+        }
+        activeLabels.clear();
 
     }
 
-    private void addMarker(Coordinate coordinate) {
+    private void addMarker(Coordinate coordinate, String labelText) {
         Marker marker = Marker.createProvided(Marker.Provided.BLUE)
                 .setVisible(true)
                 .setPosition(coordinate);
         mapView.addMarker(marker);
         activeMarkers.add(marker);
 
+        if (labelText != null && !labelText.isBlank()) {
+            MapLabel label = new MapLabel(labelText)
+                    .setVisible(true)
+                    .setPosition(coordinate);
+            mapView.addLabel(label);
+            activeLabels.add(label);
+        }
     }
 
     private List<Parada> buildOrderedStops(Parada origen, Parada destino, List<Recorrido> recorrido) {
@@ -212,9 +212,22 @@ public class MapRouteDialog {
 
 
     private Coordinate toCoordinate(Parada parada) {
+        if (parada == null) {
+            return null;
+        }
         if (Double.isNaN(parada.getLatitud()) || Double.isNaN(parada.getLongitud())) {
             return null;
         }
         return new Coordinate(parada.getLatitud(), parada.getLongitud());
+    }
+    private String getString(String key) {
+        if (bundle != null) {
+            try {
+                return bundle.getString(key);
+            } catch (Exception ignored) {
+                // Si no se encuentra la clave, se devuelve la clave tal cual.
+            }
+        }
+        return key;
     }
 }
