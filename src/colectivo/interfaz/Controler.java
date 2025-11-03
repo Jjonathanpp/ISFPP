@@ -10,9 +10,7 @@ import colectivo.util.Tiempo;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.scene.control.*;
-import javafx.scene.layout.GridPane;
 import javafx.util.StringConverter;
 import org.apache.log4j.Logger;
 
@@ -107,11 +105,8 @@ public class Controler {
         String texto = formatearRutas(origen, destino, horaLlegadaParada, rutas);
 
         // Muestra el mapa primero (sin bloquear)
-        List<Recorrido> primeraRuta = (rutas == null || rutas.isEmpty()) ? null : rutas.get(0);
-        vista.mostrarMapaRecorrido(origen, destino, primeraRuta);
-
-        // Muestra el texto en un diálogo aparte (no modal)
-        vista.mostrarResultadoRutasNoBloqueante(texto);
+        vista.mostrarMapaRecorrido(origen, destino, rutas);
+        vista.mostrarResultadoRutas(texto);
     }
 
     private String formatearRutas(Parada origen,

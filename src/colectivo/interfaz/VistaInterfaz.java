@@ -5,11 +5,11 @@ import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
 
@@ -50,8 +50,9 @@ public class VistaInterfaz {
     private final MenuItem miActualizarTramo = new MenuItem();
     private final Button btnBuscar = new Button();
     private final Label lblEstado = new Label();
-    private VBox root;
+    private BorderPane root;
     private final MapRouteDialog mapDialog;
+    private final TextArea resultadosArea = new TextArea();
 
     private Label titulo;
     private Label lblIdioma;
@@ -59,6 +60,8 @@ public class VistaInterfaz {
     private Label lblDestino;
     private Label lblDiaSemana;
     private Label lblHora;
+    private Label lblMapa;
+    private Label lblResultados;
 
     private final Configuracion configuracion = Configuracion.getInstance();
     private final List<LanguageOption> languageOptions = List.of(
@@ -69,7 +72,7 @@ public class VistaInterfaz {
 
     public VistaInterfaz() {
         this.titulo = new Label();
-        this.root = new VBox();
+        this.root = new BorderPane();
         this.mapDialog = new MapRouteDialog(configuracion.getBundle());
         configurarMenuButtons();
     }
@@ -82,6 +85,8 @@ public class VistaInterfaz {
         lblDestino = new Label();
         lblDiaSemana = new Label();
         lblHora = new Label();
+        lblMapa = new Label();
+        lblResultados = new Label();
 
         configurarSelectorIdiomas();
 
@@ -91,7 +96,7 @@ public class VistaInterfaz {
         HBox accionesCrud = new HBox(10, mbInsertar, mbActualizar, mbEliminar);
         accionesCrud.setSpacing(10);
 
-        root = new VBox(12,
+        VBox formulario = new VBox(12,
                 selectorIdioma,
                 titulo,
                 lblOrigen, cbOrigen,
@@ -102,7 +107,24 @@ public class VistaInterfaz {
                 lblEstado,
                 accionesCrud
         );
-        root.setPadding(new Insets(20));
+        formulario.setPadding(new Insets(20));
+        formulario.setPrefWidth(320);
+
+        Parent mapView = mapDialog.getView();
+        VBox mapaContainer = new VBox(10, lblMapa, mapView);
+        mapaContainer.setPadding(new Insets(20));
+        VBox.setVgrow(mapView, Priority.ALWAYS);
+
+        resultadosArea.setEditable(false);
+        resultadosArea.setWrapText(true);
+        resultadosArea.setPrefRowCount(12);
+        VBox resultadosContainer = new VBox(8, lblResultados, resultadosArea);
+        resultadosContainer.setPadding(new Insets(0, 20, 20, 20));
+
+        root = new BorderPane();
+        root.setLeft(formulario);
+        root.setCenter(mapaContainer);
+        root.setBottom(resultadosContainer);
 
         actualizarTextos(configuracion.getBundle());
 
@@ -142,33 +164,38 @@ public class VistaInterfaz {
     }
 
     private void actualizarTextos(ResourceBundle bundle) {
-        titulo.setText(bundle.getString("view.title"));
-        lblIdioma.setText(bundle.getString("view.languageLabel"));
-        lblOrigen.setText(bundle.getString("view.origin"));
-        lblDestino.setText(bundle.getString("view.destination"));
-        lblDiaSemana.setText(bundle.getString("view.weekday"));
-        lblHora.setText(bundle.getString("view.arrivalTime"));
+        titulo.setText(getString(bundle, "view.title"));
+        lblIdioma.setText(getString(bundle, "view.languageLabel"));
+        lblOrigen.setText(getString(bundle, "view.origin"));
+        lblDestino.setText(getString(bundle, "view.destination"));
+        lblDiaSemana.setText(getString(bundle, "view.weekday"));
+        lblHora.setText(getString(bundle, "view.arrivalTime"));
+        lblMapa.setText(getString(bundle, "view.map.title", configuracion.getString("dialog.results.title")));
+        lblResultados.setText(getString(bundle, "view.results.title", configuracion.getString("dialog.results.title")));
 
-        btnBuscar.setText(bundle.getString("view.searchButton"));
+        btnBuscar.setText(getString(bundle, "view.searchButton"));
         btnBuscar.setPrefWidth(200);
         btnBuscar.setDefaultButton(true);
-        txtHora.setPromptText(bundle.getString("view.timePrompt"));
+        txtHora.setPromptText(getString(bundle, "view.timePrompt"));
 
-        mbInsertar.setText(bundle.getString("view.insert"));
-        mbActualizar.setText(bundle.getString("view.update"));
-        mbEliminar.setText(bundle.getString("view.delete"));
+        resultadosArea.setPromptText(getString(bundle, "view.results.placeholder", configuracion.getString("dialog.results.header")));
 
-        miInsertarLinea.setText(bundle.getString("entity.linea"));
-        miInsertarParada.setText(bundle.getString("entity.parada"));
-        miInsertarTramo.setText(bundle.getString("entity.tramo"));
 
-        miActualizarLinea.setText(bundle.getString("entity.linea"));
-        miActualizarParada.setText(bundle.getString("entity.parada"));
-        miActualizarTramo.setText(bundle.getString("entity.tramo"));
+        mbInsertar.setText(getString(bundle, "view.insert"));
+        mbActualizar.setText(getString(bundle, "view.update"));
+        mbEliminar.setText(getString(bundle, "view.delete"));
 
-        miEliminarLinea.setText(bundle.getString("entity.linea"));
-        miEliminarParada.setText(bundle.getString("entity.parada"));
-        miEliminarTramo.setText(bundle.getString("entity.tramo"));
+        miInsertarLinea.setText(getString(bundle, "entity.linea"));
+        miInsertarParada.setText(getString(bundle, "entity.parada"));
+        miInsertarTramo.setText(getString(bundle, "entity.tramo"));
+
+        miActualizarLinea.setText(getString(bundle, "entity.linea"));
+        miActualizarParada.setText(getString(bundle, "entity.parada"));
+        miActualizarTramo.setText(getString(bundle, "entity.tramo"));
+
+        miEliminarLinea.setText(getString(bundle, "entity.linea"));
+        miEliminarParada.setText(getString(bundle, "entity.parada"));
+        miEliminarTramo.setText(getString(bundle, "entity.tramo"));
 
         int selectedIndex = cbDia.getSelectionModel().getSelectedIndex();
         List<String> nuevosDias = new ArrayList<>();
@@ -222,6 +249,17 @@ public class VistaInterfaz {
         }
     }
 
+    private String getString(ResourceBundle bundle, String key) {
+        return getString(bundle, key, "!" + key + "!");
+    }
+
+    private String getString(ResourceBundle bundle, String key, String fallbackValue) {
+        if (bundle != null && bundle.containsKey(key)) {
+            return bundle.getString(key);
+        }
+        return fallbackValue;
+    }
+
     public void setOrigenes(Map<Integer, Parada> origenes) {
         cbOrigen.getItems().clear();
         List<Parada> listaOrigenes = origenes.values().stream().toList();
@@ -235,23 +273,12 @@ public class VistaInterfaz {
     }
 
     public void mostrarResultadoRutas(String texto) {
-        ResourceBundle bundle = configuracion.getBundle();
-        TextArea area = new TextArea(texto);
-        area.setEditable(false);
-        area.setWrapText(true);
-        area.setPrefColumnCount(60);
-        area.setPrefRowCount(25);
-
-        ButtonType okButton = new ButtonType(bundle.getString("dialog.ok"), ButtonBar.ButtonData.OK_DONE);
-        Alert a = new Alert(Alert.AlertType.INFORMATION, "", okButton);
-        a.setTitle(bundle.getString("dialog.results.title"));
-        a.setHeaderText(bundle.getString("dialog.results.header"));
-        a.getDialogPane().setContent(area);
-        a.showAndWait();
+        resultadosArea.setText(texto);
+        resultadosArea.positionCaret(0);
     }
 
-    public void mostrarMapaRecorrido(Parada origen, Parada destino, List<Recorrido> recorrido) {
-        mapDialog.showRoute(origen, destino, recorrido);
+    public void mostrarMapaRecorrido(Parada origen, Parada destino, List<List<Recorrido>> rutas) {
+        mapDialog.showRoutes(origen, destino, rutas);
     }
 
     public Parent getRoot() { return root; }
@@ -320,18 +347,6 @@ public class VistaInterfaz {
      * Puse getters para cada menu item para que el controlador pueda acceder a ellos y asignarles acciones.
      */
 
-    public void mostrarResultadoRutasNoBloqueante(String texto) {
-        ResourceBundle bundle = configuracion.getBundle();
-        TextArea area = new TextArea(texto);
-        area.setEditable(false);
-        area.setWrapText(true);
-        area.setPrefColumnCount(60);
-        area.setPrefRowCount(25);
 
-        Stage stage = new Stage();
-        stage.setTitle(bundle.getString("dialog.results.title"));
-        stage.setScene(new Scene(area, 600, 400));
-        stage.show(); // No bloquea el hilo principal
-    }
 
 }

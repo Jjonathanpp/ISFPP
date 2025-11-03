@@ -1,6 +1,6 @@
 package colectivo.aplicacion;
 
-import colectivo.dao.secuencial.LineaSecuencialDAO;
+
 import colectivo.interfaz.VistaInterfaz;
 import javafx.application.Application;
 import javafx.scene.Scene;

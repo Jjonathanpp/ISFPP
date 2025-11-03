@@ -11,34 +11,41 @@ import com.sothawo.mapjfx.Marker;
 import com.sothawo.mapjfx.Projection;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
-import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 /**
- * Ventana auxiliar que muestra un mapa con el recorrido calculado.
+ * Componente reutilizable que muestra un mapa con los recorridos calculados.
  */
 public class MapRouteDialog {
 
-    private final Stage stage = new Stage();
     private final MapView mapView = new MapView();
     private final List<Marker> activeMarkers = new ArrayList<>();
     private final List<MapLabel> activeLabels = new ArrayList<>();
-    private CoordinateLine activeLine;
+    private final List<CoordinateLine> activeLines = new ArrayList<>();
+    private final BorderPane container = new BorderPane();
     private ResourceBundle bundle;
     private Runnable pendingUpdate;
+
+    private static final Color[] ROUTE_COLORS = new Color[] {
+            Color.DARKBLUE,
+            Color.CRIMSON,
+            Color.DARKGREEN,
+            Color.DARKORANGE,
+            Color.MEDIUMPURPLE
+    };
 
     public MapRouteDialog(ResourceBundle initialBundle) {
         // Desactiva logs verbosos de MapJFX
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", "off");
 
         this.bundle = initialBundle;
-        stage.setTitle(bundle.getString("view.map.title"));
 
         mapView.initialize(Configuration.builder()
                 .projection(Projection.WEB_MERCATOR)
@@ -55,51 +62,88 @@ public class MapRouteDialog {
             }
         });
 
-        BorderPane root = new BorderPane(mapView);
-        Scene scene = new Scene(root, 900, 600);
-        stage.setScene(scene);
+        container.setCenter(mapView);
     }
 
     public void updateTexts(ResourceBundle bundle) {
         this.bundle = bundle;
-        stage.setTitle(bundle.getString("view.map.title"));
     }
 
-    public void showRoute(Parada origen, Parada destino, List<Recorrido> recorrido) {
-        if (!stage.isShowing()) {
-            stage.show();
-        } else {
-            stage.toFront();
-        }
+    public BorderPane getView() {
+        return container;
+    }
 
+    public void showRoutes(Parada origen, Parada destino, List<List<Recorrido>> rutas) {
         Runnable update = () -> {
             clearMap();
 
-            List<Coordinate> coordinates = buildCoordinates(origen, destino, recorrido);
-            if (coordinates.isEmpty()) {
-                return;
-            }
+            List<Coordinate> extentCoordinates = new ArrayList<>();
 
-            addMarker(coordinates.get(0), bundle.getString("view.map.origin"));
-            Coordinate last = coordinates.get(coordinates.size() - 1);
-            if (!coordinates.get(0).equals(last)) {
-                addMarker(last, bundle.getString("view.map.destination"));
-            }
+            Coordinate originCoordinate = toCoordinate(origen);
+            Coordinate destinationCoordinate = toCoordinate(destino);
+            Set<String> markedStops = new HashSet<>();
 
-            boolean hayRecorrido = recorrido != null && !recorrido.isEmpty();
-
-            if (coordinates.size() > 1) {
-                if (hayRecorrido) {
-                    activeLine = new CoordinateLine(coordinates)
-                            //.setStrokeColor(Color.DARKBLUE)
-                            //.setStrokeWidth(4)
-                            .setVisible(true);
-                    mapView.addCoordinateLine(activeLine);
+            if (originCoordinate != null) {
+                addMarker(originCoordinate);
+                extentCoordinates.add(originCoordinate);
+                if (origen != null) {
+                    markedStops.add(origen.getCodigo());
                 }
+            }
+            if (destinationCoordinate != null && (originCoordinate == null || !originCoordinate.equals(destinationCoordinate))) {
+                addMarker(destinationCoordinate);
+                extentCoordinates.add(destinationCoordinate);
+                if (destino != null) {
+                    markedStops.add(destino.getCodigo());
+                }
+            }
 
-                mapView.setExtent(Extent.forCoordinates(coordinates));
-            } else {
-                mapView.setCenter(coordinates.get(0));
+            boolean hayRutas = rutas != null && !rutas.isEmpty();
+
+            if (hayRutas) {
+                int colorIndex = 0;
+                for (List<Recorrido> ruta : rutas) {
+                    Color color = ROUTE_COLORS[colorIndex % ROUTE_COLORS.length];
+                    colorIndex++;
+                    List<Parada> orderedStops = buildOrderedStops(origen, destino, ruta);
+                    Coordinate previous = null;
+
+                    for (Parada parada : orderedStops) {
+                        if (parada == null) {
+                            previous = null;
+                            continue;
+                        }
+
+                        Coordinate coordinate = toCoordinate(parada);
+                        if (coordinate == null) {
+                            previous = null;
+                            continue;
+                        }
+
+                        extentCoordinates.add(coordinate);
+
+                        if (markedStops.add(parada.getCodigo())) {
+                            addMarker(coordinate);
+                        }
+
+                        if (previous != null && !previous.equals(coordinate)) {
+                            CoordinateLine segment = new CoordinateLine(List.of(previous, coordinate))
+                                    //.setStrokeColor(color)
+                                    //.setStrokeWidth(4)
+                                    .setVisible(true);
+                            mapView.addCoordinateLine(segment);
+                            activeLines.add(segment);
+                        }
+
+                        previous = coordinate;
+                    }
+                }
+            }
+
+            if (extentCoordinates.size() >= 2) {
+                mapView.setExtent(Extent.forCoordinates(extentCoordinates));
+            } else if (!extentCoordinates.isEmpty()) {
+                mapView.setCenter(extentCoordinates.get(0));
                 mapView.setZoom(14);
             }
         };
@@ -112,76 +156,60 @@ public class MapRouteDialog {
     }
 
     private void clearMap() {
-        if (activeLine != null) {
-            mapView.removeCoordinateLine(activeLine);
-            activeLine = null;
+        for (CoordinateLine line : activeLines) {
+            mapView.removeCoordinateLine(line);
         }
+        activeLines.clear();
         for (Marker marker : activeMarkers) {
             mapView.removeMarker(marker);
         }
         activeMarkers.clear();
 
-        for (MapLabel label : activeLabels) {
-            mapView.removeLabel(label);
-        }
-        activeLabels.clear();
     }
 
-    private void addMarker(Coordinate coordinate, String labelText) {
+    private void addMarker(Coordinate coordinate) {
         Marker marker = Marker.createProvided(Marker.Provided.BLUE)
                 .setVisible(true)
                 .setPosition(coordinate);
         mapView.addMarker(marker);
         activeMarkers.add(marker);
 
-        if (labelText != null && !labelText.isBlank()) {
-            MapLabel label = new MapLabel(labelText)
-                    .setVisible(true)
-                    .setPosition(coordinate);
-            marker.attachLabel(label);
-            mapView.addLabel(label);
-            activeLabels.add(label);
-        }
     }
 
-    private List<Coordinate> buildCoordinates(Parada origen, Parada destino, List<Recorrido> recorrido) {
-        List<Coordinate> coordinates = new ArrayList<>();
-        appendCoordinate(coordinates, origen);
+    private List<Parada> buildOrderedStops(Parada origen, Parada destino, List<Recorrido> recorrido) {
+        List<Parada> ordered = new ArrayList<>();
+
+        if (origen != null) {
+            ordered.add(origen);
+        }
 
         if (recorrido != null) {
             for (Recorrido r : recorrido) {
-                for (Parada p : r.getParadas()) {
-                    appendCoordinate(coordinates, p);
-                }
+                ordered.addAll(r.getParadas());
             }
         }
 
-        appendCoordinate(coordinates, destino);
+        if (destino != null) {
+            ordered.add(destino);
+        }
 
-        // elimina duplicados consecutivos
-        List<Coordinate> filtered = new ArrayList<>();
-        Coordinate previous = null;
-        for (Coordinate coordinate : coordinates) {
-            if (coordinate == null) {
+
+        List<Parada> filtered = new ArrayList<>();
+        Parada previous = null;
+        for (Parada parada : ordered) {
+            if (parada == null) {
                 continue;
             }
-            if (previous == null || !previous.equals(coordinate)) {
-                filtered.add(coordinate);
-                previous = coordinate;
+            if (previous != null && parada.equals(previous)) {
+                previous = parada;
+                continue;
             }
+            filtered.add(parada);
+            previous = parada;
         }
         return filtered;
     }
 
-    private void appendCoordinate(List<Coordinate> coordinates, Parada parada) {
-        if (parada == null) {
-            return;
-        }
-        Coordinate coordinate = toCoordinate(parada);
-        if (coordinate != null) {
-            coordinates.add(coordinate);
-        }
-    }
 
     private Coordinate toCoordinate(Parada parada) {
         if (Double.isNaN(parada.getLatitud()) || Double.isNaN(parada.getLongitud())) {
