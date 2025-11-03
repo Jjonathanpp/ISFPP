@@ -644,3 +644,304 @@ Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
 2025-11-03 11:57:48,086 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-03 11:57:48,098 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-03 11:57:50,966 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 12:08:33,281 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:33,706 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:08:34,206 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:08:41,246 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='45', direccion='España, 2375'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:42,708 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:08:42,729 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:08:46,182 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='18', direccion='Avenida Juan Xxiii, 1708'}, destino=Parada{codigo='45', direccion='España, 2375'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:46,521 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:08:46,535 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:08:49,934 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='18', direccion='Avenida Juan Xxiii, 1708'}, destino=Parada{codigo='32', direccion='Caña Colihue, 1184'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:51,101 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:08:51,112 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:08:55,406 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='18', direccion='Avenida Juan Xxiii, 1708'}, destino=Parada{codigo='71', direccion='Manuel Carrera, 1534'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:55,971 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:08:55,981 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:08:58,686 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='71', direccion='Manuel Carrera, 1534'}, día=Miércoles, hora=10:00
+2025-11-03 12:08:59,071 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:08:59,081 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:01,990 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='95', direccion='San Martín, 1220'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:02,680 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:02,692 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:05,621 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='26', direccion='Belgrano, 314'}, destino=Parada{codigo='95', direccion='San Martín, 1220'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:05,926 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:05,940 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:09,724 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='95', direccion='San Martín, 1220'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:10,087 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:10,100 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:12,829 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='103', direccion='Vito Roca 1106'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:13,255 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:13,265 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:16,526 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='96', direccion='San Martín, 1400'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:17,109 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:17,121 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:20,742 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='49', direccion='Fournier, 1090'}, destino=Parada{codigo='96', direccion='San Martín, 1400'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:21,056 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:21,067 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:23,648 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='69', direccion='Magallanes, 883'}, destino=Parada{codigo='96', direccion='San Martín, 1400'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:24,034 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:24,044 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:27,513 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='96', direccion='San Martín, 1400'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:28,189 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:28,205 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:30,809 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:31,092 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:31,100 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:33,925 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='60', direccion='Juan Jose Meangolarra Y Moreno, 1005'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:34,231 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:34,241 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:38,957 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='50', direccion='Fournier, 1187'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:39,352 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:39,365 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:42,100 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='32', direccion='Caña Colihue, 1184'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:42,527 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:09:42,538 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:44,504 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='17', direccion='Avenida Juan Muzzio, 482'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:45,204 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:45,217 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:47,293 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='6', direccion='28 De Julio, 311'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:47,649 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:47,658 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:50,725 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:51,104 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:51,113 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:55,462 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='56', direccion='José Alberdi, 720'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:56,390 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:56,400 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:09:59,189 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='76', direccion='Marcos A, Zar, 691'}, día=Miércoles, hora=10:00
+2025-11-03 12:09:59,554 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:09:59,563 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:02,461 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='99', direccion='Sarmiento, 229'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:02,799 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:10:02,808 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:05,257 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:05,577 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:05,587 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:08,540 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='64', direccion='Lewis Jones, 200'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:08,930 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:08,937 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:11,516 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='42', direccion='España, 1431'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:12,721 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:12,750 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:15,405 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:15,853 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:15,864 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:20,772 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='98', direccion='Santiago Del Estero, 727'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:21,085 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:21,095 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:23,685 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='79', direccion='Pasaje 22 De Abril, 167'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:23,980 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:10:23,990 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:27,816 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='59', direccion='Juan Bautista Alberdi, 1240'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:28,233 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:28,244 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:30,897 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='37', direccion='Dorrego, 416'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:31,252 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:31,261 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:33,324 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='66', direccion='Los Alamos, 3900'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:33,745 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:33,757 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:35,868 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='87', direccion='Rivadavia, 2476'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:36,147 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:36,167 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:39,669 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='99', direccion='Sarmiento, 229'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:39,987 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:39,997 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:42,784 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='56', direccion='José Alberdi, 720'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:43,385 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:43,396 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:45,793 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='93', direccion='San Juan, 891'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:46,176 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:46,189 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:48,380 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='102', direccion='Villegas, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:48,700 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:48,708 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:52,340 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:52,629 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:52,638 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:54,712 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='3', direccion='25 De Mayo, 299'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:55,141 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:10:55,153 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:10:57,189 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Miércoles, hora=10:00
+2025-11-03 12:10:57,923 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:10:57,936 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:00,212 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:00,816 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:00,822 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:02,916 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='14', direccion='Avenida Domec García Norte, 239'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:03,372 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:03,383 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:06,588 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='16', direccion='Avenida Juan Muzzio, 258'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:06,949 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:06,956 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:09,536 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='18', direccion='Avenida Juan Xxiii, 1708'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:09,931 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:09,938 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:12,483 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:13,102 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:13,126 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:15,096 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='23', direccion='Avenida Julio Argentino Roca, 936'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:15,436 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:15,444 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:18,128 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='26', direccion='Belgrano, 314'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:18,533 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:18,546 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:21,144 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:21,679 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:21,690 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:23,684 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='30', direccion='Bv, Almirante Brown, 2925'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:24,693 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:24,700 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:27,284 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='200', direccion='carrefour'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:28,171 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:28,201 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:31,687 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='34', direccion='Comodoro Martín Rivadavia, 602'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:32,402 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:32,411 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:34,960 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='201', direccion='cuevas'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:35,585 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:35,610 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:39,227 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='39', direccion='Dorrego, 700'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:39,596 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:39,604 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:41,870 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='43', direccion='España, 1450'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:42,208 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:42,247 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:45,816 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='48', direccion='Esquel, 1352'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:46,135 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:46,143 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:48,824 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='49', direccion='Fournier, 1090'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:49,223 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:49,230 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:51,216 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='52', direccion='General Mosconi, 100'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:51,676 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:51,693 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:55,303 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='55', direccion='Hipólito Yrigoyen, 802'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:55,642 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:11:55,655 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:11:58,280 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='57', direccion='José Contin, 712'}, día=Miércoles, hora=10:00
+2025-11-03 12:11:58,670 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:11:58,674 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:00,520 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='59', direccion='Juan Bautista Alberdi, 1240'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:01,150 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:01,158 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:01,171 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='59', direccion='Juan Bautista Alberdi, 1240'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:01,477 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:01,484 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:03,183 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='61', direccion='Julián Murga, 950'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:03,512 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:03,520 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:05,851 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='62', direccion='La Pampa, 698'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:06,282 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:06,303 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:09,047 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='65', direccion='Lewis Jones, 919'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:09,533 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:09,541 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:11,791 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='69', direccion='Magallanes, 883'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:12,188 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:12,195 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:13,967 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='72', direccion='Manuel García 705'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:14,279 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:14,285 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:16,284 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='75', direccion='Marcos A, Zar, 461'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:16,741 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:16,749 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:19,675 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='77', direccion='Mariano Moreno, 193'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:19,994 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:20,006 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:22,164 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='79', direccion='Pasaje 22 De Abril, 167'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:22,606 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:12:22,612 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:25,751 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='83', direccion='Pedro Derbes, 660'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:26,071 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:12:26,113 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:28,240 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='85', direccion='Periodistas Chubutenses, 500'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:28,976 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:28,981 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:30,743 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='85', direccion='Periodistas Chubutenses, 500'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:31,064 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:31,072 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:33,071 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='87', direccion='Rivadavia, 2476'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:33,522 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:33,529 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:38,800 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='91', direccion='Ruperto Gimenez, 678'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:39,329 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:39,343 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:42,187 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='93', direccion='San Juan, 891'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:42,742 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:42,758 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:44,639 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='96', direccion='San Martín, 1400'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:44,962 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:44,968 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:47,635 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='100', direccion='Soldado Desconocido, 1265'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:48,401 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:48,409 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:51,510 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='103', direccion='Vito Roca 1106'}, día=Miércoles, hora=10:00
+2025-11-03 12:12:51,852 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:12:51,858 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:12:56,775 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 12:14:47,161 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='88', direccion='Rivadavia, 2496'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:14:47,654 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:14:48,087 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 14 points
+2025-11-03 12:14:48,087 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 13 points
+2025-11-03 12:14:48,090 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:08,189 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='88', direccion='Rivadavia, 2496'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:08,582 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:15:08,594 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 14 points
+2025-11-03 12:15:08,594 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 13 points
+2025-11-03 12:15:08,598 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:11,053 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='88', direccion='Rivadavia, 2496'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Tuesday, hora=10:00
+2025-11-03 12:15:11,589 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:15:11,599 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 14 points
+2025-11-03 12:15:11,599 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 13 points
+2025-11-03 12:15:11,601 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:14,321 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='88', direccion='Rivadavia, 2496'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martedì, hora=10:00
+2025-11-03 12:15:14,634 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:15:14,645 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 14 points
+2025-11-03 12:15:14,645 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 13 points
+2025-11-03 12:15:14,645 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:16,494 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='88', direccion='Rivadavia, 2496'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:16,920 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:15:16,932 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 14 points
+2025-11-03 12:15:16,932 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 13 points
+2025-11-03 12:15:16,933 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:21,721 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='90', direccion='Roberto Gómez, 550'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:22,401 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:22,409 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:27,552 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='84', direccion='Pedro Derbes, 816'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:28,060 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:28,070 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:30,569 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='59', direccion='Juan Bautista Alberdi, 1240'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:31,119 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:31,127 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:34,069 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Martes, hora=10:00
+2025-11-03 12:15:34,395 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:34,403 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:36,534 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='30', direccion='Bv, Almirante Brown, 2925'}, día=Martes, hora=10:00
+2025-11-03 12:15:37,072 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:37,097 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:39,486 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='45', direccion='España, 2375'}, día=Martes, hora=10:00
+2025-11-03 12:15:39,790 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:15:39,798 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:39,798 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 21 points
+2025-11-03 12:15:46,689 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='25', direccion='Bartolomé Mitre, 610'}, día=Martes, hora=10:00
+2025-11-03 12:15:47,027 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:47,035 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:49,813 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='7', direccion='8 De Marzo, 385'}, día=Martes, hora=10:00
+2025-11-03 12:15:50,110 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:50,118 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:52,629 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Martes, hora=10:00
+2025-11-03 12:15:53,090 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 12:15:53,098 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:55,485 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='58', direccion='Juan B, Justo, 1172'}, destino=Parada{codigo='1', direccion='1 De Marzo, 405'}, día=Martes, hora=10:00
+2025-11-03 12:15:55,776 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-03 12:15:55,785 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:15:55,785 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 7 points
+2025-11-03 12:15:55,786 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 1 with 8 points
+2025-11-03 12:16:19,450 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='51', direccion='Fuerte San José, 742'}, destino=Parada{codigo='7', direccion='8 De Marzo, 385'}, día=Martes, hora=10:00
+2025-11-03 12:16:19,777 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 9 points
+2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 12:16:36,606 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
