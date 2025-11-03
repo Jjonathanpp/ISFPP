@@ -20,9 +20,10 @@ public class Lanzar extends Application {
             VistaInterfaz vista = app.getVista();
             Configuracion configuracion = app.getConfiguracion();
 
-            stage.setTitle(configuracion.getBundle().getString("app.windowTitle"));
+            // Usar Configuracion.getString(...) que devuelve un fallback si falta la clave
+            stage.setTitle(configuracion.getString("app.windowTitle"));
             configuracion.localeProperty().addListener((obs, oldLocale, newLocale) ->
-                    stage.setTitle(configuracion.getBundle().getString("app.windowTitle"))
+                    stage.setTitle(configuracion.getString("app.windowTitle"))
             );
             stage.setScene(new Scene(vista.getRoot(), 900, 720));
             stage.show();

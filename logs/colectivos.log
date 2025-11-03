@@ -422,3 +422,225 @@
 2025-11-02 21:32:08,244 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-02 21:32:08,847 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-02 21:32:15,635 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 11:26:49,973 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.logica.Empresa.<init>(Empresa.java:48)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-03 11:26:49,984 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:127)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-03 11:26:49,989 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:138)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-03 11:26:49,992 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:91)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-03 11:26:49,997 ERROR [colectivo.dao.postgresql.TramoPostgresqlDAO] - Error al buscar todos los tramos
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:96)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-03 11:27:03,527 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 11:27:21,567 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Lunes, hora=10:00
+2025-11-03 11:27:22,269 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:27:22,828 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:27:36,302 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 11:41:24,140 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=10:00
+2025-11-03 11:41:24,552 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:41:25,082 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:41:45,735 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='24', direccion='Bartolomé Mitre, 401'}, día=Martes, hora=10:00
+2025-11-03 11:41:46,257 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:41:46,272 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:41:53,011 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='32', direccion='Caña Colihue, 1184'}, día=Martes, hora=10:00
+2025-11-03 11:41:53,351 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:41:53,361 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:41:56,011 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='42', direccion='España, 1431'}, día=Martes, hora=10:00
+2025-11-03 11:41:56,332 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:41:56,341 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:41:59,538 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='48', direccion='Esquel, 1352'}, día=Martes, hora=10:00
+2025-11-03 11:41:59,902 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:41:59,910 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:02,310 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='51', direccion='Fuerte San José, 742'}, día=Martes, hora=10:00
+2025-11-03 11:42:02,928 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:42:02,938 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:05,790 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='28', direccion='Bouchard, 400'}, día=Martes, hora=10:00
+2025-11-03 11:42:06,165 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:42:06,184 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:08,857 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='25', direccion='Bartolomé Mitre, 610'}, día=Martes, hora=10:00
+2025-11-03 11:42:09,297 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:42:09,305 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:13,372 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Martes, hora=10:00
+2025-11-03 11:42:14,089 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:42:14,115 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:33,856 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='6', direccion='28 De Julio, 311'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Martes, hora=10:00
+2025-11-03 11:42:34,177 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-03 11:42:34,200 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:42:37,324 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Martes, hora=10:00
+2025-11-03 11:42:37,862 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:42:37,873 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:43:04,082 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, día=Martes, hora=10:00
+2025-11-03 11:43:04,483 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:43:04,495 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:43:16,495 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='6', direccion='28 De Julio, 311'}, destino=Parada{codigo='35', direccion='Comodoro Martín Rivadavia, 750'}, día=Martes, hora=10:00
+2025-11-03 11:43:16,838 INFO  [colectivo.interfaz.Controler] - Se encontraron 3 rutas posibles.
+2025-11-03 11:43:16,872 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:43:48,566 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 11:49:08,896 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=10:00
+2025-11-03 11:49:09,326 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:49:09,661 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:49:14,277 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-03 11:56:28,374 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=10:00
+2025-11-03 11:56:28,898 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:56:29,366 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:57:13,228 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Martes, hora=10:00
+2025-11-03 11:57:13,607 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:57:13,622 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:57:36,260 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Tuesday, hora=10:00
+2025-11-03 11:57:36,700 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:57:36,710 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:57:41,167 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Martedì, hora=10:00
+2025-11-03 11:57:41,504 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:57:41,514 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:57:47,628 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='28', direccion='Bouchard, 400'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Martes, hora=10:00
+2025-11-03 11:57:48,086 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-03 11:57:48,098 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-03 11:57:50,966 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

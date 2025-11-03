@@ -11,17 +11,23 @@ import com.sothawo.mapjfx.Marker;
 import com.sothawo.mapjfx.Projection;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
+import javafx.concurrent.Task;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import org.apache.log4j.Logger;
 
 /**
  * Componente reutilizable que muestra un mapa con los recorridos calculados.
  */
 public class MapRouteDialog {
+
+    private static final Logger LOGGER = Logger.getLogger(MapRouteDialog.class);
 
     private final MapView mapView = new MapView();
     private final List<Marker> activeMarkers = new ArrayList<>();
@@ -30,6 +36,11 @@ public class MapRouteDialog {
     private final BorderPane container = new BorderPane();
     private ResourceBundle bundle;
     private Runnable pendingUpdate;
+
+    // Métodos cacheados (si existen) para evitar búsquedas repetidas por reflexión
+    private final Method strokeColorMethod;
+    private final Method strokeWidthDoubleMethod;
+    private final Method strokeWidthIntMethod;
 
     private static final Color[] ROUTE_COLORS = new Color[] {
             Color.DARKBLUE,
@@ -51,6 +62,28 @@ public class MapRouteDialog {
                 .build());
         mapView.setMapType(MapType.OSM);
 
+        // cachear métodos de estilo si están disponibles en esta versión de MapJFX
+        Method mColor = null;
+        Method mWidthDouble = null;
+        Method mWidthInt = null;
+        try {
+            mColor = CoordinateLine.class.getMethod("setStrokeColor", javafx.scene.paint.Color.class);
+        } catch (NoSuchMethodException e) {
+            LOGGER.debug("CoordinateLine.setStrokeColor not available");
+        }
+        try {
+            mWidthDouble = CoordinateLine.class.getMethod("setStrokeWidth", double.class);
+        } catch (NoSuchMethodException e) {
+            try {
+                mWidthInt = CoordinateLine.class.getMethod("setStrokeWidth", int.class);
+            } catch (NoSuchMethodException ex) {
+                LOGGER.debug("CoordinateLine.setStrokeWidth not available");
+            }
+        }
+        this.strokeColorMethod = mColor;
+        this.strokeWidthDoubleMethod = mWidthDouble;
+        this.strokeWidthIntMethod = mWidthInt;
+
         mapView.initializedProperty().addListener((obs, oldVal, newVal) -> {
             if (Boolean.TRUE.equals(newVal)) {
                 if (pendingUpdate != null) {
@@ -71,8 +104,19 @@ public class MapRouteDialog {
         return container;
     }
 
+    // Resultado del Task: líneas + coordenadas para extent
+    private static class LinesResult {
+        final List<CoordinateLine> lines;
+        final List<Coordinate> extentCoords;
+        LinesResult(List<CoordinateLine> lines, List<Coordinate> extentCoords) {
+            this.lines = lines;
+            this.extentCoords = extentCoords;
+        }
+    }
+
     public void showRoutes(Parada origen, Parada destino, List<List<Recorrido>> rutas) {
         Runnable update = () -> {
+            // Limpiar vista actual inmediatamente en UI thread
             clearMap();
 
             List<Coordinate> extentCoordinates = new ArrayList<>();
@@ -80,8 +124,8 @@ public class MapRouteDialog {
             Coordinate originCoordinate = toCoordinate(origen);
             Coordinate destinationCoordinate = toCoordinate(destino);
 
-
             if (originCoordinate != null) {
+                // marcador de origen
                 addMarker(originCoordinate, getString("view.map.origin"));
                 extentCoordinates.add(originCoordinate);
             }
@@ -92,49 +136,97 @@ public class MapRouteDialog {
 
             boolean hayRutas = rutas != null && !rutas.isEmpty();
 
-            if (hayRutas) {
-                int colorIndex = 0;
-                for (List<Recorrido> ruta : rutas) {
-                    Color color = ROUTE_COLORS[colorIndex % ROUTE_COLORS.length];
-                    colorIndex++;
-                    List<Parada> orderedStops = buildOrderedStops(origen, destino, ruta);
-                    Coordinate previous = null;
+            if (!hayRutas) {
+                // Ajustar vista según marcadores solamente
+                if (extentCoordinates.size() >= 2) {
+                    mapView.setExtent(Extent.forCoordinates(extentCoordinates));
+                } else if (!extentCoordinates.isEmpty()) {
+                    mapView.setCenter(extentCoordinates.get(0));
+                    mapView.setZoom(14);
+                }
+                return;
+            }
 
-                    for (Parada parada : orderedStops) {
-                        if (parada == null) {
-                            previous = null;
-                            continue;
+            // Usar Task para construir geometría en background y luego añadir todo en UI thread
+            Task<LinesResult> task = new Task<>() {
+                @Override
+                protected LinesResult call() {
+                    List<CoordinateLine> linesToAdd = new ArrayList<>();
+                    List<Coordinate> allCoordsForExtent = new ArrayList<>(extentCoordinates);
+
+                    int colorIndex = 0;
+                    for (List<Recorrido> ruta : rutas) {
+                        Color color = ROUTE_COLORS[colorIndex % ROUTE_COLORS.length];
+                        colorIndex++;
+
+                        List<Parada> orderedStops = buildOrderedStops(origen, destino, ruta);
+                        List<Coordinate> coords = new ArrayList<>();
+                        Coordinate prev = null;
+                        for (Parada parada : orderedStops) {
+                            if (parada == null) { prev = null; continue; }
+                            Coordinate c = toCoordinate(parada);
+                            if (c == null) { prev = null; continue; }
+                            if (prev != null && prev.equals(c)) { prev = c; continue; }
+                            coords.add(c);
+                            allCoordsForExtent.add(c);
+                            prev = c;
                         }
 
-                        Coordinate coordinate = toCoordinate(parada);
-                        if (coordinate == null) {
-                            previous = null;
-                            continue;
+                        if (coords.size() >= 2) {
+                            CoordinateLine line = new CoordinateLine(coords);
+                            // aplicar estilo usando métodos cacheados
+                            if (strokeColorMethod != null) {
+                                try {
+                                    strokeColorMethod.invoke(line, color);
+                                } catch (IllegalAccessException | InvocationTargetException e) {
+                                    LOGGER.debug("Failed to invoke setStrokeColor", e);
+                                }
+                            }
+                            if (strokeWidthDoubleMethod != null) {
+                                try {
+                                    strokeWidthDoubleMethod.invoke(line, 4.0);
+                                } catch (IllegalAccessException | InvocationTargetException e) {
+                                    LOGGER.debug("Failed to invoke setStrokeWidth(double)", e);
+                                }
+                            } else if (strokeWidthIntMethod != null) {
+                                try {
+                                    strokeWidthIntMethod.invoke(line, 4);
+                                } catch (IllegalAccessException | InvocationTargetException e) {
+                                    LOGGER.debug("Failed to invoke setStrokeWidth(int)", e);
+                                }
+                            }
+                            line.setVisible(true);
+                            linesToAdd.add(line);
                         }
+                    }
+                    return new LinesResult(linesToAdd, allCoordsForExtent);
+                }
+            };
 
-                        extentCoordinates.add(coordinate);
-
-
-                        if (previous != null && !previous.equals(coordinate)) {
-                            CoordinateLine segment = new CoordinateLine(List.of(previous, coordinate))
-                                    //.setStrokeColor(color)
-                                    //.setStrokeWidth(4)
-                                    .setVisible(true);
-                            mapView.addCoordinateLine(segment);
-                            activeLines.add(segment);
-                        }
-
-                        previous = coordinate;
+            task.setOnSucceeded(evt -> {
+                LinesResult result = task.getValue();
+                List<CoordinateLine> lines = result.lines;
+                List<Coordinate> extentCoords = result.extentCoords;
+                for (CoordinateLine l : lines) {
+                    mapView.addCoordinateLine(l);
+                    activeLines.add(l);
+                }
+                if (extentCoords.size() >= 2) {
+                    mapView.setExtent(Extent.forCoordinates(extentCoords));
+                } else if (!extentCoordinates.isEmpty()) {
+                    if (extentCoordinates.size() >= 2) {
+                        mapView.setExtent(Extent.forCoordinates(extentCoordinates));
+                    } else if (!extentCoordinates.isEmpty()) {
+                        mapView.setCenter(extentCoordinates.get(0));
+                        mapView.setZoom(14);
                     }
                 }
-            }
+            });
 
-            if (extentCoordinates.size() >= 2) {
-                mapView.setExtent(Extent.forCoordinates(extentCoordinates));
-            } else if (!extentCoordinates.isEmpty()) {
-                mapView.setCenter(extentCoordinates.get(0));
-                mapView.setZoom(14);
-            }
+            task.setOnFailed(evt -> LOGGER.error("Error building map lines", task.getException()));
+
+            new Thread(task, "map-build-lines").start();
+
         };
 
         if (mapView.getInitialized()) {
