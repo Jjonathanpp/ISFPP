@@ -14,34 +14,68 @@ import colectivo.modelo.Recorrido;
 import javafx.concurrent.Task;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.paint.Color;
+import org.apache.log4j.Logger;
+import org.json.JSONArray;
+import org.json.JSONObject;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import org.apache.log4j.Logger;
 
+/**
+ * Muestra un mapa (MapJFX) y dibuja rutas entre paradas.
+ * Integra OpenRouteService (ORS) para que el trazo siga calles.
+ * Colorea: Directo (1 pierna) con un color fijo y Conexión (2+ piernas) con un color por pierna.
+ */
 public class MapRouteDialog {
 
+    // === ORS (OpenRouteService) ===
+    // Opción segura: tomar de variable de entorno si existe
+    private static final String ORS_API_KEY = /*System.getenv("ORS_API_KEY") != null ? System.getenv("ORS_API_KEY") :*/
+            "eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjU2Y2FiMzcxODVmYTRhY2I5ZDNlZjhjMjFkNmVkYmM0IiwiaCI6Im11cm11cjY0In0=";
+    private static final String ORS_URL = "https://api.openrouteservice.org/v2/directions/driving-car/geojson";
+
+    private static final HttpClient HTTP = HttpClient.newBuilder()
+            .version(HttpClient.Version.HTTP_2)
+            .connectTimeout(Duration.ofSeconds(10))
+            .build();
+
+    // Logger
     private static final Logger LOGGER = Logger.getLogger(MapRouteDialog.class);
+
+    // Mapa
     private final MapView mapView = new MapView();
+
+    // Lo que agregamos al mapa (para poder limpiar)
     private final List<Marker> activeMarkers = new ArrayList<>();
     private final List<MapLabel> activeLabels = new ArrayList<>();
     private final List<CoordinateLine> activeLines = new ArrayList<>();
+
+    // Contenedor para insertar el mapa en la UI
     private final BorderPane container = new BorderPane();
+
+    // i18n
     private ResourceBundle bundle;
+
+    // Acciones diferidas hasta que el mapa esté inicializado
     private Runnable pendingUpdate;
+
+    // Métodos opcionales de estilo en CoordinateLine (compatibilidad)
     private final Method strokeColorMethod;
     private final Method strokeWidthDoubleMethod;
     private final Method strokeWidthIntMethod;
 
-    private static final Color[] ROUTE_COLORS = new Color[] {
-            Color.DARKBLUE,
-            Color.CRIMSON,
-            Color.DARKGREEN,
-            Color.DARKORANGE,
-            Color.MEDIUMPURPLE
+    // Colores
+    private static final Color DIRECT_COLOR = Color.DODGERBLUE; // Directo (1 pierna)
+    private static final Color[] LEG_COLORS = new Color[]{
+            Color.CRIMSON, Color.DARKGREEN, Color.DARKORANGE, Color.MEDIUMPURPLE, Color.DARKBLUE
     };
 
     public MapRouteDialog(ResourceBundle initialBundle) {
@@ -53,33 +87,24 @@ public class MapRouteDialog {
                 .showZoomControls(true)
                 .build());
         mapView.setMapType(MapType.OSM);
-        Method mColor = null;
-        Method mWidthDouble = null;
-        Method mWidthInt = null;
-        try {
-            mColor = CoordinateLine.class.getMethod("setStrokeColor", javafx.scene.paint.Color.class);
-        } catch (NoSuchMethodException e) {
-            LOGGER.debug("CoordinateLine.setStrokeColor not available");
-        }
-        try {
-            mWidthDouble = CoordinateLine.class.getMethod("setStrokeWidth", double.class);
-        } catch (NoSuchMethodException e) {
-            try {
-                mWidthInt = CoordinateLine.class.getMethod("setStrokeWidth", int.class);
-            } catch (NoSuchMethodException ex) {
-                LOGGER.debug("CoordinateLine.setStrokeWidth not available");
-            }
+
+        // Reflexión para setear color/anchura si la versión lo soporta
+        Method mColor = null, mWidthDouble = null, mWidthInt = null;
+        try { mColor = CoordinateLine.class.getMethod("setStrokeColor", javafx.scene.paint.Color.class); }
+        catch (NoSuchMethodException ignored) { LOGGER.debug("CoordinateLine.setStrokeColor not available"); }
+        try { mWidthDouble = CoordinateLine.class.getMethod("setStrokeWidth", double.class); }
+        catch (NoSuchMethodException e) {
+            try { mWidthInt = CoordinateLine.class.getMethod("setStrokeWidth", int.class); }
+            catch (NoSuchMethodException ignored) { LOGGER.debug("CoordinateLine.setStrokeWidth not available"); }
         }
         this.strokeColorMethod = mColor;
         this.strokeWidthDoubleMethod = mWidthDouble;
         this.strokeWidthIntMethod = mWidthInt;
 
         mapView.initializedProperty().addListener((obs, oldVal, newVal) -> {
-            if (Boolean.TRUE.equals(newVal)) {
-                if (pendingUpdate != null) {
-                    pendingUpdate.run();
-                    pendingUpdate = null;
-                }
+            if (Boolean.TRUE.equals(newVal) && pendingUpdate != null) {
+                pendingUpdate.run();
+                pendingUpdate = null;
             }
         });
 
@@ -89,10 +114,12 @@ public class MapRouteDialog {
     public void updateTexts(ResourceBundle bundle) {
         this.bundle = bundle;
     }
+
     public BorderPane getView() {
         return container;
     }
 
+    // Resultado para pasar del hilo de background al de UI
     private static class LinesResult {
         final List<CoordinateLine> lines;
         final List<Coordinate> extentCoords;
@@ -102,9 +129,15 @@ public class MapRouteDialog {
         }
     }
 
+    /**
+     * Dibuja marcadores y rutas. Para cada alternativa:
+     * - Directo (1 Recorrido): una línea con DIRECT_COLOR.
+     * - Conexión (2+ Recorridos): una línea por pierna con colores distintos (LEG_COLORS).
+     */
     public void showRoutes(Parada origen, Parada destino, List<List<Recorrido>> rutas) {
         Runnable update = () -> {
             clearMap();
+
             List<Coordinate> extentCoordinates = new ArrayList<>();
 
             Coordinate originCoordinate = toCoordinate(origen);
@@ -114,20 +147,15 @@ public class MapRouteDialog {
                 addMarker(originCoordinate, getString("view.map.origin"));
                 extentCoordinates.add(originCoordinate);
             }
-            if (destinationCoordinate != null && (originCoordinate == null || !originCoordinate.equals(destinationCoordinate))) {
+            if (destinationCoordinate != null &&
+                    (originCoordinate == null || !originCoordinate.equals(destinationCoordinate))) {
                 addMarker(destinationCoordinate, getString("view.map.destination"));
                 extentCoordinates.add(destinationCoordinate);
             }
 
             boolean hayRutas = rutas != null && !rutas.isEmpty();
-
             if (!hayRutas) {
-                if (extentCoordinates.size() >= 2) {
-                    mapView.setExtent(Extent.forCoordinates(extentCoordinates));
-                } else if (!extentCoordinates.isEmpty()) {
-                    mapView.setCenter(extentCoordinates.get(0));
-                    mapView.setZoom(14);
-                }
+                encuadrar(extentCoordinates);
                 return;
             }
 
@@ -137,41 +165,34 @@ public class MapRouteDialog {
                     List<CoordinateLine> linesToAdd = new ArrayList<>();
                     List<Coordinate> allCoordsForExtent = new ArrayList<>(extentCoordinates);
 
-                    int colorIndex = 0;
-                    for (List<Recorrido> ruta : rutas) {
-                        Color color = ROUTE_COLORS[colorIndex % ROUTE_COLORS.length];
-                        colorIndex++;
+                    for (List<Recorrido> alternativa : rutas) {
+                        int legs = (alternativa != null) ? alternativa.size() : 0;
 
-                        List<Parada> orderedStops = buildOrderedStops(origen, destino, ruta);
-                        List<Coordinate> coords = new ArrayList<>();
-                        Coordinate prev = null;
-                        for (Parada parada : orderedStops) {
-                            // Si la parada es nula o no tiene coordenadas válidas, la saltamos
-                            if (parada == null) { prev = null; continue; }
-                            Coordinate c = toCoordinate(parada);
-                            if (c == null) { prev = null; continue; }
-                            // Evitar repetir el mismo punto consecutivo
-                            if (prev != null && prev.equals(c)) { prev = c; continue; }
-                            coords.add(c);
-                            allCoordsForExtent.add(c);
-                            prev = c;
-                        }
+                        if (legs <= 1) {
+                            // ===== Directo (0 o 1 pierna) =====
+                            List<Parada> ordered = buildOrderedStops(origen, destino, alternativa);
+                            List<Coordinate> waypoints = compactToCoordinates(ordered);
+                            if (waypoints.size() >= 2) {
+                                List<Coordinate> routed = fetchRoutedSafe(waypoints);
+                                allCoordsForExtent.addAll(routed);
 
-                        if (coords.size() >= 2) {
-                            CoordinateLine line = new CoordinateLine(coords);
-                            if (strokeColorMethod != null) {
-                                try { strokeColorMethod.invoke(line, color); }
-                                catch (IllegalAccessException | InvocationTargetException e) { LOGGER.debug("Failed to invoke setStrokeColor", e); }
+                                CoordinateLine line = styledLine(routed, DIRECT_COLOR, 4.0);
+                                linesToAdd.add(line);
                             }
-                            if (strokeWidthDoubleMethod != null) {
-                                try { strokeWidthDoubleMethod.invoke(line, 4.0); }
-                                catch (IllegalAccessException | InvocationTargetException e) { LOGGER.debug("Failed to invoke setStrokeWidth(double)", e); }
-                            } else if (strokeWidthIntMethod != null) {
-                                try { strokeWidthIntMethod.invoke(line, 4); }
-                                catch (IllegalAccessException | InvocationTargetException e) { LOGGER.debug("Failed to invoke setStrokeWidth(int)", e); }
+                        } else {
+                            // ===== Conexión (2+ piernas) =====
+                            for (int i = 0; i < legs; i++) {
+                                List<Parada> stopsForLeg = buildStopsForLeg(origen, destino, alternativa, i);
+                                List<Coordinate> waypoints = compactToCoordinates(stopsForLeg);
+                                if (waypoints.size() < 2) continue;
+
+                                List<Coordinate> routed = fetchRoutedSafe(waypoints);
+                                allCoordsForExtent.addAll(routed);
+
+                                Color color = LEG_COLORS[i % LEG_COLORS.length];
+                                CoordinateLine line = styledLine(routed, color, 4.0);
+                                linesToAdd.add(line);
                             }
-                            line.setVisible(true);
-                            linesToAdd.add(line);
                         }
                     }
                     return new LinesResult(linesToAdd, allCoordsForExtent);
@@ -180,28 +201,19 @@ public class MapRouteDialog {
 
             task.setOnSucceeded(evt -> {
                 LinesResult result = task.getValue();
-                List<CoordinateLine> lines = result.lines;
-                List<Coordinate> extentCoords = result.extentCoords;
-                for (CoordinateLine l : lines) {
+                for (CoordinateLine l : result.lines) {
                     mapView.addCoordinateLine(l);
                     activeLines.add(l);
                 }
-                if (extentCoords.size() >= 2) {
-                    mapView.setExtent(Extent.forCoordinates(extentCoords));
-                } else if (!extentCoordinates.isEmpty()) {
-                    if (extentCoordinates.size() >= 2) {
-                        mapView.setExtent(Extent.forCoordinates(extentCoordinates));
-                    } else if (!extentCoordinates.isEmpty()) {
-                        mapView.setCenter(extentCoordinates.get(0));
-                        mapView.setZoom(14);
-                    }
+                if (!result.extentCoords.isEmpty()) {
+                    mapView.setExtent(Extent.forCoordinates(result.extentCoords));
+                } else {
+                    encuadrar(extentCoordinates);
                 }
             });
 
             task.setOnFailed(evt -> LOGGER.error("Error building map lines", task.getException()));
-
             new Thread(task, "map-build-lines").start();
-
         };
 
         if (mapView.getInitialized()) {
@@ -211,22 +223,17 @@ public class MapRouteDialog {
         }
     }
 
+    /** Limpia líneas, marcadores y etiquetas del mapa. */
     private void clearMap() {
-        for (CoordinateLine line : activeLines) {
-            mapView.removeCoordinateLine(line);
-        }
+        for (CoordinateLine line : activeLines) mapView.removeCoordinateLine(line);
         activeLines.clear();
-        for (Marker marker : activeMarkers) {
-            mapView.removeMarker(marker);
-        }
+        for (Marker marker : activeMarkers) mapView.removeMarker(marker);
         activeMarkers.clear();
-        for (MapLabel label : activeLabels) {
-            mapView.removeLabel(label);
-        }
+        for (MapLabel label : activeLabels) mapView.removeLabel(label);
         activeLabels.clear();
-
     }
 
+    /** Agrega un marcador (pin) con etiqueta opcional. */
     private void addMarker(Coordinate coordinate, String labelText) {
         Marker marker = Marker.createProvided(Marker.Provided.BLUE)
                 .setVisible(true)
@@ -243,57 +250,171 @@ public class MapRouteDialog {
         }
     }
 
-    private List<Parada> buildOrderedStops(Parada origen, Parada destino, List<Recorrido> recorrido) {
-        List<Parada> ordered = new ArrayList<>();
+    // ===== Helpers de vista/estilo =====
 
-        if (origen != null) {
-            ordered.add(origen);
+    private void encuadrar(List<Coordinate> extentCoordinates) {
+        if (extentCoordinates.size() >= 2) {
+            mapView.setExtent(Extent.forCoordinates(extentCoordinates));
+        } else if (!extentCoordinates.isEmpty()) {
+            mapView.setCenter(extentCoordinates.get(0));
+            mapView.setZoom(14);
         }
+    }
 
-        if (recorrido != null) {
-            for (Recorrido r : recorrido) {
-                ordered.addAll(r.getParadas());
+    private CoordinateLine styledLine(List<Coordinate> coords, Color color, double width) {
+        CoordinateLine line = new CoordinateLine(coords);
+        if (strokeColorMethod != null) {
+            try { strokeColorMethod.invoke(line, color); }
+            catch (IllegalAccessException | InvocationTargetException ignored) {}
+        }
+        if (strokeWidthDoubleMethod != null) {
+            try { strokeWidthDoubleMethod.invoke(line, width); }
+            catch (IllegalAccessException | InvocationTargetException ignored) {}
+        } else if (strokeWidthIntMethod != null) {
+            try { strokeWidthIntMethod.invoke(line, (int)Math.round(width)); }
+            catch (IllegalAccessException | InvocationTargetException ignored) {}
+        }
+        line.setVisible(true);
+        return line;
+    }
+
+    // ===== Construcción de paradas / waypoints =====
+
+    /** Directo: origen + todas las paradas de la alternativa (si existe) + destino. */
+    private List<Parada> buildOrderedStops(Parada origen, Parada destino, List<Recorrido> alternativa) {
+        List<Parada> ordered = new ArrayList<>();
+        if (origen != null) ordered.add(origen);
+
+        if (alternativa != null && !alternativa.isEmpty()) {
+            // Si hay 1 sola pierna, se agregan esas paradas
+            if (alternativa.size() == 1 && alternativa.get(0) != null && alternativa.get(0).getParadas() != null) {
+                ordered.addAll(alternativa.get(0).getParadas());
             }
         }
 
-        if (destino != null) {
-            ordered.add(destino);
-        }
+        if (destino != null) ordered.add(destino);
+        return filterConsecutiveDuplicates(ordered);
+    }
 
+    /**
+     * Conexión: arma las paradas para la pierna i de la alternativa.
+     * i==0: incluye origen (si existe) + paradas de la primera pierna.
+     * i==last: paradas de la última pierna + destino (si existe).
+     * intermedias: solo paradas de esa pierna.
+     */
+    private List<Parada> buildStopsForLeg(Parada origen, Parada destino, List<Recorrido> alternativa, int i) {
+        List<Parada> list = new ArrayList<>();
+        Recorrido pierna = alternativa.get(i);
 
+        if (i == 0 && origen != null) list.add(origen);
+        if (pierna != null && pierna.getParadas() != null) list.addAll(pierna.getParadas());
+        if (i == alternativa.size() - 1 && destino != null) list.add(destino);
+
+        return filterConsecutiveDuplicates(list);
+    }
+
+    private List<Parada> filterConsecutiveDuplicates(List<Parada> ordered) {
         List<Parada> filtered = new ArrayList<>();
         Parada previous = null;
-        for (Parada parada : ordered) {
-            if (parada == null) {
-                continue;
-            }
-            if (previous != null && parada.equals(previous)) {
-                previous = parada;
-                continue;
-            }
-            filtered.add(parada);
-            previous = parada;
+        for (Parada p : ordered) {
+            if (p == null) continue;
+            if (previous != null && p.equals(previous)) { previous = p; continue; }
+            filtered.add(p);
+            previous = p;
         }
         return filtered;
     }
 
-
-    private Coordinate toCoordinate(Parada parada) {
-        if (parada == null) {
-            return null;
+    /** Convierte paradas a Coordinates (lat,lon), quitando nulos y duplicados consecutivos. */
+    private List<Coordinate> compactToCoordinates(List<Parada> paradas) {
+        List<Coordinate> waypoints = new ArrayList<>();
+        Coordinate prev = null;
+        for (Parada p : paradas) {
+            Coordinate c = toCoordinate(p);
+            if (c == null) continue;
+            if (prev != null && prev.equals(c)) continue;
+            waypoints.add(c);
+            prev = c;
         }
-        if (Double.isNaN(parada.getLatitud()) || Double.isNaN(parada.getLongitud())) {
-            return null;
-        }
-        return new Coordinate(parada.getLatitud(), parada.getLongitud());
+        return waypoints;
     }
+
+    /** Convierte Parada (lat,lon) a Coordinate. */
+    private Coordinate toCoordinate(Parada parada) {
+        if (parada == null) return null;
+        if (Double.isNaN(parada.getLatitud()) || Double.isNaN(parada.getLongitud())) return null;
+        return new Coordinate(parada.getLatitud(), parada.getLongitud()); // MapJFX: (lat, lon)
+    }
+
+    /** i18n safe-get */
     private String getString(String key) {
         if (bundle != null) {
-            try {
-                return bundle.getString(key);
-            } catch (Exception ignored) {
-            }
+            try { return bundle.getString(key); } catch (Exception ignored) {}
         }
         return key;
+    }
+
+    // ======================
+    //  ORS: llamada y parseo
+    // ======================
+
+    /** Llama ORS y devuelve polilínea que sigue calles. Si falla, devuelve los waypoints. */
+    private List<Coordinate> fetchRoutedSafe(List<Coordinate> waypoints) {
+        try { return fetchRoutedGeometryORS(waypoints); }
+        catch (Exception e) {
+            LOGGER.warn("Fallo ORS, se usa línea directa. Motivo: " + e.getMessage());
+            return waypoints;
+        }
+    }
+
+    /**
+     * Pide a ORS la geometría de la ruta (siguiendo calles) para los waypoints dados.
+     * Recibe Coordinates (lat,lon) y devuelve Coordinates (lat,lon) de la polilínea resultante.
+     */
+    private List<Coordinate> fetchRoutedGeometryORS(List<Coordinate> waypoints) throws Exception {
+        if (waypoints == null || waypoints.size() < 2) return List.of();
+        if (ORS_API_KEY == null || ORS_API_KEY.isBlank()) {
+            throw new IllegalStateException("Falta ORS_API_KEY");
+        }
+
+        // ORS espera [lon, lat]
+        JSONArray coords = new JSONArray();
+        for (Coordinate c : waypoints) {
+            coords.put(new JSONArray().put(c.getLongitude()).put(c.getLatitude()));
+        }
+
+        JSONObject body = new JSONObject()
+                .put("coordinates", coords)
+                .put("instructions", false)
+                .put("geometry_simplify", true);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(ORS_URL))
+                .timeout(Duration.ofSeconds(20))
+                .header("Content-Type", "application/json")
+                .header("Authorization", ORS_API_KEY)
+                .POST(HttpRequest.BodyPublishers.ofString(body.toString()))
+                .build();
+
+        HttpResponse<String> resp = HTTP.send(request, HttpResponse.BodyHandlers.ofString());
+        if (resp.statusCode() != 200) {
+            throw new IllegalStateException("ORS error " + resp.statusCode() + ": " + resp.body());
+        }
+
+        JSONObject root = new JSONObject(resp.body());
+        JSONArray features = root.getJSONArray("features");
+        if (features.isEmpty()) return List.of();
+
+        JSONObject geom = features.getJSONObject(0).getJSONObject("geometry");
+        JSONArray line = geom.getJSONArray("coordinates");
+
+        List<Coordinate> routed = new ArrayList<>(line.length());
+        for (int i = 0; i < line.length(); i++) {
+            JSONArray p = line.getJSONArray(i);
+            double lon = p.getDouble(0);
+            double lat = p.getDouble(1);
+            routed.add(new Coordinate(lat, lon)); // MapJFX: (lat, lon)
+        }
+        return routed;
     }
 }

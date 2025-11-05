@@ -2152,3 +2152,32 @@ java.lang.NullPointerException: Cannot read field "hour" because "other" is null
 2025-11-05 14:57:57,263 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
 2025-11-05 14:57:57,268 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-05 15:01:02,584 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 15:57:49,627 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='14', direccion='Ameghino y Peron'}, día=Martes, hora=12:30
+2025-11-05 15:57:49,642 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:57:49,667 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:57:53,340 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='6', direccion='Ameghino y Costanera'}, día=Martes, hora=12:30
+2025-11-05 15:57:53,347 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:57:53,351 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:57:55,461 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='6', direccion='Ameghino y Costanera'}, día=Martes, hora=12:30
+2025-11-05 15:57:55,467 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:57:55,474 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:58:37,463 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='4', direccion='Pasteur y Av. Alvear'}, día=Martes, hora=12:30
+2025-11-05 15:58:37,467 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:58:37,471 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:58:40,738 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='6', direccion='Ameghino y Costanera'}, destino=Parada{codigo='4', direccion='Pasteur y Av. Alvear'}, día=Martes, hora=12:30
+2025-11-05 15:58:40,742 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:58:40,744 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:58:44,621 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='5', direccion='Alvear y Sarmiento'}, día=Martes, hora=12:30
+2025-11-05 15:58:44,627 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:58:44,630 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:58:47,377 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='6', direccion='Ameghino y Costanera'}, día=Martes, hora=12:30
+2025-11-05 15:58:47,381 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:58:47,384 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:58:52,940 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='14', direccion='Ameghino y Peron'}, día=Martes, hora=12:30
+2025-11-05 15:58:52,944 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 15:58:52,948 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 16:00:09,725 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 16:04:15,903 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='13', direccion='Ant Argentina y Ameghino'}, día=Miércoles, hora=12:30
+2025-11-05 16:04:15,925 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 16:04:15,942 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 16:04:26,096 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
