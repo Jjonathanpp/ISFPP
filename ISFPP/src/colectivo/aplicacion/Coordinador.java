@@ -4,7 +4,6 @@ import colectivo.conexion.Factory;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
-import colectivo.interfaz.VistaInterfaz;
 import colectivo.logica.Empresa;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;

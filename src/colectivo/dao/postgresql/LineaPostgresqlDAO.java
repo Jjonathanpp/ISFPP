@@ -4,8 +4,8 @@ package colectivo.dao.postgresql;
 import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
@@ -18,22 +18,14 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Explicación de porque se repite en cada metodo la creación de un nuevo objeto Connection:
- * Es claro y seguro para la concurrencia y evita fugas, si se tiene a Connection como atributo de clase hay que gestionar
- * su ciclo de vida, sincronización y transacciones de forma explicita (y cerrar la conexión al final). Si no se hace bien
- * puede llevar a inconsistencias, bloqueos, fugas y problemas de transacción.
- * (PUEDE QUE CON ESTO SE REFIERE AL HILO DESCONECTOR DE LA BD)
- */
-
 public class LineaPostgresqlDAO implements LineaDAO {
 
     private static final Logger LOGGER = Logger.getLogger(LineaPostgresqlDAO.class);
 
     @Override
-    public void insertar(Linea linea) throws InstanciaExisteEnBDException {
+    public void insertar(Linea linea) throws InstanciaExisteException {
         if (existe(linea.getCodigo())) {
-            throw new InstanciaExisteEnBDException("La línea con código " + linea.getCodigo() + " ya existe en la base de datos.");
+            throw new InstanciaExisteException("La línea con código " + linea.getCodigo() + " ya existe en la base de datos.");
         }
 
         String sql = "INSERT INTO linea (codigo, nombre) VALUES (?, ?)";
@@ -93,9 +85,9 @@ public class LineaPostgresqlDAO implements LineaDAO {
     }
 
     @Override
-    public void borrar(Linea linea) throws InstanciaNoExisteEnBDException {
+    public void borrar(Linea linea) throws InstanciaNoExisteException {
         if (!existe(linea.getCodigo())) {
-            throw new InstanciaNoExisteEnBDException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
+            throw new InstanciaNoExisteException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
         }
         String sql = "DELETE FROM linea WHERE codigo = ?";
         Connection conn = null;
@@ -155,7 +147,6 @@ public class LineaPostgresqlDAO implements LineaDAO {
                     }
                 }
 
-                // Luego cargamos las frecuencias para cada línea
                 try (PreparedStatement psFreq = conn.prepareStatement(sqlFrecuencias);
                      ResultSet rsFreq = psFreq.executeQuery()) {
                     while (rsFreq.next()) {
@@ -170,7 +161,6 @@ public class LineaPostgresqlDAO implements LineaDAO {
                     }
                 }
 
-                // Ahora armamos los objetos Linea con la lista de paradas
                 while (rsLineas.next()) {
                     String codigo = rsLineas.getString("codigo");
                     String nombre = rsLineas.getString("nombre");
@@ -193,7 +183,6 @@ public class LineaPostgresqlDAO implements LineaDAO {
         return resultado;
     }
 
-    // Método auxiliar para verificar existencia
     private boolean existe(String codigo) {
         String sql = "SELECT 1 FROM linea WHERE codigo = ?";
         try (Connection conn = Conexion.getInstancia().getConnection();
@@ -207,7 +196,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
         }
         return false;
     }
-    //================================= DAO DE LineaParada =================================
+
     private void insertarLineaParada(Connection conn, Linea linea) {
         String sql = "INSERT INTO linea_parada (codigo_linea, codigo_parada, orden) VALUES (?, ?, ?)";
         List<Parada> paradas = linea.getParadas();

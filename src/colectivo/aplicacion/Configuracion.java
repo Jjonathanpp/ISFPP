@@ -6,12 +6,6 @@ import javafx.beans.property.SimpleObjectProperty;
 import java.util.Locale;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
-
-/**
- * Centraliza la gestión de idioma de la aplicación.
- * Permite cambiar el {@link Locale} en tiempo de ejecución y notificar a
- * los interesados mediante una propiedad observable.
- */
 public final class Configuracion {
 
     private static final String BUNDLE_BASE = "i18n.messages";

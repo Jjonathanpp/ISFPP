@@ -5,18 +5,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class Parada {
-    //atributos
     private String codigo;
     private String direccion;
     private double latitud;
     private double longitud;
-
     private List<Linea> lineas;
-
     private List<Parada> paradasCaminando;
 
-
-    //Constructor
     public Parada(String codigo, String direccion, double latitud, double longitud) {
         this.codigo = codigo;
         this.direccion = direccion;
@@ -27,8 +22,6 @@ public class Parada {
         this.paradasCaminando = new ArrayList<>();
     }
 
-
-    //Getters y setters
     public String getCodigo() {
         return codigo;
     }
@@ -49,16 +42,8 @@ public class Parada {
         return latitud;
     }
 
-    public void setLatitud(double latitud) {
-        this.latitud = latitud;
-    }
-
     public double getLongitud() {
         return longitud;
-    }
-
-    public void setLongitud(double longitud) {
-        this.longitud = longitud;
     }
 
     public List<Linea> getLineas() {
@@ -73,10 +58,6 @@ public class Parada {
         return paradasCaminando;
     }
 
-    public void setParadasCaminando(List<Parada> paradasCaminando) {
-        this.paradasCaminando = paradasCaminando;
-    }
-
     public void addLinea(Linea linea) {
         this.lineas.add(linea);
     }
@@ -84,7 +65,6 @@ public class Parada {
         this.paradasCaminando.add(parada);
     }
 
-    // equals/hashCode basados en 'codigo' (identificador lógico)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

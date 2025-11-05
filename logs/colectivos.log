@@ -945,3 +945,1012 @@ Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
 2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 9 points
 2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-03 12:16:36,606 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 15:04:14,199 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.logica.Empresa.<init>(Empresa.java:48)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:04:24,202 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:127)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 15:04:34,207 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:138)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:04:44,271 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:91)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 15:04:54,273 ERROR [colectivo.dao.postgresql.TramoPostgresqlDAO] - Error al buscar todos los tramos
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:96)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:05:56,594 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 15:07:29,074 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.logica.Empresa.<init>(Empresa.java:48)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:07:39,080 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:127)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 15:07:49,083 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:138)
+	at colectivo.logica.Empresa.<init>(Empresa.java:49)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:07:59,142 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:91)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 15:08:09,145 ERROR [colectivo.dao.postgresql.TramoPostgresqlDAO] - Error al buscar todos los tramos
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:45)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:96)
+	at colectivo.logica.Empresa.<init>(Empresa.java:50)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:34)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 15:08:32,607 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 15:13:37,700 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-11-04 15:13:37,750 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 15:13:38,025 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 15:15:15,150 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='83', direccion='Pedro Derbes, 660'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Miércoles, hora=12:00
+2025-11-04 15:15:15,169 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 15:15:15,177 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 15:16:31,659 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 16:36:32,961 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='83', direccion='Pedro Derbes, 660'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Viernes, hora=12:00
+2025-11-04 16:36:32,999 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:36:33,248 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:37:32,611 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Venerdì, hora=12:00
+2025-11-04 16:37:32,633 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:37:32,641 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:38:23,172 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Sábado, hora=22:00
+2025-11-04 16:38:23,188 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:38:23,191 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:38:37,133 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=22:00
+2025-11-04 16:38:37,142 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:38:37,146 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:40:51,156 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 16:56:11,682 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='3', direccion='25 De Mayo, 299'}, día=Miércoles, hora=12:30
+2025-11-04 16:56:11,712 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:56:11,856 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:27,138 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='7', direccion='8 De Marzo, 385'}, día=Miércoles, hora=12:30
+2025-11-04 16:56:27,161 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:56:27,167 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:30,602 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='7', direccion='8 De Marzo, 385'}, día=Viernes, hora=12:30
+2025-11-04 16:56:30,612 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:56:30,617 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:34,546 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='3', direccion='25 De Mayo, 299'}, día=Viernes, hora=12:30
+2025-11-04 16:56:34,555 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:56:34,559 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:39,466 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Viernes, hora=12:30
+2025-11-04 16:56:39,478 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:56:39,485 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:48,036 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='4', direccion='25 De Mayo, 693'}, día=Viernes, hora=12:30
+2025-11-04 16:56:48,044 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:56:48,049 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:56:50,620 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='6', direccion='28 De Julio, 311'}, día=Viernes, hora=12:30
+2025-11-04 16:56:50,628 INFO  [colectivo.interfaz.Controler] - Se encontraron 3 rutas posibles.
+2025-11-04 16:56:50,633 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:57:10,539 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='3', direccion='25 De Mayo, 299'}, día=Viernes, hora=12:30
+2025-11-04 16:57:10,547 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:57:10,551 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:57:13,797 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Viernes, hora=12:30
+2025-11-04 16:57:13,805 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 16:57:13,808 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:57:16,460 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Viernes, hora=12:30
+2025-11-04 16:57:16,470 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:57:16,474 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:57:19,908 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Viernes, hora=12:30
+2025-11-04 16:57:19,916 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 16:57:19,921 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 16:58:00,294 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Viernes, hora=null
+2025-11-04 16:58:00,321 ERROR [colectivo.interfaz.Controler] - Error al procesar la búsqueda de recorridos
+java.lang.NullPointerException: Cannot read field "hour" because "other" is null
+	at java.base/java.time.LocalTime.compareTo(LocalTime.java:1543)
+	at java.base/java.time.LocalTime.isAfter(LocalTime.java:1565)
+	at colectivo.logica.Calculo.lambda$obtenerHorario$4(Calculo.java:278)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:196)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:589)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at colectivo.logica.Calculo.obtenerHorario(Calculo.java:279)
+	at colectivo.logica.Calculo.buscarRutasConTransbordo(Calculo.java:181)
+	at colectivo.logica.Calculo.calcularRecorridosInternos(Calculo.java:55)
+	at colectivo.logica.Calculo.calcularRecorrido(Calculo.java:40)
+	at colectivo.aplicacion.Coordinador.desacopladorLogica(Coordinador.java:50)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:76)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:52)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Node.fireEvent(Node.java:9026)
+	at javafx.controls@25/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@25/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@25/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Scene$MouseHandler.process(Scene.java:4061)
+	at javafx.graphics@25/javafx.scene.Scene.processMouseEvent(Scene.java:1947)
+	at javafx.graphics@25/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2784)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:353)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:255)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:387)
+	at javafx.graphics@25/com.sun.glass.ui.View.handleMouseEvent(View.java:573)
+	at javafx.graphics@25/com.sun.glass.ui.View.notifyMouse(View.java:975)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-04 16:58:07,127 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Viernes, hora=null
+2025-11-04 16:58:07,135 ERROR [colectivo.interfaz.Controler] - Error al procesar la búsqueda de recorridos
+java.lang.NullPointerException: Cannot read field "hour" because "other" is null
+	at java.base/java.time.LocalTime.compareTo(LocalTime.java:1543)
+	at java.base/java.time.LocalTime.isAfter(LocalTime.java:1565)
+	at colectivo.logica.Calculo.lambda$obtenerHorario$4(Calculo.java:278)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:196)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:589)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at colectivo.logica.Calculo.obtenerHorario(Calculo.java:279)
+	at colectivo.logica.Calculo.buscarRutasConTransbordo(Calculo.java:181)
+	at colectivo.logica.Calculo.calcularRecorridosInternos(Calculo.java:55)
+	at colectivo.logica.Calculo.calcularRecorrido(Calculo.java:40)
+	at colectivo.aplicacion.Coordinador.desacopladorLogica(Coordinador.java:50)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:76)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:52)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Node.fireEvent(Node.java:9026)
+	at javafx.controls@25/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@25/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@25/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Scene$MouseHandler.process(Scene.java:4061)
+	at javafx.graphics@25/javafx.scene.Scene.processMouseEvent(Scene.java:1947)
+	at javafx.graphics@25/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2784)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:353)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:255)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:387)
+	at javafx.graphics@25/com.sun.glass.ui.View.handleMouseEvent(View.java:573)
+	at javafx.graphics@25/com.sun.glass.ui.View.notifyMouse(View.java:975)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-04 16:58:16,111 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Friday, hora=null
+2025-11-04 16:58:16,119 ERROR [colectivo.interfaz.Controler] - Error al procesar la búsqueda de recorridos
+java.lang.NullPointerException: Cannot read field "hour" because "other" is null
+	at java.base/java.time.LocalTime.compareTo(LocalTime.java:1543)
+	at java.base/java.time.LocalTime.isAfter(LocalTime.java:1565)
+	at colectivo.logica.Calculo.lambda$obtenerHorario$4(Calculo.java:278)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:196)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:589)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at colectivo.logica.Calculo.obtenerHorario(Calculo.java:279)
+	at colectivo.logica.Calculo.buscarRutasConTransbordo(Calculo.java:181)
+	at colectivo.logica.Calculo.calcularRecorridosInternos(Calculo.java:55)
+	at colectivo.logica.Calculo.calcularRecorrido(Calculo.java:40)
+	at colectivo.aplicacion.Coordinador.desacopladorLogica(Coordinador.java:50)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:76)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:52)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Node.fireEvent(Node.java:9026)
+	at javafx.controls@25/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@25/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@25/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Scene$MouseHandler.process(Scene.java:4061)
+	at javafx.graphics@25/javafx.scene.Scene.processMouseEvent(Scene.java:1947)
+	at javafx.graphics@25/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2784)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:353)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:255)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:387)
+	at javafx.graphics@25/com.sun.glass.ui.View.handleMouseEvent(View.java:573)
+	at javafx.graphics@25/com.sun.glass.ui.View.notifyMouse(View.java:975)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-04 16:58:22,048 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Venerdì, hora=null
+2025-11-04 16:58:22,055 ERROR [colectivo.interfaz.Controler] - Error al procesar la búsqueda de recorridos
+java.lang.NullPointerException: Cannot read field "hour" because "other" is null
+	at java.base/java.time.LocalTime.compareTo(LocalTime.java:1543)
+	at java.base/java.time.LocalTime.isAfter(LocalTime.java:1565)
+	at colectivo.logica.Calculo.lambda$obtenerHorario$4(Calculo.java:278)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:196)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:589)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at colectivo.logica.Calculo.obtenerHorario(Calculo.java:279)
+	at colectivo.logica.Calculo.buscarRutasConTransbordo(Calculo.java:181)
+	at colectivo.logica.Calculo.calcularRecorridosInternos(Calculo.java:55)
+	at colectivo.logica.Calculo.calcularRecorrido(Calculo.java:40)
+	at colectivo.aplicacion.Coordinador.desacopladorLogica(Coordinador.java:50)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:76)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:52)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Node.fireEvent(Node.java:9026)
+	at javafx.controls@25/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@25/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@25/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Scene$MouseHandler.process(Scene.java:4061)
+	at javafx.graphics@25/javafx.scene.Scene.processMouseEvent(Scene.java:1947)
+	at javafx.graphics@25/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2784)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:353)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:255)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:387)
+	at javafx.graphics@25/com.sun.glass.ui.View.handleMouseEvent(View.java:573)
+	at javafx.graphics@25/com.sun.glass.ui.View.notifyMouse(View.java:975)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-04 16:58:30,859 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:40:10,686 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:40:44,484 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-11-04 19:40:44,549 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 19:40:44,803 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 19:40:50,235 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:44:49,486 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:45:03,918 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.logica.Empresa.<init>(Empresa.java:40)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 19:45:13,924 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:119)
+	at colectivo.logica.Empresa.<init>(Empresa.java:41)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 19:45:23,928 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:130)
+	at colectivo.logica.Empresa.<init>(Empresa.java:41)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 19:45:33,988 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:88)
+	at colectivo.logica.Empresa.<init>(Empresa.java:42)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 19:45:43,997 ERROR [colectivo.dao.postgresql.TramoPostgresqlDAO] - Error al buscar todos los tramos
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:93)
+	at colectivo.logica.Empresa.<init>(Empresa.java:42)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 19:45:58,580 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:57:35,425 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.logica.Empresa.<init>(Empresa.java:40)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 19 more
+2025-11-04 19:57:45,430 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: El intento de conexión falló.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:613)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:199)
+	at colectivo.conexion.Conexion.getConnection(Conexion.java:44)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:83)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:119)
+	at colectivo.logica.Empresa.<init>(Empresa.java:41)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:29)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedFinishConnect(NioSocketImpl.java:547)
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:594)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+	at java.base/java.net.Socket.connect(Socket.java:659)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 20 more
+2025-11-04 19:57:53,444 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 19:58:11,240 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=null
+2025-11-04 19:58:11,290 ERROR [colectivo.interfaz.Controler] - Error al procesar la búsqueda de recorridos
+java.lang.NullPointerException: Cannot read field "hour" because "other" is null
+	at java.base/java.time.LocalTime.compareTo(LocalTime.java:1543)
+	at java.base/java.time.LocalTime.isAfter(LocalTime.java:1565)
+	at colectivo.logica.Calculo.lambda$obtenerHorario$4(Calculo.java:252)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:196)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214)
+	at java.base/java.util.stream.SortedOps$RefSortingSink.end(SortedOps.java:400)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.Sink$ChainedReference.end(Sink.java:261)
+	at java.base/java.util.stream.AbstractPipeline.copyIntoWithCancel(AbstractPipeline.java:589)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:574)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560)
+	at java.base/java.util.stream.FindOps$FindOp.evaluateSequential(FindOps.java:150)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265)
+	at java.base/java.util.stream.ReferencePipeline.findFirst(ReferencePipeline.java:683)
+	at colectivo.logica.Calculo.obtenerHorario(Calculo.java:253)
+	at colectivo.logica.Calculo.buscarRutasConTransbordo(Calculo.java:160)
+	at colectivo.logica.Calculo.calcularRecorridosInternos(Calculo.java:44)
+	at colectivo.logica.Calculo.calcularRecorrido(Calculo.java:35)
+	at colectivo.aplicacion.Coordinador.desacopladorLogica(Coordinador.java:31)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:65)
+	at colectivo.interfaz.Controler$1.handle(Controler.java:41)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:86)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:49)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Node.fireEvent(Node.java:9026)
+	at javafx.controls@25/javafx.scene.control.Button.fire(Button.java:203)
+	at javafx.controls@25/com.sun.javafx.scene.control.behavior.ButtonBehavior.mouseReleased(ButtonBehavior.java:207)
+	at javafx.controls@25/com.sun.javafx.scene.control.inputmap.InputMap.handle(InputMap.java:274)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler$NormalEventHandlerRecord.handleBubblingEvent(CompositeEventHandler.java:247)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventHandler.dispatchBubblingEvent(CompositeEventHandler.java:80)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:232)
+	at javafx.base@25/com.sun.javafx.event.EventHandlerManager.dispatchBubblingEvent(EventHandlerManager.java:189)
+	at javafx.base@25/com.sun.javafx.event.CompositeEventDispatcher.dispatchBubblingEvent(CompositeEventDispatcher.java:59)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:58)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.BasicEventDispatcher.dispatchEvent(BasicEventDispatcher.java:56)
+	at javafx.base@25/com.sun.javafx.event.EventDispatchChainImpl.dispatchEvent(EventDispatchChainImpl.java:114)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEventImpl(EventUtil.java:74)
+	at javafx.base@25/com.sun.javafx.event.EventUtil.fireEvent(EventUtil.java:54)
+	at javafx.base@25/javafx.event.Event.fireEvent(Event.java:199)
+	at javafx.graphics@25/javafx.scene.Scene$MouseHandler.process(Scene.java:4061)
+	at javafx.graphics@25/javafx.scene.Scene.processMouseEvent(Scene.java:1947)
+	at javafx.graphics@25/javafx.scene.Scene$ScenePeerListener.mouseEvent(Scene.java:2784)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:353)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler$MouseEventNotification.get(GlassViewEventHandler.java:255)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.QuantumToolkit.runWithoutRenderLock(QuantumToolkit.java:424)
+	at javafx.graphics@25/com.sun.javafx.tk.quantum.GlassViewEventHandler.handleMouseEvent(GlassViewEventHandler.java:387)
+	at javafx.graphics@25/com.sun.glass.ui.View.handleMouseEvent(View.java:573)
+	at javafx.graphics@25/com.sun.glass.ui.View.notifyMouse(View.java:975)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-04 19:58:19,017 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-11-04 19:58:19,044 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 19:58:21,277 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 19:58:23,179 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:12:22,972 ERROR [colectivo.aplicacion.Lanzar] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key view.mapTitle
+2025-11-04 20:13:19,828 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:16:22,874 ERROR [colectivo.aplicacion.Lanzar] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key view.mapTitle
+2025-11-04 20:16:44,830 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:17:40,920 ERROR [colectivo.aplicacion.Lanzar] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key view.mapTitle
+2025-11-04 20:17:47,027 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:17:49,392 ERROR [colectivo.aplicacion.Lanzar] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key view.mapTitle
+2025-11-04 20:17:59,889 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:21:25,791 ERROR [colectivo.aplicacion.Lanzar] - java.util.MissingResourceException: Can't find resource for bundle java.util.PropertyResourceBundle, key view.mapTitle
+2025-11-04 20:21:32,792 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:25:31,459 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-11-04 20:25:31,492 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:25:31,497 INFO  [colectivo.interfaz.Controler] - Búsqueda delegada al coordinador.
+2025-11-04 20:26:37,703 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:35:12,317 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Sábado, hora=08:00
+2025-11-04 20:35:12,352 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:35:12,490 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:37:22,480 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:40:26,626 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='4', direccion='25 De Mayo, 693'}, día=Miércoles, hora=12:00
+2025-11-04 20:40:26,656 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 20:40:26,803 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:41:25,503 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='4', direccion='25 De Mayo, 693'}, día=Mercoledì, hora=12:00
+2025-11-04 20:41:25,522 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 20:41:25,528 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:41:37,793 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='4', direccion='25 De Mayo, 693'}, día=Wednesday, hora=12:00
+2025-11-04 20:41:37,805 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-04 20:41:37,809 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:42:03,126 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='83', direccion='Pedro Derbes, 660'}, día=Wednesday, hora=12:00
+2025-11-04 20:42:03,137 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:42:03,146 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:42:31,808 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='83', direccion='Pedro Derbes, 660'}, día=Miércoles, hora=12:00
+2025-11-04 20:42:31,818 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:42:31,824 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:42:42,877 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='83', direccion='Pedro Derbes, 660'}, día=Mercoledì, hora=12:00
+2025-11-04 20:42:42,887 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:42:42,891 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:42:55,611 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:44:42,247 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=08:00
+2025-11-04 20:44:42,278 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:44:42,430 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:44:59,972 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:47:02,939 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-04 20:47:31,346 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Jueves, hora=08:00
+2025-11-04 20:47:31,378 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:47:31,519 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:47:59,993 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='83', direccion='Pedro Derbes, 660'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Jueves, hora=12:00
+2025-11-04 20:48:00,019 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:48:00,029 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:48:10,217 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='83', direccion='Pedro Derbes, 660'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Thursday, hora=12:00
+2025-11-04 20:48:10,230 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:48:10,236 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:48:15,246 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='83', direccion='Pedro Derbes, 660'}, destino=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, día=Giovedì, hora=12:00
+2025-11-04 20:48:15,256 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-04 20:48:15,261 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-04 20:48:17,440 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

@@ -5,13 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Recorrido {
-    //Atributos
     private LocalTime horaSalida;
     private int duracion; // duración en segundos
     private Linea linea;
     private List<Parada> paradas;
 
-    //Constructor
     public Recorrido(LocalTime horaSalida, Linea linea, Parada p1, Parada p2) {
         this.horaSalida = horaSalida;
         this.linea = linea;
@@ -21,13 +19,8 @@ public class Recorrido {
         this.duracion = 0;
     }
 
-    //Getters y setters
     public LocalTime getHoraSalida() {
         return horaSalida;
-    }
-
-    public void setHoraSalida(LocalTime horaSalida) {
-        this.horaSalida = horaSalida;
     }
 
     public int getDuracion() {
@@ -54,7 +47,6 @@ public class Recorrido {
         this.paradas = paradas;
     }
 
-    //Metodo para agregar una parada al recorrido
     public void agregarParada(Parada parada) {
         this.paradas.add(parada);
     }

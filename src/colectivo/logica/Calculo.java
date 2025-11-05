@@ -12,15 +12,10 @@ import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-/**
- * Clase que implementa la lógica de cálculo de recorridos entre paradas.
- * Soporta rutas directas, con transbordo y con conexión caminando.
- */
 public class Calculo {
 
     private static final Logger LOGGER = Logger.getLogger(Calculo.class);
 
-    // Método principal (API pública)
     public static List<List<Recorrido>> calcularRecorrido(
             Parada paradaOrigen,
             Parada paradaDestino,
@@ -40,28 +35,17 @@ public class Calculo {
         return calcularRecorridosInternos(origen, destino, diaSemana, horaLlegadaParada, datos.tramos());
     }
 
-    // ==========================================================
-    // ================ LÓGICA PRINCIPAL ========================
-    // ==========================================================
-
     private static List<List<Recorrido>> calcularRecorridosInternos(
             Parada origen, Parada destino, int diaSemana, LocalTime hora, Map<String, Tramo> tramos) {
 
-        // 1. Buscar rutas directas
         List<List<Recorrido>> rutas = buscarRutasDirectas(origen, destino, diaSemana, hora, tramos);
         if (!rutas.isEmpty()) return rutas;
 
-        // 2. Buscar rutas con transbordo
         rutas = buscarRutasConTransbordo(origen, destino, diaSemana, hora, tramos);
         if (!rutas.isEmpty()) return rutas;
 
-        // 3. Buscar rutas con conexión caminando
         return buscarRutasConexionCaminando(origen, destino, diaSemana, hora, tramos);
     }
-
-    // ==========================================================
-    // ================ MÉTODOS DE CARGA DE DATOS ===============
-    // ==========================================================
 
     private static DatosRed cargarDatos(Map<String, Tramo> tramosDestino) {
         try {
@@ -114,7 +98,7 @@ public class Calculo {
             String clave = inicio.getCodigo() + "-" + fin.getCodigo();
             tramos.put(clave, t);
 
-            if (t.getTipo() == 2) { // conexión caminando
+            if (t.getTipo() == 2) {
                 inicio.addParadaCaminando(fin);
                 fin.addParadaCaminando(inicio);
 
@@ -126,11 +110,6 @@ public class Calculo {
     }
 
     private record DatosRed(Map<String, Parada> paradasPorCodigo, Map<String, Tramo> tramos) {}
-
-
-    // ==========================================================
-    // ================ RUTAS: DIRECTAS / TRANSBORDO / CAMINAR ==
-    // ==========================================================
 
     private static List<List<Recorrido>> buscarRutasDirectas(
             Parada origen, Parada destino, int dia, LocalTime hora, Map<String, Tramo> tramos) {
@@ -245,10 +224,6 @@ public class Calculo {
         }
         return resultados;
     }
-
-    // ==========================================================
-    // ================ UTILITARIOS =============================
-    // ==========================================================
 
     private static int buscarIndice(List<Parada> paradas, Parada parada) {
         for (int i = 0; i < paradas.size(); i++)

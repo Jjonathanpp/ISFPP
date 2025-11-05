@@ -1,8 +1,8 @@
 package colectivo.dao.secuencial;
 
 import colectivo.dao.ParadaDAO;
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Parada;
 import org.apache.log4j.Logger;
 
@@ -18,7 +18,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
     public ParadaSecuencialDAO() {
         ResourceBundle rb = ResourceBundle.getBundle("config");
-        name = rb.getString("parada"); // "parada_PM.txt"
+        name = rb.getString("parada");
     }
 
     private Map<Integer, Parada> leerDesdeArchivo() {
@@ -64,7 +64,7 @@ public class ParadaSecuencialDAO implements ParadaDAO {
 
     private void escribirArchivo(Map<Integer, Parada> mapa) {
         try (Formatter outFile = new Formatter(new File("src/resources/" + name), "UTF-8")) {
-            mapa.entrySet().stream().sorted(Map.Entry.comparingByKey()) // ordena por ID
+            mapa.entrySet().stream().sorted(Map.Entry.comparingByKey())
                     .forEach(entry -> {
                         Parada p = entry.getValue();
                         outFile.format("%s;%s;%.6f;%.6f;%n",
@@ -76,9 +76,9 @@ public class ParadaSecuencialDAO implements ParadaDAO {
     }
 
     @Override
-    public void insertar(Parada parada) throws InstanciaExisteEnBDException {
+    public void insertar(Parada parada) throws InstanciaExisteException {
         if (existe(parada.getCodigo())) {
-            throw new InstanciaExisteEnBDException("Ya existe la parada con código: " + parada.getCodigo());
+            throw new InstanciaExisteException("Ya existe la parada con código: " + parada.getCodigo());
         }
 
         Map<Integer, Parada> mapa = leerDesdeArchivo();
@@ -106,9 +106,9 @@ public class ParadaSecuencialDAO implements ParadaDAO {
     }
 
     @Override
-    public void borrar(Parada parada) throws InstanciaNoExisteEnBDException {
+    public void borrar(Parada parada) throws InstanciaNoExisteException {
         if (!existe(parada.getCodigo())) {
-            throw new InstanciaNoExisteEnBDException("No existe la parada con código: " + parada.getCodigo());
+            throw new InstanciaNoExisteException("No existe la parada con código: " + parada.getCodigo());
         }
 
         Map<Integer, Parada> mapa = leerDesdeArchivo();
@@ -124,7 +124,6 @@ public class ParadaSecuencialDAO implements ParadaDAO {
         return leerDesdeArchivo();
     }
 
-    // Verifica si ya existe la parada con ese código antes de insertar
     private boolean existe(String codigo) {
         Map<Integer, Parada> mapa = leerDesdeArchivo();
         try {

@@ -2,8 +2,8 @@ package colectivo.dao.postgresql;
 
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Parada;
 import org.apache.log4j.Logger;
 
@@ -19,9 +19,9 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
     private static final Logger LOGGER = Logger.getLogger(ParadaPostgresqlDAO.class);
 
     @Override
-    public void insertar(Parada parada) throws InstanciaExisteEnBDException {
+    public void insertar(Parada parada) throws InstanciaExisteException {
         if (existe(parada.getCodigo())) {
-            throw new InstanciaExisteEnBDException("La parada con código " + parada.getCodigo() + " ya existe en la base de datos.");
+            throw new InstanciaExisteException("La parada con código " + parada.getCodigo() + " ya existe en la base de datos.");
         }
         String sql = "INSERT INTO parada (codigo, direccion, latitud, longitud) VALUES (?, ?, ?, ?)";
         try {
@@ -58,9 +58,9 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
     }
 
     @Override
-    public void borrar(Parada parada) throws InstanciaNoExisteEnBDException {
+    public void borrar(Parada parada) throws InstanciaNoExisteException {
         if (!existe(parada.getCodigo())) {
-            throw new InstanciaNoExisteEnBDException("La parada con código " + parada.getCodigo() + " no existe en la base de datos.");
+            throw new InstanciaNoExisteException("La parada con código " + parada.getCodigo() + " no existe en la base de datos.");
         }
         String sql = "DELETE FROM parada WHERE codigo = ?";
         try {
@@ -98,7 +98,6 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         return resultado;
     }
 
-    // Verifica si ya existe la parada con ese código antes de insertar
     private boolean existe(String codigo) {
         String sql = "SELECT 1 FROM parada WHERE codigo = ?";
         try (Connection conn = Conexion.getInstancia().getConnection();

@@ -6,15 +6,11 @@ import java.util.Objects;
 
 public class Linea {
 
-    //atributos
     private String codigo;
     private String nombre;
-
     private List<Frecuencia> frecuencias;
-
     private List<Parada> paradas;
 
-    //Constructor
     public Linea(String codigo, String nombre, List<Parada> paradas) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -27,7 +23,6 @@ public class Linea {
         this.paradas = new ArrayList<>(paradas);
     }
 
-    //getters y setters
     public String getCodigo() {
         return codigo;
     }
@@ -48,10 +43,6 @@ public class Linea {
         return frecuencias;
     }
 
-    public void setFrecuencias(List<Frecuencia> frecuencias) {
-        this.frecuencias = frecuencias;
-    }
-
     public List<Parada> getParadas() {
         return paradas;
     }
@@ -60,15 +51,10 @@ public class Linea {
         this.paradas = paradas;
     }
 
-    //metodos
     public void agregarFrecuencia(Frecuencia frecuencia) {
         this.frecuencias.add(frecuencia);
     }
-    public void agregarParada(Parada parada) {
-        this.paradas.add(parada);
-    }
 
-    // equals/hashCode basados en 'codigo' (identificador lógico)
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

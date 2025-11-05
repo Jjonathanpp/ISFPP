@@ -1,18 +1,12 @@
 package colectivo.modelo;
 
-import java.time.LocalTime;
-
 public class Tramo {
 
-    //atributos
     private int tiempo;
     private int tipo;
-
     private Parada inicio;
     private Parada fin;
 
-
-    //Constructor
     public Tramo(int tiempo, int tipo, Parada inicio, Parada fin) {
         this.tiempo = tiempo;
         this.tipo = tipo;
@@ -20,7 +14,6 @@ public class Tramo {
         this.fin = fin;
     }
 
-    //Getters y setters
     public int getTiempo() {
         return tiempo;
     }

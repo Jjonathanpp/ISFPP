@@ -1,7 +1,7 @@
 package colectivo.dao;
 
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Linea;
 
 import java.util.Map;
@@ -9,11 +9,11 @@ import java.util.Map;
 public interface LineaDAO {
 
 
-    void insertar(Linea linea) throws InstanciaExisteEnBDException;
+    void insertar(Linea linea) throws InstanciaExisteException;
 
     void actualizar(Linea linea);
 
-    void borrar(Linea linea) throws InstanciaNoExisteEnBDException;
+    void borrar(Linea linea) throws InstanciaNoExisteException;
 
     Map<String, Linea> buscarTodos();
 }

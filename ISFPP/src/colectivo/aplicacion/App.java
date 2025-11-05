@@ -1,7 +1,6 @@
 package colectivo.aplicacion;
 import colectivo.interfaz.Controler;
 
-import colectivo.interfaz.VistaInterfaz;
 import colectivo.logica.Empresa;
 import javafx.application.Application;
 import javafx.scene.Scene;

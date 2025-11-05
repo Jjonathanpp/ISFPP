@@ -4,20 +4,16 @@ import java.time.LocalTime;
 
 public class Frecuencia {
 
-    //Atributos
     private int diaSemana;
     private LocalTime hora;
-
     private Linea linea;
 
-    //Constructor
     public Frecuencia(Linea linea, int diaSemana, LocalTime hora) {
         this.diaSemana = diaSemana;
         this.hora = hora;
         this.linea = linea;
     }
 
-    //getters y setters
     public int getDiaSemana() {
         return diaSemana;
     }

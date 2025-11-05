@@ -2,7 +2,7 @@ package colectivo.dao.secuencial;
 
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
 import org.apache.log4j.Logger;
@@ -20,15 +20,13 @@ public class TramoSecuencialDAO implements TramoDAO {
     private static final Logger LOGGER = Logger.getLogger(TramoSecuencialDAO.class);
 
     private final String name;
-    private final ParadaDAO paradaDAO;  // para resolver id -> Parada
+    private final ParadaDAO paradaDAO;
 
     public TramoSecuencialDAO() {
         ResourceBundle rb = ResourceBundle.getBundle("config");
         this.name = rb.getString("tramo");
         this.paradaDAO = new ParadaSecuencialDAO();
     }
-
-    /* ===================== Helpers de clave ===================== */
 
     private String keyFromIds(int idIni, int idFin, int tipo) {
         return idIni + ";" + idFin + ";" + tipo;
@@ -40,9 +38,6 @@ public class TramoSecuencialDAO implements TramoDAO {
         return keyFromIds(idIni, idFin, tipo);
     }
 
-    /* ============ Lectura / Escritura del archivo ============== */
-
-    // Lee todo: Map<"inicio;fin;tipo", Tramo>
     private Map<String, Tramo> leerDesdeArchivo() {
         Map<String, Tramo> mapa = new HashMap<>();
         Map<Integer, Parada> idxParadas = paradaDAO.buscarTodos();
@@ -74,10 +69,8 @@ public class TramoSecuencialDAO implements TramoDAO {
         return mapa;
     }
 
-    // Escribe todo el Map al archivo (orden: inicio, fin, tipo)
     private void escribirArchivo(Map<String, Tramo> mapa) {
         try (Formatter out = new Formatter(new File("src/resources/" + name), "UTF-8")) {
-            //Ordena los Tramos 1.º por IdIni, si son iguales por IdFin y si también son iguales por tipo(1 o 2)
             mapa.values().stream()
                     .sorted(Comparator
                             .comparing((Tramo t) -> Integer.parseInt(t.getInicio().getCodigo()))
@@ -94,9 +87,6 @@ public class TramoSecuencialDAO implements TramoDAO {
         }
     }
 
-    /* ================== Validaciones de existencia ================= */
-
-    // True si la parada EXISTE (por código String)
     private boolean existeParada(String codigoParada) {
         try {
             int id = Integer.parseInt(codigoParada);
@@ -106,12 +96,9 @@ public class TramoSecuencialDAO implements TramoDAO {
         }
     }
 
-    // True si el tramo EXISTE (misma identidad: inicio;fin;tipo)
     private boolean existeTramo(String codIni, String codFin, int tipo) {
         return leerDesdeArchivo().containsKey(keyFromParadas(codIni, codFin, tipo));
     }
-
-    /* ======================== Métodos del DAO ======================= */
 
     @Override
     public void insertar(Tramo tramo) {
@@ -156,7 +143,7 @@ public class TramoSecuencialDAO implements TramoDAO {
     }
 
     @Override
-    public void borrar(Tramo tramo) throws InstanciaNoExisteEnBDException {
+    public void borrar(Tramo tramo) throws InstanciaNoExisteException {
         String codIni = tramo.getInicio().getCodigo();
         String codFin = tramo.getFin().getCodigo();
         int tipo      = tramo.getTipo();
@@ -165,7 +152,7 @@ public class TramoSecuencialDAO implements TramoDAO {
         Map<String, Tramo> mapa = leerDesdeArchivo();
 
         if (!mapa.containsKey(k)) {
-            throw new InstanciaNoExisteEnBDException(
+            throw new InstanciaNoExisteException(
                     "No existe el tramo: " + codIni + " → " + codFin + " (tipo " + tipo + ")"
             );
         }

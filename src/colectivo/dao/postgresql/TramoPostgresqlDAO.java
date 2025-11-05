@@ -3,8 +3,8 @@ package colectivo.dao.postgresql;
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Tramo;
 import org.apache.log4j.Logger;
@@ -21,14 +21,12 @@ public class TramoPostgresqlDAO implements TramoDAO {
     private static final Logger LOGGER = Logger.getLogger(TramoPostgresqlDAO.class);
 
     @Override
-    public void insertar(Tramo tramo) throws InstanciaNoExisteEnBDException, InstanciaExisteEnBDException {
-        // Verifico que existan ambas paradas
+    public void insertar(Tramo tramo) throws InstanciaNoExisteException, InstanciaExisteException {
         if (!existeParada(tramo.getInicio().getCodigo()) || !existeParada(tramo.getFin().getCodigo())) {
-            throw new InstanciaNoExisteEnBDException("Una o ambas paradas del tramo no existen en la base de datos.");
+            throw new InstanciaNoExisteException("Una o ambas paradas del tramo no existen en la base de datos.");
         }
-        // Verifico que el tramo no exista ya
         if (existeTramo(tramo.getInicio().getCodigo(), tramo.getFin().getCodigo(), tramo.getTipo())) {
-            throw new InstanciaExisteEnBDException("El tramo ya existe en la base de datos.");
+            throw new InstanciaExisteException("El tramo ya existe en la base de datos.");
         }
         String sql = "INSERT INTO tramo (inicio, destino, tiempo, tipo) VALUES (?, ?, ?, ?)";
         try {
@@ -65,10 +63,9 @@ public class TramoPostgresqlDAO implements TramoDAO {
     }
 
     @Override
-    public void borrar(Tramo tramo) throws InstanciaNoExisteEnBDException {
-        // Verifico que el tramo no exista ya
+    public void borrar(Tramo tramo) throws InstanciaNoExisteException {
         if (!existeTramo(tramo.getInicio().getCodigo(), tramo.getFin().getCodigo(), tramo.getTipo())) {
-            throw new InstanciaNoExisteEnBDException("El tramo no existe en la base de datos.");
+            throw new InstanciaNoExisteException("El tramo no existe en la base de datos.");
         }
         String sql = "DELETE FROM tramo WHERE inicio = (SELECT codigo FROM parada WHERE codigo = ?) AND destino = (SELECT codigo FROM parada WHERE codigo = ?)";
         try {
@@ -117,7 +114,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
         return resultado;
     }
 
-    // Verifica si una parada existe
     private boolean existeParada(String codigoParada) {
         String sql = "SELECT 1 FROM parada WHERE codigo = ?";
         try (Connection conn = Conexion.getInstancia().getConnection();
@@ -132,7 +128,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
         return false;
     }
 
-    // Verifica si el tramo ya existe
     private boolean existeTramo(String inicio, String destino, int tipo) {
         String sql = "SELECT 1 FROM tramo WHERE inicio = ? AND destino = ? AND tipo = ?";
         try (Connection conn = Conexion.getInstancia().getConnection();

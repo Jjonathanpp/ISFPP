@@ -26,7 +26,6 @@ public class Conexion {
 
     private Conexion() throws SQLException {
         this.url = String.format("jdbc:postgresql://%s:%s/%s", HOST, PORT, DB);
-        // Opcional: cargar el driver explícitamente (no suele ser necesario con JDBC 4+)
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException e) {
@@ -60,16 +59,5 @@ public class Conexion {
         LOGGER.info("Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.");
         instancia = null;
     }
-
-    /**
-     * Explicación clase Conexion:
-     * Es una fabrica singleton que encapsula los parametros de conexión y crea nuevas conexiones JDBC
-     * bajo demanda.
-     * Cada llamada a getConnection() devuelve una Connection nueva (no hay una Connection compartida).
-     * NO es un singleton de Connection porque devolver una conexión compartida trae problemas de transacciones.
-     * Y se hace singleton para evitar repetir la construcción de URL y el intento de carga del driver.
-     * ¿Por qué no se comparten conexiones?
-     * Porque las conexiones JDBC no son thread-safe y compartirlas puede causar problemas de concurrencia.
-     */
 }
 

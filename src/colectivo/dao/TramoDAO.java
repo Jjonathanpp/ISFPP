@@ -1,18 +1,18 @@
 package colectivo.dao;
 
-import colectivo.excepciones.InstanciaExisteEnBDException;
-import colectivo.excepciones.InstanciaNoExisteEnBDException;
+import colectivo.excepciones.InstanciaExisteException;
+import colectivo.excepciones.InstanciaNoExisteException;
 import colectivo.modelo.Tramo;
 
 import java.util.Map;
 
 public interface TramoDAO {
 
-    void insertar (Tramo tramo) throws InstanciaNoExisteEnBDException, InstanciaExisteEnBDException;
+    void insertar (Tramo tramo) throws InstanciaNoExisteException, InstanciaExisteException;
 
     void actualizar (Tramo tramo);
 
-    void borrar(Tramo tramo) throws InstanciaNoExisteEnBDException;
+    void borrar(Tramo tramo) throws InstanciaNoExisteException;
 
     Map<String, Tramo> buscarTodos();
 }
