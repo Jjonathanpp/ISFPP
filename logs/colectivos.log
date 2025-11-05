@@ -945,3 +945,110 @@ Caused by: java.net.UnknownHostException: pgs.fi.mdn.unp.edu.ar
 2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.MapRouteDialog] - MapRouteDialog: prepared line for route 0 with 9 points
 2025-11-03 12:16:19,790 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-03 12:16:36,606 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:11:25,778 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=12:30
+2025-11-05 14:11:25,807 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 14:11:25,935 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:11:29,258 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 15:03:13,845 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:14,016 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:03:14,037 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:14,822 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:14,974 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:03:14,980 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:26,886 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:27,038 INFO  [colectivo.interfaz.Controler] - Se encontraron 5 rutas posibles.
+2025-11-05 15:03:27,045 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:27,330 WARN  [colectivo.interfaz.MapRouteDialog] - Fallo ORS, usando línea recta. Motivo: ORS error 400: {"error":{"code":2004,"message":"Request parameters exceed the server configuration limits. The approximated route distance must not be greater than 6000000.0 meters."},"info":{"engine":{"build_date":"2025-06-06T15:39:25Z","graph_version":"2","graph_date":"2025-11-02T11:46:39Z","osm_date":"2025-10-27T00:59:56Z","version":"9.3.0"},"timestamp":1762365808670}}
+2025-11-05 15:03:42,396 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:42,557 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:03:42,561 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:48,412 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='3', direccion='25 De Mayo, 299'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:48,565 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:03:48,568 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:51,239 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='4', direccion='25 De Mayo, 693'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:51,391 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:03:51,394 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:54,533 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Miércoles, hora=12:30
+2025-11-05 15:03:54,681 INFO  [colectivo.interfaz.Controler] - Se encontraron 5 rutas posibles.
+2025-11-05 15:03:54,685 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:03:57,934 WARN  [colectivo.interfaz.MapRouteDialog] - Fallo ORS, usando línea recta. Motivo: ORS error 400: {"error":{"code":2004,"message":"Request parameters exceed the server configuration limits. The approximated route distance must not be greater than 6000000.0 meters."},"info":{"engine":{"build_date":"2025-06-06T15:39:25Z","graph_version":"2","graph_date":"2025-11-02T11:46:39Z","osm_date":"2025-10-27T00:59:56Z","version":"9.3.0"},"timestamp":1762365839240}}
+2025-11-05 15:04:10,222 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='6', direccion='28 De Julio, 311'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:10,381 INFO  [colectivo.interfaz.Controler] - Se encontraron 3 rutas posibles.
+2025-11-05 15:04:10,385 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:19,026 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='7', direccion='8 De Marzo, 385'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:19,398 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:19,403 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:23,267 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:23,429 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:23,432 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:28,110 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:28,264 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:28,266 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:31,835 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:31,990 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:31,993 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:34,075 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:34,223 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:34,226 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:36,577 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='9', direccion='Abraham Mathews, 2525'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:36,726 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:04:36,729 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:43,640 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:43,784 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:43,788 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:45,856 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='13', direccion='Alto Río Senguer, 1311'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:46,005 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:46,011 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:47,681 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='14', direccion='Avenida Domec García Norte, 239'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:47,832 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:47,835 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:49,576 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='22', direccion='Avenida Julio Argentino Roca, 2599'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:49,724 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:49,727 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:51,794 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='32', direccion='Caña Colihue, 1184'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:51,944 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:51,946 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:54,049 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:54,192 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:54,195 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:55,679 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:55,830 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:55,833 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:04:57,682 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='10', direccion='Agustín Pujol, 284'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Miércoles, hora=12:30
+2025-11-05 15:04:57,829 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:04:57,831 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:01,171 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='20', direccion='Avenida Julio Argentino Roca, 1615'}, destino=Parada{codigo='29', direccion='Bouchard, 880'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:01,319 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:05:01,322 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:24,360 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='20', direccion='Avenida Julio Argentino Roca, 1615'}, destino=Parada{codigo='200', direccion='carrefour'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:24,509 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:05:24,512 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:27,209 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='200', direccion='carrefour'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:27,354 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:05:27,356 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:30,487 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='39', direccion='Dorrego, 700'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:30,631 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 15:05:30,633 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:31,218 WARN  [colectivo.interfaz.MapRouteDialog] - Fallo ORS, usando línea recta. Motivo: ORS error 404: {"error":{"code":2010,"message":"Could not find routable point within a radius of 350.0 meters of specified coordinate 3: -65.0249440 -42.7576610."},"info":{"engine":{"build_date":"2025-06-06T15:39:25Z","graph_version":"2","graph_date":"2025-11-02T11:46:39Z","osm_date":"2025-10-27T00:59:56Z","version":"9.3.0"},"timestamp":1762365932560}}
+2025-11-05 15:05:32,866 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='52', direccion='General Mosconi, 100'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:33,020 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:05:33,023 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:36,214 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='63', direccion='Lewis Jones, 1336'}, día=Miércoles, hora=12:30
+2025-11-05 15:05:36,373 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:05:36,379 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:05:55,757 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='6', direccion='28 De Julio, 311'}, día=Viernes, hora=12:30
+2025-11-05 15:05:55,906 INFO  [colectivo.interfaz.Controler] - Se encontraron 3 rutas posibles.
+2025-11-05 15:05:55,909 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:06:09,885 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Viernes, hora=12:30
+2025-11-05 15:06:10,028 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:06:10,031 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:07:52,691 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='8', direccion='Aarón Jenkins, 219'}, día=Viernes, hora=12:30
+2025-11-05 15:07:52,840 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:07:52,843 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:08:08,148 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='7', direccion='8 De Marzo, 385'}, destino=Parada{codigo='11', direccion='Agustín Pujol, 374'}, día=Viernes, hora=12:30
+2025-11-05 15:08:08,290 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 15:08:08,295 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:08:22,396 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Viernes, hora=12:30
+2025-11-05 15:08:22,533 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 15:08:22,536 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:11:46,088 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
