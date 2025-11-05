@@ -2181,3 +2181,984 @@ java.lang.NullPointerException: Cannot read field "hour" because "other" is null
 2025-11-05 16:04:15,925 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
 2025-11-05 16:04:15,942 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-05 16:04:26,096 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 17:14:55,679 ERROR [colectivo.aplicacion.Lanzar] - java.lang.RuntimeException: Error creando instancia para: PARADA
+2025-11-05 17:15:20,861 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 17:15:36,505 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='6', direccion='Ameghino y Costanera'}, día=Martes, hora=10:00
+2025-11-05 17:15:36,595 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 17:15:36,720 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:15:43,098 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='5', direccion='Alvear y Sarmiento'}, día=Martes, hora=10:00
+2025-11-05 17:15:43,120 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 17:15:43,169 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:15:45,578 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='11', direccion='Ohiggins y 25 de mayo'}, día=Martes, hora=10:00
+2025-11-05 17:15:45,604 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:15:45,627 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:19,712 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='11', direccion='Ohiggins y 25 de mayo'}, día=Tuesday, hora=10:00
+2025-11-05 17:17:19,726 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:17:19,741 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:24,609 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='11', direccion='Ohiggins y 25 de mayo'}, día=Martedì, hora=10:00
+2025-11-05 17:17:24,630 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:17:24,644 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:29,714 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='4', direccion='Pasteur y Av. Alvear'}, día=Martedì, hora=10:00
+2025-11-05 17:17:29,730 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 17:17:29,743 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:33,944 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='4', direccion='Pasteur y Av. Alvear'}, día=Martedì, hora=10:00
+2025-11-05 17:17:33,959 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 17:17:33,974 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:36,688 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='19', direccion='universidad'}, día=Martedì, hora=10:00
+2025-11-05 17:17:36,698 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:17:36,708 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:17:52,388 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='19', direccion='universidad'}, día=Martes, hora=10:00
+2025-11-05 17:17:52,408 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:17:52,424 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:18:09,922 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 17:31:41,771 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='6', direccion='Ameghino y Costanera'}, día=Martes, hora=10:00
+2025-11-05 17:31:41,884 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:31:42,021 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:32:05,469 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='1', direccion='Av. Alvear y Guido Spano'}, día=Martes, hora=10:00
+2025-11-05 17:32:05,495 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 17:32:05,542 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:32:08,044 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='15', direccion='Baden 1'}, día=Martes, hora=10:00
+2025-11-05 17:32:08,062 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 17:32:08,075 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 17:32:21,657 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 18:11:55,570 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='11', direccion='Ohiggins y 25 de mayo'}, día=Martes, hora=12:00
+2025-11-05 18:11:55,637 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 18:11:55,720 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 18:12:35,520 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:14:03,877 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='13', direccion='Ant Argentina y Ameghino'}, día=Lunes, hora=09:00
+2025-11-05 19:14:03,937 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 19:14:04,021 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:18:25,547 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:32:52,466 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:33:03,103 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:33:35,745 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:33:49,476 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Lunes, hora=10:00
+2025-11-05 19:33:49,728 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 19:33:49,807 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:33:54,693 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:34:23,955 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:34:30,386 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.logica.Empresa.<init>(Empresa.java:37)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:34:30,409 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:121)
+	at colectivo.logica.Empresa.<init>(Empresa.java:38)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:34:30,420 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 44
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:131)
+	at colectivo.logica.Empresa.<init>(Empresa.java:38)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:34:30,428 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:90)
+	at colectivo.logica.Empresa.<init>(Empresa.java:39)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:34:30,453 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 1->2: inicio=null, destino=null
+2025-11-05 19:34:30,453 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 2->3: inicio=null, destino=null
+2025-11-05 19:34:30,453 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 3->4: inicio=null, destino=null
+2025-11-05 19:34:30,453 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 4->5: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 5->6: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 6->7: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 7->8: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 8->9: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 9->10: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 10->11: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 11->12: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 12->13: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 13->14: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 14->15: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 15->16: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 16->17: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 17->18: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 18->19: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 19->20: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 20->21: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 21->22: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 22->23: inicio=null, destino=null
+2025-11-05 19:34:30,454 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 23->24: inicio=null, destino=null
+2025-11-05 19:34:30,455 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 24->25: inicio=null, destino=null
+2025-11-05 19:34:30,455 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 25->26: inicio=null, destino=null
+2025-11-05 19:34:30,455 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 26->27: inicio=null, destino=null
+2025-11-05 19:34:30,455 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 27->28: inicio=null, destino=null
+2025-11-05 19:34:30,455 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 28->29: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 29->30: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 30->31: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 31->32: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 32->33: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 33->34: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 34->1: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 35->36: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 36->37: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 37->38: inicio=null, destino=null
+2025-11-05 19:34:30,456 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 38->39: inicio=null, destino=null
+2025-11-05 19:34:30,458 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 39->40: inicio=null, destino=null
+2025-11-05 19:34:30,458 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 40->41: inicio=null, destino=null
+2025-11-05 19:34:30,458 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 41->42: inicio=null, destino=null
+2025-11-05 19:34:30,458 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 42->43: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 43->44: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 44->45: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 45->46: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 46->47: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 47->48: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 48->49: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 49->50: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 50->51: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 51->52: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 52->53: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 53->54: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 54->55: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 55->56: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 56->218: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 56->57: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 57->58: inicio=null, destino=null
+2025-11-05 19:34:30,459 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 58->59: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 59->60: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 60->61: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 61->62: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 62->63: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 63->64: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 64->65: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 65->66: inicio=null, destino=null
+2025-11-05 19:34:30,460 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 66->67: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->68: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 68->69: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 69->70: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 70->71: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 71->72: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 72->73: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 73->74: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 74->75: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 75->76: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 76->77: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 77->78: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 78->79: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 79->80: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 80->81: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 81->82: inicio=null, destino=null
+2025-11-05 19:34:30,462 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 82->83: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 83->84: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 84->85: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 85->86: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 86->87: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 87->88: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 88->89: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 89->90: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 90->91: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 91->92: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 92->93: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 93->94: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 94->95: inicio=null, destino=null
+2025-11-05 19:34:30,464 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 95->96: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 96->97: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 97->98: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 98->99: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 99->100: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 100->101: inicio=null, destino=null
+2025-11-05 19:34:30,465 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 101->102: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 102->21: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 23->103: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 103->104: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 104->105: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 105->106: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 106->35: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 107->108: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 108->109: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 109->110: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 110->111: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 111->112: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 112->113: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 113->114: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 114->115: inicio=null, destino=null
+2025-11-05 19:34:30,466 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 115->116: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 116->117: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 117->118: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 118->119: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 119->120: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 120->121: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 121->122: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 122->123: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 123->124: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 124->125: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 125->126: inicio=null, destino=null
+2025-11-05 19:34:30,469 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 126->127: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 127->128: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 128->129: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 129->130: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 130->131: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 131->132: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 132->133: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 133->134: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 134->135: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 135->136: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 136->137: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 137->138: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 138->139: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 139->140: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 140->141: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 141->142: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 142->143: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 143->144: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 144->145: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 145->146: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 146->147: inicio=null, destino=null
+2025-11-05 19:34:30,470 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 147->148: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 148->149: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 149->150: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 150->151: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 151->152: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 152->153: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 153->154: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 154->155: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 155->156: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 156->157: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 157->152: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 152->158: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 158->159: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 159->160: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 160->161: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 161->162: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->163: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 163->145: inicio=null, destino=null
+2025-11-05 19:34:30,471 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 145->164: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 164->165: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 165->166: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 166->167: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 167->168: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 168->140: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 140->169: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 169->170: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 170->171: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 171->172: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 172->173: inicio=null, destino=null
+2025-11-05 19:34:30,472 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 173->174: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 174->175: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 175->176: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 176->177: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 177->178: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->179: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 179->180: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 180->181: inicio=null, destino=null
+2025-11-05 19:34:30,473 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 181->182: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 182->183: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 183->184: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 184->185: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 185->186: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 186->187: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 187->188: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 188->189: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 189->190: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 190->191: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 191->192: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 192->193: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 193->194: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 194->195: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 195->196: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 196->197: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 197->198: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 198->199: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 199->200: inicio=null, destino=null
+2025-11-05 19:34:30,474 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 200->201: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 201->202: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 202->203: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 203->204: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 205->107: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 107->206: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 206->110: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 112->207: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 207->208: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 208->209: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 209->10: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 12->210: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 210->211: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 211->212: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 212->213: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 213->214: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 214->215: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 215->51: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 51->106: inicio=null, destino=null
+2025-11-05 19:34:30,475 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 35->53: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 53->218: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 218->219: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 219->220: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 220->67: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 68->221: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 221->72: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 72->222: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 222->223: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 223->77: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 77->85: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 85->224: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 224->94: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 94->90: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 91->225: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 225->226: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 226->227: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 227->228: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 228->92: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 96->67: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->230: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 230->231: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 231->67: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->75: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 75->229: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 229->239: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 239->240: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 240->103: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 105->233: inicio=null, destino=null
+2025-11-05 19:34:30,476 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 233->216: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 216->217: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 217->233: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 233->53: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 54->177: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->235: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 235->236: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 236->189: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 191->237: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 237->238: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 238->111: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 111->110: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 110->234: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 234->204: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 204->232: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 109->241: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 241->242: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 242->243: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 243->113: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 113->244: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 244->245: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 245->246: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 246->247: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 247->116: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 116->259: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 259->128: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 131->248: inicio=null, destino=null
+2025-11-05 19:34:30,477 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 248->249: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 249->250: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 250->251: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 251->252: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 252->253: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 253->254: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 254->255: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 255->161: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->256: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 256->257: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 257->258: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 258->151: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 153->152: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 158->260: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 260->257: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 257->256: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 256->162: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->148: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 148->261: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 261->262: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 262->263: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 263->264: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 264->265: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 265->266: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 266->267: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 267->268: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 268->269: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 269->101: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 101->270: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 270->271: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 271->272: inicio=null, destino=null
+2025-11-05 19:34:30,478 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 272->296: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 296->132: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 133->216: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 216->273: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 273->274: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 274->275: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 275->139: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 139->276: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 276->277: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 277->278: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 278->279: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 279->280: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 280->145: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 261->281: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 281->282: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 282->283: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 283->284: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 284->285: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 285->286: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 286->287: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 287->288: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 288->289: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 289->177: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->290: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 290->291: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 291->292: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 292->184: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 188->294: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 294->189: inicio=null, destino=null
+2025-11-05 19:34:30,479 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 238->200: inicio=null, destino=null
+2025-11-05 19:34:30,480 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 13->236: inicio=null, destino=null
+2025-11-05 19:34:57,325 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:35:03,678 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.logica.Empresa.<init>(Empresa.java:37)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:35:03,686 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:121)
+	at colectivo.logica.Empresa.<init>(Empresa.java:38)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:35:03,693 ERROR [colectivo.dao.postgresql.LineaPostgresqlDAO] - Error al buscar todas las líneas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 44
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.LineaPostgresqlDAO.buscarTodos(LineaPostgresqlDAO.java:131)
+	at colectivo.logica.Empresa.<init>(Empresa.java:38)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:35:03,708 ERROR [colectivo.dao.postgresql.ParadaPostgresqlDAO] - Error al buscar todas las paradas
+org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
+  Position: 67
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2733)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2420)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:372)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:517)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:434)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:194)
+	at org.postgresql.jdbc.PgPreparedStatement.executeQuery(PgPreparedStatement.java:137)
+	at colectivo.dao.postgresql.ParadaPostgresqlDAO.buscarTodos(ParadaPostgresqlDAO.java:87)
+	at colectivo.dao.postgresql.TramoPostgresqlDAO.buscarTodos(TramoPostgresqlDAO.java:90)
+	at colectivo.logica.Empresa.<init>(Empresa.java:39)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.App.<init>(App.java:16)
+	at colectivo.aplicacion.Lanzar.start(Lanzar.java:19)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-05 19:35:03,732 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 1->2: inicio=null, destino=null
+2025-11-05 19:35:03,732 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 2->3: inicio=null, destino=null
+2025-11-05 19:35:03,732 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 3->4: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 4->5: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 5->6: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 6->7: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 7->8: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 8->9: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 9->10: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 10->11: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 11->12: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 12->13: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 13->14: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 14->15: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 15->16: inicio=null, destino=null
+2025-11-05 19:35:03,733 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 16->17: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 17->18: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 18->19: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 19->20: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 20->21: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 21->22: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 22->23: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 23->24: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 24->25: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 25->26: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 26->27: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 27->28: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 28->29: inicio=null, destino=null
+2025-11-05 19:35:03,734 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 29->30: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 30->31: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 31->32: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 32->33: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 33->34: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 34->1: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 35->36: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 36->37: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 37->38: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 38->39: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 39->40: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 40->41: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 41->42: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 42->43: inicio=null, destino=null
+2025-11-05 19:35:03,735 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 43->44: inicio=null, destino=null
+2025-11-05 19:35:03,736 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 44->45: inicio=null, destino=null
+2025-11-05 19:35:03,736 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 45->46: inicio=null, destino=null
+2025-11-05 19:35:03,736 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 46->47: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 47->48: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 48->49: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 49->50: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 50->51: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 51->52: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 52->53: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 53->54: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 54->55: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 55->56: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 56->218: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 56->57: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 57->58: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 58->59: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 59->60: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 60->61: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 61->62: inicio=null, destino=null
+2025-11-05 19:35:03,737 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 62->63: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 63->64: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 64->65: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 65->66: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 66->67: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->68: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 68->69: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 69->70: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 70->71: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 71->72: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 72->73: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 73->74: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 74->75: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 75->76: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 76->77: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 77->78: inicio=null, destino=null
+2025-11-05 19:35:03,739 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 78->79: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 79->80: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 80->81: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 81->82: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 82->83: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 83->84: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 84->85: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 85->86: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 86->87: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 87->88: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 88->89: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 89->90: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 90->91: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 91->92: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 92->93: inicio=null, destino=null
+2025-11-05 19:35:03,740 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 93->94: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 94->95: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 95->96: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 96->97: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 97->98: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 98->99: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 99->100: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 100->101: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 101->102: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 102->21: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 23->103: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 103->104: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 104->105: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 105->106: inicio=null, destino=null
+2025-11-05 19:35:03,741 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 106->35: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 107->108: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 108->109: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 109->110: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 110->111: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 111->112: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 112->113: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 113->114: inicio=null, destino=null
+2025-11-05 19:35:03,742 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 114->115: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 115->116: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 116->117: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 117->118: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 118->119: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 119->120: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 120->121: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 121->122: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 122->123: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 123->124: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 124->125: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 125->126: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 126->127: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 127->128: inicio=null, destino=null
+2025-11-05 19:35:03,743 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 128->129: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 129->130: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 130->131: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 131->132: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 132->133: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 133->134: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 134->135: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 135->136: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 136->137: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 137->138: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 138->139: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 139->140: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 140->141: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 141->142: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 142->143: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 143->144: inicio=null, destino=null
+2025-11-05 19:35:03,744 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 144->145: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 145->146: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 146->147: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 147->148: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 148->149: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 149->150: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 150->151: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 151->152: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 152->153: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 153->154: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 154->155: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 155->156: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 156->157: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 157->152: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 152->158: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 158->159: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 159->160: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 160->161: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 161->162: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->163: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 163->145: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 145->164: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 164->165: inicio=null, destino=null
+2025-11-05 19:35:03,745 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 165->166: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 166->167: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 167->168: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 168->140: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 140->169: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 169->170: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 170->171: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 171->172: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 172->173: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 173->174: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 174->175: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 175->176: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 176->177: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 177->178: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->179: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 179->180: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 180->181: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 181->182: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 182->183: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 183->184: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 184->185: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 185->186: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 186->187: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 187->188: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 188->189: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 189->190: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 190->191: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 191->192: inicio=null, destino=null
+2025-11-05 19:35:03,746 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 192->193: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 193->194: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 194->195: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 195->196: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 196->197: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 197->198: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 198->199: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 199->200: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 200->201: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 201->202: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 202->203: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 203->204: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 205->107: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 107->206: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 206->110: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 112->207: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 207->208: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 208->209: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 209->10: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 12->210: inicio=null, destino=null
+2025-11-05 19:35:03,747 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 210->211: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 211->212: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 212->213: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 213->214: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 214->215: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 215->51: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 51->106: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 35->53: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 53->218: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 218->219: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 219->220: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 220->67: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 68->221: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 221->72: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 72->222: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 222->223: inicio=null, destino=null
+2025-11-05 19:35:03,748 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 223->77: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 77->85: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 85->224: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 224->94: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 94->90: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 91->225: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 225->226: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 226->227: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 227->228: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 228->92: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 96->67: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->230: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 230->231: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 231->67: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 67->75: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 75->229: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 229->239: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 239->240: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 240->103: inicio=null, destino=null
+2025-11-05 19:35:03,749 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 105->233: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 233->216: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 216->217: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 217->233: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 233->53: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 54->177: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->235: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 235->236: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 236->189: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 191->237: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 237->238: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 238->111: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 111->110: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 110->234: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 234->204: inicio=null, destino=null
+2025-11-05 19:35:03,750 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 204->232: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 109->241: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 241->242: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 242->243: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 243->113: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 113->244: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 244->245: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 245->246: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 246->247: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 247->116: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 116->259: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 259->128: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 131->248: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 248->249: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 249->250: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 250->251: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 251->252: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 252->253: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 253->254: inicio=null, destino=null
+2025-11-05 19:35:03,751 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 254->255: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 255->161: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->256: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 256->257: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 257->258: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 258->151: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 153->152: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 158->260: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 260->257: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 257->256: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 256->162: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 162->148: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 148->261: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 261->262: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 262->263: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 263->264: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 264->265: inicio=null, destino=null
+2025-11-05 19:35:03,752 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 265->266: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 266->267: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 267->268: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 268->269: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 269->101: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 101->270: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 270->271: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 271->272: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 272->296: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 296->132: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 133->216: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 216->273: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 273->274: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 274->275: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 275->139: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 139->276: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 276->277: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 277->278: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 278->279: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 279->280: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 280->145: inicio=null, destino=null
+2025-11-05 19:35:03,753 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 261->281: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 281->282: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 282->283: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 283->284: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 284->285: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 285->286: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 286->287: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 287->288: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 288->289: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 289->177: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 178->290: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 290->291: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 291->292: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 292->184: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 188->294: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 294->189: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 238->200: inicio=null, destino=null
+2025-11-05 19:35:03,754 WARN  [colectivo.dao.postgresql.TramoPostgresqlDAO] - Paradas faltantes para tramo 13->236: inicio=null, destino=null
+2025-11-05 19:35:06,184 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:48:32,106 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:48:50,997 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3025', direccion='10TH AVE + ANUENUE SCHOOL'}, destino=Parada{codigo='4085', direccion='16TH AVE + CLAUDINE ST'}, día=Miércoles, hora=10:00
+2025-11-05 19:48:51,491 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:48:51,584 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:48:55,376 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3025', direccion='10TH AVE + ANUENUE SCHOOL'}, destino=Parada{codigo='4712', direccion='98-1819 KAAHUMANU ST'}, día=Miércoles, hora=10:00
+2025-11-05 19:48:56,036 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:48:56,061 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:48:59,381 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3025', direccion='10TH AVE + ANUENUE SCHOOL'}, destino=Parada{codigo='3745', direccion='ALA AOLANI ST + ALA AOLOA LP'}, día=Miércoles, hora=10:00
+2025-11-05 19:48:59,911 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:48:59,935 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:02,476 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3025', direccion='10TH AVE + ANUENUE SCHOOL'}, destino=Parada{codigo='2925', direccion='ALA LILIKOI ST + SALT LAKE BL'}, día=Miércoles, hora=10:00
+2025-11-05 19:49:02,936 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:02,955 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:05,303 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3025', direccion='10TH AVE + ANUENUE SCHOOL'}, destino=Parada{codigo='880', direccion='ALA MOANA BL + HOBRON LN'}, día=Miércoles, hora=10:00
+2025-11-05 19:49:05,705 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 19:49:05,735 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:17,827 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:49:31,246 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 19:49:46,340 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='67', direccion='Argentina 118'}, día=Lunes, hora=10:00
+2025-11-05 19:49:46,602 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:46,691 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:50,740 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='207', direccion='Av. Urioste X Burgos'}, día=Lunes, hora=10:00
+2025-11-05 19:49:50,895 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:50,917 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:52,966 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='176', direccion='Avenida Bartolomé Mitre 615'}, día=Lunes, hora=10:00
+2025-11-05 19:49:53,157 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:53,176 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:54,886 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='151', direccion='Avenida Mujica 412'}, día=Lunes, hora=10:00
+2025-11-05 19:49:55,051 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:55,060 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:56,983 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='208', direccion='Burgos 1731'}, día=Lunes, hora=10:00
+2025-11-05 19:49:57,224 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:57,248 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:49:59,015 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='285', direccion='Colón 245'}, día=Lunes, hora=10:00
+2025-11-05 19:49:59,181 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:49:59,194 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:01,191 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='171', direccion='Diab X Caneva'}, día=Lunes, hora=10:00
+2025-11-05 19:50:01,346 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:01,369 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:02,983 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='57', direccion='Hipólito Yrigoyen 317'}, día=Lunes, hora=10:00
+2025-11-05 19:50:03,112 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:03,126 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:04,860 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='273', direccion='Lavalle 412'}, día=Lunes, hora=10:00
+2025-11-05 19:50:04,976 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:04,985 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:06,687 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='217', direccion='Monseñor Caneva 690'}, día=Lunes, hora=10:00
+2025-11-05 19:50:06,782 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:06,806 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:08,808 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='144', direccion='Av. 25 De Mayo Norte X Tapalqué'}, destino=Parada{codigo='217', direccion='Monseñor Caneva 690'}, día=Lunes, hora=10:00
+2025-11-05 19:50:08,930 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:08,939 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:11,207 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='241', direccion='Avenida 25 De Mayo 2107'}, destino=Parada{codigo='217', direccion='Monseñor Caneva 690'}, día=Lunes, hora=10:00
+2025-11-05 19:50:11,330 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:11,359 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:13,624 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='241', direccion='Avenida 25 De Mayo 2107'}, destino=Parada{codigo='97', direccion='San Carlos 526'}, día=Lunes, hora=10:00
+2025-11-05 19:50:13,745 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 19:50:13,754 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:15,567 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='241', direccion='Avenida 25 De Mayo 2107'}, destino=Parada{codigo='280', direccion='Tiro Federal 676'}, día=Lunes, hora=10:00
+2025-11-05 19:50:15,776 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 19:50:15,805 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 19:50:56,895 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

@@ -30,12 +30,12 @@ public class TramoPostgresqlDAO implements TramoDAO {
         if (existeTramo(tramo.getInicio().getCodigo(), tramo.getFin().getCodigo(), tramo.getTipo())) {
             throw new InstanciaExisteException("El tramo ya existe en la base de datos.");
         }
-        String sql = "INSERT INTO tramo (inicio, destino, tiempo, tipo) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO tramo (inicio, fin, tiempo, tipo) VALUES (?, ?, ?, ?)";
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, tramo.getInicio().getCodigo());
-                ps.setString(2, tramo.getFin().getCodigo());
+                ps.setInt(1, Integer.parseInt(tramo.getInicio().getCodigo()));
+                ps.setInt(2, Integer.parseInt(tramo.getFin().getCodigo()));
                 ps.setInt(3, tramo.getTiempo());
                 ps.setInt(4, tramo.getTipo());
                 ps.executeUpdate();
@@ -48,14 +48,14 @@ public class TramoPostgresqlDAO implements TramoDAO {
 
     @Override
     public void actualizar(Tramo tramo) {
-        String sql = "UPDATE tramo SET tiempo = ?, tipo = ? WHERE inicio = (SELECT codigo FROM parada WHERE codigo = ?) AND destino = (SELECT codigo FROM parada WHERE codigo = ?)";
+        String sql = "UPDATE tramo SET tiempo = ?, tipo = ? WHERE inicio = ? AND fin = ?";
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, tramo.getTiempo());
                 ps.setInt(2, tramo.getTipo());
-                ps.setString(3, tramo.getInicio().getCodigo());
-                ps.setString(4, tramo.getFin().getCodigo());
+                ps.setInt(3, Integer.parseInt(tramo.getInicio().getCodigo()));
+                ps.setInt(4, Integer.parseInt(tramo.getFin().getCodigo()));
                 ps.executeUpdate();
                 LOGGER.info("Tramo actualizado en PostgreSQL: " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo());
             }
@@ -69,12 +69,12 @@ public class TramoPostgresqlDAO implements TramoDAO {
         if (!existeTramo(tramo.getInicio().getCodigo(), tramo.getFin().getCodigo(), tramo.getTipo())) {
             throw new InstanciaNoExisteException("El tramo no existe en la base de datos.");
         }
-        String sql = "DELETE FROM tramo WHERE inicio = (SELECT codigo FROM parada WHERE codigo = ?) AND destino = (SELECT codigo FROM parada WHERE codigo = ?)";
+        String sql = "DELETE FROM tramo WHERE inicio = ? AND fin = ?";
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, tramo.getInicio().getCodigo());
-                ps.setString(2, tramo.getFin().getCodigo());
+                ps.setInt(1, Integer.parseInt(tramo.getInicio().getCodigo()));
+                ps.setInt(2, Integer.parseInt(tramo.getFin().getCodigo()));
                 ps.executeUpdate();
                 LOGGER.info("Tramo borrado en PostgreSQL: " + tramo.getInicio().getCodigo() + "->" + tramo.getFin().getCodigo());
             }
@@ -89,7 +89,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
         ParadaDAO paradaDAO = new ParadaPostgresqlDAO();
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
-        String sql = "SELECT t.inicio, t.destino, t.tiempo, t.tipo " +
+        String sql = "SELECT t.inicio, t.fin, t.tiempo, t.tipo " +
                 "FROM tramo t";
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
@@ -97,7 +97,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
                     int codigoInicio = rs.getInt("inicio");
-                    int codigoDestino = rs.getInt("destino");
+                    int codigoDestino = rs.getInt("fin");
                     int tiempo = rs.getInt("tiempo");
                     int tipo = rs.getInt("tipo");
                     Parada inicio = paradas.get(codigoInicio);
@@ -120,7 +120,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
         String sql = "SELECT 1 FROM parada WHERE codigo = ?";
         try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, codigoParada);
+            ps.setInt(1, Integer.parseInt(codigoParada));
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next();
             }
@@ -131,11 +131,11 @@ public class TramoPostgresqlDAO implements TramoDAO {
     }
 
     private boolean existeTramo(String inicio, String destino, int tipo) {
-        String sql = "SELECT 1 FROM tramo WHERE inicio = ? AND destino = ? AND tipo = ?";
+        String sql = "SELECT 1 FROM tramo WHERE inicio = ? AND fin = ? AND tipo = ?";
         try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, inicio);
-            ps.setString(2, destino);
+            ps.setInt(1, Integer.parseInt(inicio));
+            ps.setInt(2, Integer.parseInt(destino));
             ps.setInt(3, tipo);
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next();

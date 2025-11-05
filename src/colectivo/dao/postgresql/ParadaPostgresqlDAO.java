@@ -29,7 +29,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, parada.getCodigo());
+                ps.setInt(1, Integer.parseInt(parada.getCodigo()));
                 ps.setString(2, parada.getDireccion());
                 ps.setDouble(3, parada.getLatitud());
                 ps.setDouble(4, parada.getLongitud());
@@ -50,7 +50,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
                 ps.setString(1, parada.getDireccion());
                 ps.setDouble(2, parada.getLatitud());
                 ps.setDouble(3, parada.getLongitud());
-                ps.setString(4, parada.getCodigo());
+                ps.setInt(4, Integer.parseInt(parada.getCodigo()));
                 ps.executeUpdate();
                 LOGGER.info("Parada actualizada en PostgreSQL: " + parada.getCodigo());
             }
@@ -68,7 +68,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
-                ps.setString(1, parada.getCodigo());
+                ps.setInt(1, Integer.parseInt(parada.getCodigo()));
                 ps.executeUpdate();
                 LOGGER.info("Parada borrada en PostgreSQL: " + parada.getCodigo());
             }
@@ -86,12 +86,12 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
             try (PreparedStatement ps = conn.prepareStatement(sql);
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
-                    String codigo = rs.getString("codigo");
+                    int codigo = rs.getInt("codigo");
                     String direccion = rs.getString("direccion");
                     double latitud = rs.getDouble("latitud");
                     double longitud = rs.getDouble("longitud");
-                    Parada p = new Parada(codigo, direccion, latitud, longitud);
-                    resultado.put(Integer.parseInt(codigo), p);
+                    Parada p = new Parada(String.valueOf(codigo), direccion, latitud, longitud);
+                    resultado.put(codigo, p);
                 }
             }
         } catch (SQLException e) {
@@ -104,7 +104,7 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         String sql = "SELECT 1 FROM parada WHERE codigo = ?";
         try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
-            ps.setString(1, codigo);
+            ps.setInt(1, Integer.parseInt(codigo));
             try (ResultSet rs = ps.executeQuery()) {
                 return rs.next(); // Si hay resultado, existe
             }

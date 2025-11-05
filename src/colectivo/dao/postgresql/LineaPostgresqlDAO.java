@@ -121,12 +121,9 @@ public class LineaPostgresqlDAO implements LineaDAO {
         Map<Integer, Parada> paradas = paradaDAO.buscarTodos();
 
         String sqlLineas = "SELECT codigo, nombre FROM linea";
-        String sqlParadasLinea = "SELECT l.codigo as cod_linea, p.codigo as cod_parada " +
-                "FROM linea_parada pl " +
-                "JOIN linea l ON pl.codigo_linea = l.codigo " +
-                "JOIN parada p ON pl.codigo_parada = p.codigo " +
-                "ORDER BY pl.codigo_linea, pl.orden";
-        String sqlFrecuencias = "Select codigo_linea, diasemana,hora from frecuencia";
+        String sqlParadasLinea = "SELECT linea AS cod_linea, parada AS cod_parada " +
+                "FROM linea_parada ORDER BY linea, secuencia";
+        String sqlFrecuencias = "SELECT linea AS cod_linea, diasemana, hora FROM linea_frecuencia";
 
         try {
             //Connection conn = Conexion.getInstancia().getConnection();
@@ -141,8 +138,8 @@ public class LineaPostgresqlDAO implements LineaDAO {
                      ResultSet rsPL = psPL.executeQuery()) {
                     while (rsPL.next()) {
                         String codLinea = rsPL.getString("cod_linea");
-                        String codParada = rsPL.getString("cod_parada");
-                        Parada parada = paradas.get(Integer.parseInt(codParada));
+                        int codParada = rsPL.getInt("cod_parada");
+                        Parada parada = paradas.get(codParada);
                         if (parada != null) {
                             lineasParadas.computeIfAbsent(codLinea, k -> new ArrayList<>()).add(parada);
                         }
@@ -152,7 +149,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                 try (PreparedStatement psFreq = conn.prepareStatement(sqlFrecuencias);
                      ResultSet rsFreq = psFreq.executeQuery()) {
                     while (rsFreq.next()) {
-                        String codLinea = rsFreq.getString("codigo_linea");
+                        String codLinea = rsFreq.getString("cod_linea");
                         int diaSemana = rsFreq.getInt("diasemana");
                         Time hora = rsFreq.getTime("hora");
                         if (hora != null) {
@@ -200,14 +197,14 @@ public class LineaPostgresqlDAO implements LineaDAO {
     }
 
     private void insertarLineaParada(Connection conn, Linea linea) {
-        String sql = "INSERT INTO linea_parada (codigo_linea, codigo_parada, orden) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO linea_parada (linea, parada, secuencia) VALUES (?, ?, ?)";
         List<Parada> paradas = linea.getParadas();
         try {
             for (int i = 0; i < paradas.size(); i++) {
                 Parada parada = paradas.get(i);
                 try (PreparedStatement ps = conn.prepareStatement(sql)) {
                     ps.setString(1, linea.getCodigo());
-                    ps.setString(2, parada.getCodigo());
+                    ps.setInt(2, Integer.parseInt(parada.getCodigo()));
                     ps.setInt(3, i + 1); // orden, comienza en 1
                     ps.executeUpdate();
                 }
@@ -223,7 +220,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
 
     }
     private void borrarLineaParada(Connection conn, Linea linea){
-        String sql = "DELETE FROM linea_parada WHERE codigo_linea = ?";
+        String sql = "DELETE FROM linea_parada WHERE linea = ?";
         try {
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, linea.getCodigo());
