@@ -1954,3 +1954,201 @@ java.lang.NullPointerException: Cannot read field "hour" because "other" is null
 2025-11-04 20:48:15,256 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-04 20:48:15,261 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-04 20:48:17,440 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:11:44,479 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:11:49,072 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:11:49,077 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:11:49,088 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1I
+2025-11-05 14:11:49,089 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1I
+2025-11-05 14:11:49,089 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1R
+2025-11-05 14:11:49,089 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1R
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:11:49,090 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:11:49,091 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:11:49,121 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:11:49,133 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (88 → 97)
+2025-11-05 14:11:49,133 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 44)
+2025-11-05 14:11:49,135 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (44 → 97)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 88)
+2025-11-05 14:11:49,136 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:11:49,137 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:11:49,137 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:11:49,137 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:11:49,137 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:12:08,018 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='106', direccion='9 de julio'}, destino=Parada{codigo='47', direccion='Alvear y Sarmiento'}, día=Miércoles, hora=12:00
+2025-11-05 14:12:08,037 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:12:08,039 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:12:08,040 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1R
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1R
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:12:08,041 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:12:08,042 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:12:08,048 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:12:08,049 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (88 → 97)
+2025-11-05 14:12:08,049 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 44)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:12:08,050 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (44 → 97)
+2025-11-05 14:12:08,051 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 88)
+2025-11-05 14:12:08,051 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:12:08,051 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:12:08,051 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:12:08,051 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:12:08,052 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:12:08,062 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:12:08,326 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:13:27,615 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='121', direccion='Baden 1'}, destino=Parada{codigo='101', direccion='Pioneros y Lezana'}, día=Miércoles, hora=12:00
+2025-11-05 14:13:27,616 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:27,617 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1R
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1R
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:13:27,618 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:13:27,619 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:13:27,619 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:13:27,619 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:13:27,623 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:27,623 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (88 → 97)
+2025-11-05 14:13:27,623 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 44)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (44 → 97)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 88)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:13:27,626 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:13:27,626 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:13:27,632 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:13:35,263 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='100', direccion='Ameghino y Costanera'}, destino=Parada{codigo='122', direccion='Fontana rosa y alda deco (mutrapa)'}, día=Miércoles, hora=12:00
+2025-11-05 14:13:35,263 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1R
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1R
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:13:35,265 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:13:35,269 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:13:35,269 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (88 → 97)
+2025-11-05 14:13:35,269 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 44)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (44 → 97)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 88)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:13:35,271 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:13:35,271 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:13:35,275 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:13:40,050 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:15:57,193 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:15:57,198 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:15:57,202 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1I
+2025-11-05 14:15:57,202 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1I
+2025-11-05 14:15:57,202 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 97 no encontrada para línea L1R
+2025-11-05 14:15:57,202 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 88 no encontrada para línea L1R
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:15:57,203 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:15:57,204 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:15:57,204 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:15:57,224 WARN  [colectivo.dao.secuencial.ParadaSecuencialDAO] - Error al parsear coordenadas de la parada 88: For input string: "-42.89861 -71.3039"
+2025-11-05 14:15:57,226 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (88 → 97)
+2025-11-05 14:15:57,226 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 44)
+2025-11-05 14:15:57,228 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:15:57,228 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:15:57,230 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:15:57,230 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:15:57,230 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:15:57,230 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (44 → 97)
+2025-11-05 14:15:57,230 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (97 → 88)
+2025-11-05 14:15:57,231 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:15:57,231 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:15:57,231 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:15:57,231 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:15:57,231 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:16:14,192 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:22:59,871 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3I
+2025-11-05 14:22:59,871 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3I
+2025-11-05 14:22:59,871 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3I
+2025-11-05 14:22:59,871 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3I
+2025-11-05 14:22:59,871 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 128 no encontrada para línea L3R
+2025-11-05 14:22:59,872 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 127 no encontrada para línea L3R
+2025-11-05 14:22:59,872 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 124 no encontrada para línea L3R
+2025-11-05 14:22:59,872 WARN  [colectivo.dao.secuencial.LineaSecuencialDAO] - Parada 120 no encontrada para línea L3R
+2025-11-05 14:22:59,896 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (120 → 121)
+2025-11-05 14:22:59,897 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (123 → 124)
+2025-11-05 14:22:59,897 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 125)
+2025-11-05 14:22:59,897 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (126 → 127)
+2025-11-05 14:22:59,897 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 128)
+2025-11-05 14:22:59,897 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (128 → 127)
+2025-11-05 14:22:59,898 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (127 → 126)
+2025-11-05 14:22:59,898 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (125 → 124)
+2025-11-05 14:22:59,898 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (124 → 123)
+2025-11-05 14:22:59,898 WARN  [colectivo.dao.secuencial.TramoSecuencialDAO] - Tramo ignorado: paradas inexistentes (121 → 120)
+2025-11-05 14:23:41,846 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-05 14:54:47,471 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='Av. Alvear y Guido Spano'}, destino=Parada{codigo='5', direccion='Alvear y Sarmiento'}, día=Miércoles, hora=12:00
+2025-11-05 14:54:47,522 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 14:54:47,660 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:55:05,688 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='8', direccion='Calderon y Holdich'}, día=Miércoles, hora=12:00
+2025-11-05 14:55:05,696 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:55:05,703 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:55:11,577 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='7', direccion='Pioneros y Lezana'}, día=Miércoles, hora=12:00
+2025-11-05 14:55:11,583 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:55:11,586 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:55:15,698 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='10', direccion='Pje 33 y andina'}, día=Miércoles, hora=12:00
+2025-11-05 14:55:15,704 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-05 14:55:15,707 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:55:18,696 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='8', direccion='Calderon y Holdich'}, destino=Parada{codigo='10', direccion='Pje 33 y andina'}, día=Miércoles, hora=12:00
+2025-11-05 14:55:18,703 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 14:55:18,707 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:56:46,241 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='12', direccion='9 de julio'}, destino=Parada{codigo='18', direccion='Don Bosco y pasteur (Escuela 8)'}, día=Miércoles, hora=12:00
+2025-11-05 14:56:46,245 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-05 14:56:46,250 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 14:57:57,258 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='6', direccion='Ameghino y Costanera'}, destino=Parada{codigo='17', direccion='Libertad y saenz peña (escuela 735)'}, día=Miércoles, hora=12:00
+2025-11-05 14:57:57,263 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-05 14:57:57,268 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-05 15:01:02,584 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

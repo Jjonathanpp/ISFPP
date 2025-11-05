@@ -1,6 +1,7 @@
 package colectivo.dao.postgresql;
 
 
+import colectivo.conexion.BDConexion;
 import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
@@ -21,6 +22,7 @@ import java.util.Map;
 public class LineaPostgresqlDAO implements LineaDAO {
 
     private static final Logger LOGGER = Logger.getLogger(LineaPostgresqlDAO.class);
+    private final Connection conn = BDConexion.getConnection();
 
     @Override
     public void insertar(Linea linea) throws InstanciaExisteException {
@@ -29,10 +31,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
         }
 
         String sql = "INSERT INTO linea (codigo, nombre) VALUES (?, ?)";
-        Connection conn = null;
+        //Connection conn = null;
         boolean prevuioAutoComit = true;
         try {
-            conn = Conexion.getInstancia().getConnection();
+            //conn = Conexion.getInstancia().getConnection();
             prevuioAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -61,10 +63,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
     @Override
     public void actualizar(Linea linea) {
         String sql = "UPDATE linea SET nombre = ? WHERE codigo = ?";
-        Connection conn = null;
+        //Connection conn = null;
         boolean previoAutoComit = true;
         try {
-            conn = Conexion.getInstancia().getConnection();
+            //conn = Conexion.getInstancia().getConnection();
             previoAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -90,10 +92,10 @@ public class LineaPostgresqlDAO implements LineaDAO {
             throw new InstanciaNoExisteException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
         }
         String sql = "DELETE FROM linea WHERE codigo = ?";
-        Connection conn = null;
+        //Connection conn = null;
         boolean previoAutoComit = true;
         try {
-            conn = Conexion.getInstancia().getConnection();
+            //conn = Conexion.getInstancia().getConnection();
             previoAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             borrarLineaParada(conn, linea);
@@ -127,7 +129,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
         String sqlFrecuencias = "Select codigo_linea, diasemana,hora from frecuencia";
 
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement psLineas = conn.prepareStatement(sqlLineas);
                  ResultSet rsLineas = psLineas.executeQuery()) {
 
@@ -185,7 +187,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
 
     private boolean existe(String codigo) {
         String sql = "SELECT 1 FROM linea WHERE codigo = ?";
-        try (Connection conn = Conexion.getInstancia().getConnection();
+        try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, codigo);
             try (ResultSet rs = ps.executeQuery()) {

@@ -1,5 +1,6 @@
 package colectivo.dao.postgresql;
 
+import colectivo.conexion.BDConexion;
 import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
@@ -19,6 +20,7 @@ import java.util.Map;
 public class TramoPostgresqlDAO implements TramoDAO {
 
     private static final Logger LOGGER = Logger.getLogger(TramoPostgresqlDAO.class);
+    private final Connection conn = BDConexion.getConnection();
 
     @Override
     public void insertar(Tramo tramo) throws InstanciaNoExisteException, InstanciaExisteException {
@@ -30,7 +32,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
         }
         String sql = "INSERT INTO tramo (inicio, destino, tiempo, tipo) VALUES (?, ?, ?, ?)";
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, tramo.getInicio().getCodigo());
                 ps.setString(2, tramo.getFin().getCodigo());
@@ -48,7 +50,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
     public void actualizar(Tramo tramo) {
         String sql = "UPDATE tramo SET tiempo = ?, tipo = ? WHERE inicio = (SELECT codigo FROM parada WHERE codigo = ?) AND destino = (SELECT codigo FROM parada WHERE codigo = ?)";
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, tramo.getTiempo());
                 ps.setInt(2, tramo.getTipo());
@@ -69,7 +71,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
         }
         String sql = "DELETE FROM tramo WHERE inicio = (SELECT codigo FROM parada WHERE codigo = ?) AND destino = (SELECT codigo FROM parada WHERE codigo = ?)";
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, tramo.getInicio().getCodigo());
                 ps.setString(2, tramo.getFin().getCodigo());
@@ -90,7 +92,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
         String sql = "SELECT t.inicio, t.destino, t.tiempo, t.tipo " +
                 "FROM tramo t";
         try {
-            Connection conn = Conexion.getInstancia().getConnection();
+            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql);
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
@@ -116,7 +118,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
 
     private boolean existeParada(String codigoParada) {
         String sql = "SELECT 1 FROM parada WHERE codigo = ?";
-        try (Connection conn = Conexion.getInstancia().getConnection();
+        try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, codigoParada);
             try (ResultSet rs = ps.executeQuery()) {
@@ -130,7 +132,7 @@ public class TramoPostgresqlDAO implements TramoDAO {
 
     private boolean existeTramo(String inicio, String destino, int tipo) {
         String sql = "SELECT 1 FROM tramo WHERE inicio = ? AND destino = ? AND tipo = ?";
-        try (Connection conn = Conexion.getInstancia().getConnection();
+        try (Connection conn = BDConexion.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, inicio);
             ps.setString(2, destino);

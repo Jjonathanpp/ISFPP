@@ -1,0 +1,21 @@
+1;Av. Alvear y Guido Spano;-42,89861;-71,30390;
+2;Don Bosco y Fontana;-42,90804;-71,32502;
+3;Ohiggins y 25 de Mayo;-42,91817;-71,31521;
+4;Pasteur y Av. Alvear;-42,91889;-71,33098;
+5;Alvear y Sarmiento;-42,91195;-71,32174;
+6;Ameghino y Costanera;-42,92013;-71,30890;
+7;Pioneros y Lezana;-42,90951;-71,29284;
+8;Calderon y Holdich;-42,91626;-71,29619;
+9;Valle chico;-42,93096;-71,27755;
+10;Pje 33 y andina;-42,91784;-71,28870;
+11;Ohiggins y 25 de mayo;-42,91817;-71,31521;
+12;9 de julio;-42,91154;-71,31940;
+13;Ant Argentina y Ameghino;-42,92128;-71,32559;
+14;Ameghino y Peron;-42,90811;-71,30811;
+15;Baden 1;-42,91658;-71,29544;
+16;Fontana rosa y alda deco (mutrapa);-42,91588;-71,31434;
+17;Libertad y saenz peña (escuela 735);-42,90055;-71,30987;
+18;Don Bosco y pasteur (Escuela 8);-42,91562;-71,33566;
+19;universidad;-42,91048;-71,32201;
+
+
