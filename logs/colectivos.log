@@ -3162,3 +3162,11 @@ org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
 2025-11-05 19:50:15,776 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-05 19:50:15,805 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-05 19:50:56,895 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-06 00:27:37,162 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-06 00:27:37,162 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-06 00:27:50,123 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='4', direccion='25 De Mayo, 693'}, destino=Parada{codigo='5', direccion='28 De Julio, 200'}, día=Miércoles, hora=17:11
+2025-11-06 00:27:50,153 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-06 00:27:50,174 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-06 00:27:51,736 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-06 00:27:51,737 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-06 00:28:22,148 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
