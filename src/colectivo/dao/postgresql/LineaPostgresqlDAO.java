@@ -6,7 +6,6 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteException;
 import colectivo.excepciones.InstanciaNoExisteException;
-import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import org.apache.log4j.Logger;
@@ -124,7 +123,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
 
                 Map<String, List<Parada>> lineasParadas = new HashMap<>();
                 Map<String, List<FrecuenciaData>> frecuenciasPorLinea = new HashMap<>();
-                
+
                 try (PreparedStatement psPL = conn.prepareStatement(sqlParadasLinea);
                      ResultSet rsPL = psPL.executeQuery()) {
                     while (rsPL.next()) {
@@ -160,7 +159,7 @@ public class LineaPostgresqlDAO implements LineaDAO {
                         List<FrecuenciaData> datosFrecuencias = frecuenciasPorLinea.get(codigo);
                         if (datosFrecuencias != null) {
                             for (FrecuenciaData datos : datosFrecuencias) {
-                                l.agregarFrecuencia(new Frecuencia(l, datos.diaSemana(), datos.hora()));
+                                l.agregarFrecuencia(new Linea.Frecuencia(l, datos.diaSemana(), datos.hora()));
                             }
                         }
                         resultado.put(codigo, l);

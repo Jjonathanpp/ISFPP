@@ -5,6 +5,7 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
 import colectivo.modelo.*;
+import colectivo.modelo.Linea.Frecuencia;
 import org.apache.log4j.Logger;
 
 import java.time.LocalTime;

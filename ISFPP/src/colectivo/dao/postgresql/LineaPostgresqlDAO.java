@@ -6,7 +6,6 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteEnBDException;
 import colectivo.excepciones.InstanciaNoExisteEnBDException;
-import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import org.apache.log4j.Logger;

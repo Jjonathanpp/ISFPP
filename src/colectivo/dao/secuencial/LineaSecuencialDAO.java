@@ -4,7 +4,6 @@ import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteException;
 import colectivo.excepciones.InstanciaNoExisteException;
-import colectivo.modelo.Frecuencia;
 import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import org.apache.log4j.Logger;
@@ -98,7 +97,7 @@ public class LineaSecuencialDAO implements LineaDAO {
             List<FrecuenciaData> datos = frecuenciasMapa.get(codigoLinea);
             if (datos != null) {
                 for (FrecuenciaData fd : datos) {
-                    linea.agregarFrecuencia(new Frecuencia(linea, fd.diaSemana(), fd.hora()));
+                    linea.agregarFrecuencia(new Linea.Frecuencia(linea, fd.diaSemana(), fd.hora()));
                 }
             }
         }
