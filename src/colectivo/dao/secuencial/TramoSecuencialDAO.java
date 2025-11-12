@@ -77,7 +77,6 @@ public class TramoSecuencialDAO implements TramoDAO {
                             .thenComparing(t -> Integer.parseInt(t.getFin().getCodigo()))
                             .thenComparingInt(Tramo::getTipo))
                     .forEach(t -> {
-                        //escribe el Archivo linea a linea
                         int idIni = Integer.parseInt(t.getInicio().getCodigo());
                         int idFin = Integer.parseInt(t.getFin().getCodigo());
                         out.format("%d;%d;%d;%d;%n", idIni, idFin, t.getTiempo(), t.getTipo());

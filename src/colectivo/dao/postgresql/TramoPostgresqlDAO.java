@@ -1,7 +1,6 @@
 package colectivo.dao.postgresql;
 
 import colectivo.conexion.BDConexion;
-import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
 import colectivo.dao.TramoDAO;
 import colectivo.excepciones.InstanciaExisteException;
@@ -32,7 +31,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
         }
         String sql = "INSERT INTO tramo (inicio, fin, tiempo, tipo) VALUES (?, ?, ?, ?)";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, Integer.parseInt(tramo.getInicio().getCodigo()));
                 ps.setInt(2, Integer.parseInt(tramo.getFin().getCodigo()));
@@ -50,7 +48,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
     public void actualizar(Tramo tramo) {
         String sql = "UPDATE tramo SET tiempo = ?, tipo = ? WHERE inicio = ? AND fin = ?";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, tramo.getTiempo());
                 ps.setInt(2, tramo.getTipo());
@@ -71,7 +68,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
         }
         String sql = "DELETE FROM tramo WHERE inicio = ? AND fin = ?";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, Integer.parseInt(tramo.getInicio().getCodigo()));
                 ps.setInt(2, Integer.parseInt(tramo.getFin().getCodigo()));
@@ -92,7 +88,6 @@ public class TramoPostgresqlDAO implements TramoDAO {
         String sql = "SELECT t.inicio, t.fin, t.tiempo, t.tipo " +
                 "FROM tramo t";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql);
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {

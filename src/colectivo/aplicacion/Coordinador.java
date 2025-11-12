@@ -5,7 +5,6 @@ import colectivo.interfaz.VistaInterfaz;
 import colectivo.logica.Calculo;
 import colectivo.logica.Empresa;
 import colectivo.modelo.Parada;
-import colectivo.modelo.Tramo;
 import org.apache.log4j.Logger;
 
 import java.time.LocalTime;

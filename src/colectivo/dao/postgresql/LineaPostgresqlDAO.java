@@ -2,7 +2,6 @@ package colectivo.dao.postgresql;
 
 
 import colectivo.conexion.BDConexion;
-import colectivo.conexion.Conexion;
 import colectivo.dao.LineaDAO;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteException;
@@ -31,10 +30,8 @@ public class LineaPostgresqlDAO implements LineaDAO {
         }
 
         String sql = "INSERT INTO linea (codigo, nombre) VALUES (?, ?)";
-        //Connection conn = null;
         boolean prevuioAutoComit = true;
         try {
-            //conn = Conexion.getInstancia().getConnection();
             prevuioAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -63,10 +60,8 @@ public class LineaPostgresqlDAO implements LineaDAO {
     @Override
     public void actualizar(Linea linea) {
         String sql = "UPDATE linea SET nombre = ? WHERE codigo = ?";
-        //Connection conn = null;
         boolean previoAutoComit = true;
         try {
-            //conn = Conexion.getInstancia().getConnection();
             previoAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
@@ -92,10 +87,8 @@ public class LineaPostgresqlDAO implements LineaDAO {
             throw new InstanciaNoExisteException("La línea con código " + linea.getCodigo() + " no existe en la base de datos.");
         }
         String sql = "DELETE FROM linea WHERE codigo = ?";
-        //Connection conn = null;
         boolean previoAutoComit = true;
         try {
-            //conn = Conexion.getInstancia().getConnection();
             previoAutoComit = conn.getAutoCommit();
             conn.setAutoCommit(false);
             borrarLineaParada(conn, linea);
@@ -126,14 +119,12 @@ public class LineaPostgresqlDAO implements LineaDAO {
         String sqlFrecuencias = "SELECT linea AS cod_linea, diasemana, hora FROM linea_frecuencia";
 
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement psLineas = conn.prepareStatement(sqlLineas);
                  ResultSet rsLineas = psLineas.executeQuery()) {
 
                 Map<String, List<Parada>> lineasParadas = new HashMap<>();
                 Map<String, List<FrecuenciaData>> frecuenciasPorLinea = new HashMap<>();
-
-                // Primero armamos el mapa de paradas para cada línea
+                
                 try (PreparedStatement psPL = conn.prepareStatement(sqlParadasLinea);
                      ResultSet rsPL = psPL.executeQuery()) {
                     while (rsPL.next()) {

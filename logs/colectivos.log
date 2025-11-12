@@ -3170,3 +3170,132 @@ org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
 2025-11-06 00:27:51,736 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
 2025-11-06 00:27:51,737 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
 2025-11-06 00:28:22,148 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 15:41:31,946 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 15:41:31,948 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 15:41:43,486 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='180', direccion='9 De Julio 749'}, destino=Parada{codigo='296', direccion='Av. Mitre X Av. 25 De Mayo'}, día=Martes, hora=17:23
+2025-11-07 15:41:44,163 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-07 15:41:44,238 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:41:49,059 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 15:42:22,351 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 15:42:27,010 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 15:42:27,011 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 15:42:37,147 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='17', direccion='Libertad y saenz peña (escuela 735)'}, destino=Parada{codigo='11', direccion='Ohiggins y 25 de mayo'}, día=Miércoles, hora=11:24
+2025-11-07 15:42:37,341 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-07 15:42:37,437 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:42:41,175 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-07 15:42:41,176 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-07 15:42:41,179 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #3 en color Rojo
+2025-11-07 15:42:41,179 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #4 en color Verde oscuro
+2025-11-07 15:44:52,362 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 15:45:09,558 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 15:45:09,559 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 15:45:13,117 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 15:45:19,478 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 15:45:19,479 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 15:45:32,441 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=18:30
+2025-11-07 15:45:32,660 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 15:45:32,742 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:45:36,136 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-07 15:45:36,139 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-07 15:45:55,523 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='26', direccion='Belgrano, 314'}, destino=Parada{codigo='23', direccion='Avenida Julio Argentino Roca, 936'}, día=Martes, hora=18:30
+2025-11-07 15:45:55,956 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-07 15:45:55,972 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:45:58,019 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='26', direccion='Belgrano, 314'}, destino=Parada{codigo='42', direccion='España, 1431'}, día=Martes, hora=18:30
+2025-11-07 15:45:58,130 INFO  [colectivo.interfaz.Controler] - Se encontraron 2 rutas posibles.
+2025-11-07 15:45:58,145 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:45:59,146 WARN  [colectivo.interfaz.MapRouteDialog] - Fallo ORS, usando línea directa: ORS error 404
+2025-11-07 15:45:59,148 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 15:45:59,150 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Azul (directo)
+2025-11-07 15:46:02,038 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='26', direccion='Belgrano, 314'}, destino=Parada{codigo='63', direccion='Lewis Jones, 1336'}, día=Martes, hora=18:30
+2025-11-07 15:46:02,154 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-07 15:46:02,163 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:46:04,416 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='26', direccion='Belgrano, 314'}, destino=Parada{codigo='82', direccion='Pedro Derbes, 1102'}, día=Martes, hora=18:30
+2025-11-07 15:46:04,933 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 15:46:04,950 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:46:05,800 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-07 15:46:05,804 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-07 15:46:42,350 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Jueves, hora=18:30
+2025-11-07 15:46:42,477 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 15:46:42,493 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:46:43,583 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 15:47:17,939 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Thursday, hora=18:30
+2025-11-07 15:47:18,163 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 15:47:18,177 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:47:19,526 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 15:47:26,890 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Giovedì, hora=18:30
+2025-11-07 15:47:27,388 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 15:47:27,399 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 15:47:27,820 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 15:47:46,498 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:10:55,419 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:10:55,420 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:11:05,331 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:11:13,310 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:11:13,311 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:11:45,833 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='14', direccion='Ameghino y Peron'}, destino=Parada{codigo='1', direccion='Av. Alvear y Guido Spano'}, día=Martes, hora=14:50
+2025-11-07 17:11:46,017 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-07 17:11:46,126 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:11:58,543 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='15', direccion='Baden 1'}, destino=Parada{codigo='14', direccion='Ameghino y Peron'}, día=Martes, hora=14:50
+2025-11-07 17:11:58,682 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:11:58,710 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:12:00,719 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:12:56,491 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='15', direccion='Baden 1'}, destino=Parada{codigo='14', direccion='Ameghino y Peron'}, día=Tuesday, hora=14:50
+2025-11-07 17:12:56,666 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:12:56,679 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:13:02,492 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:14:31,085 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:16:22,854 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:16:22,855 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:16:22,993 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:16:32,212 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:16:32,213 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:16:48,868 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:18:12,249 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:18:12,250 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:18:21,007 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:18:29,444 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:18:29,445 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:19:19,722 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Jueves, hora=14:30
+2025-11-07 17:19:19,805 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:19:19,880 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:19:22,143 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:24:59,947 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Giovedì, hora=14:30
+2025-11-07 17:24:59,991 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:25:00,014 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:25:01,921 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:25:27,476 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='3', direccion='25 De Mayo, 299'}, destino=Parada{codigo='21', direccion='Avenida Julio Argentino Roca, 2251'}, día=Jueves, hora=14:30
+2025-11-07 17:25:27,509 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:25:27,522 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:25:27,831 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:27:12,383 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='31', direccion='Bv, Almirante Brown, 3053'}, destino=Parada{codigo='66', direccion='Los Alamos, 3900'}, día=Jueves, hora=14:30
+2025-11-07 17:27:12,420 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:27:12,441 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:27:14,124 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-07 17:27:14,125 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-07 17:27:14,128 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #3 en color Naranja
+2025-11-07 17:29:25,156 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:30:01,061 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:30:01,062 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:30:02,320 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:30:07,840 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:30:07,841 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:30:30,195 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='5', direccion='Alvear y Sarmiento'}, destino=Parada{codigo='3', direccion='Ohiggins y 25 de Mayo'}, día=Viernes, hora=15:00
+2025-11-07 17:30:30,306 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:30:30,371 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:30:34,154 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:31:35,019 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:31:40,732 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:31:44,436 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:31:44,436 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:31:44,483 ERROR [colectivo.aplicacion.Lanzar] - java.lang.RuntimeException: Error creando instancia para: PARADA
+2025-11-07 17:31:54,973 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-07 17:32:00,916 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-07 17:32:00,916 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-07 17:32:17,898 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='181', direccion='9 De Julio 891'}, destino=Parada{codigo='147', direccion='Av. 25 De Mayo Norte X Aldaz'}, día=Miércoles, hora=20:00
+2025-11-07 17:32:18,144 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-07 17:32:18,209 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:32:31,195 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='270', direccion='Alvear 395'}, destino=Parada{codigo='147', direccion='Av. 25 De Mayo Norte X Aldaz'}, día=Miércoles, hora=20:00
+2025-11-07 17:32:31,329 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-07 17:32:31,356 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-07 17:32:32,721 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-07 17:34:09,654 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.

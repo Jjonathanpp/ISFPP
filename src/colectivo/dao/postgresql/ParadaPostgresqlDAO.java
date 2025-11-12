@@ -1,7 +1,6 @@
 package colectivo.dao.postgresql;
 
 import colectivo.conexion.BDConexion;
-import colectivo.conexion.Conexion;
 import colectivo.dao.ParadaDAO;
 import colectivo.excepciones.InstanciaExisteException;
 import colectivo.excepciones.InstanciaNoExisteException;
@@ -27,7 +26,6 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         }
         String sql = "INSERT INTO parada (codigo, direccion, latitud, longitud) VALUES (?, ?, ?, ?)";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, Integer.parseInt(parada.getCodigo()));
                 ps.setString(2, parada.getDireccion());
@@ -45,7 +43,6 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
     public void actualizar(Parada parada) {
         String sql = "UPDATE parada SET direccion = ?, latitud = ?, longitud = ? WHERE codigo = ?";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setString(1, parada.getDireccion());
                 ps.setDouble(2, parada.getLatitud());
@@ -66,7 +63,6 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         }
         String sql = "DELETE FROM parada WHERE codigo = ?";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql)) {
                 ps.setInt(1, Integer.parseInt(parada.getCodigo()));
                 ps.executeUpdate();
@@ -82,7 +78,6 @@ public class ParadaPostgresqlDAO implements ParadaDAO {
         Map<Integer, Parada> resultado = new HashMap<>();
         String sql = "SELECT codigo, direccion, latitud, longitud FROM parada";
         try {
-            //Connection conn = Conexion.getInstancia().getConnection();
             try (PreparedStatement ps = conn.prepareStatement(sql);
                  ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {

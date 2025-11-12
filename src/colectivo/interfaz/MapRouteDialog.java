@@ -32,10 +32,9 @@ public class MapRouteDialog {
             .connectTimeout(Duration.ofSeconds(10))
             .build();
 
-    // Logger
+
     private static final Logger LOGGER = Logger.getLogger(MapRouteDialog.class);
 
-    // Mapa y estructuras
     private final MapView mapView = new MapView();
     private final List<Marker> activeMarkers = new ArrayList<>();
     private final List<MapLabel> activeLabels = new ArrayList<>();
@@ -45,11 +44,11 @@ public class MapRouteDialog {
     private ResourceBundle bundle;
     private Runnable pendingUpdate;
 
-    // Métodos de tu versión de MapJFX
+
     private final Method lineColorMethod;
     private final Method lineWidthIntMethod;
 
-    // Colores usados
+
     private static final Color DIRECT_COLOR = Color.DODGERBLUE;
     private static final Color[] LEG_COLORS = new Color[]{
             Color.RED, Color.DARKGREEN, Color.ORANGE
@@ -233,13 +232,13 @@ public class MapRouteDialog {
     private CoordinateLine styledLine(List<Coordinate> coords, Color color, double width) {
         CoordinateLine line = new CoordinateLine(coords);
 
-        // Color
+
         if (lineColorMethod != null) {
             try { lineColorMethod.invoke(line, color); }
             catch (Exception e) { LOGGER.warn("No se pudo aplicar color", e); }
         }
 
-        // Ancho
+
         if (lineWidthIntMethod != null) {
             try { lineWidthIntMethod.invoke(line, (int)Math.round(width)); }
             catch (Exception e) { LOGGER.warn("No se pudo aplicar ancho", e); }
@@ -362,7 +361,7 @@ public class MapRouteDialog {
         if (rgbaHex.startsWith("0x")) rgbaHex = rgbaHex.substring(2);
         if (rgbaHex.length() != 8) return "Desconocido";
 
-        String rgb = rgbaHex.substring(0, 6).toUpperCase(); // ignoramos alfa
+        String rgb = rgbaHex.substring(0, 6).toUpperCase();
 
         return switch (rgb) {
             case "FF0000" -> "Rojo";

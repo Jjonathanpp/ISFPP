@@ -20,7 +20,7 @@ public class LineaSecuencialDAO implements LineaDAO {
     private static final Logger LOGGER = Logger.getLogger(LineaSecuencialDAO.class);
 
     private final String name;
-    private final ParadaDAO paradaDAO;  // para resolver IDs -> Parada
+    private final ParadaDAO paradaDAO;
 
     public LineaSecuencialDAO() {
         ResourceBundle rb = ResourceBundle.getBundle("config");
@@ -152,10 +152,9 @@ public class LineaSecuencialDAO implements LineaDAO {
         Map<String, List<FrecuenciaData>> mapa = new HashMap<>();
         try {
             ResourceBundle rb = ResourceBundle.getBundle("config");
-            String nombreArchivo = rb.getString("frecuencia").trim(); // p.e. "frecuencia.txt"
+            String nombreArchivo = rb.getString("frecuencia").trim();
             File f = new File("src/resources/" + nombreArchivo);
             if (!f.exists()) {
-                // archivo opcional: si no existe devolvemos mapa vacío
                 return mapa;
             }
 

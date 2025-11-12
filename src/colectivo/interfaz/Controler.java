@@ -2,16 +2,12 @@ package colectivo.interfaz;
 
 import colectivo.aplicacion.Configuracion;
 import colectivo.aplicacion.Coordinador;
-import colectivo.modelo.Linea;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
-import colectivo.modelo.Tramo;
 import colectivo.util.Tiempo;
-import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
-import javafx.util.StringConverter;
 import org.apache.log4j.Logger;
 
 import java.text.MessageFormat;

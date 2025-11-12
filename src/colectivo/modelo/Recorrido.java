@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Recorrido {
     private LocalTime horaSalida;
-    private int duracion; // duración en segundos
+    private int duracion;
     private Linea linea;
     private List<Parada> paradas;
 

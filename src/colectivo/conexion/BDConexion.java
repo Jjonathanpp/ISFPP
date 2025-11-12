@@ -8,8 +8,6 @@ import java.util.ResourceBundle;
 public class BDConexion {
 	private static Connection con = null;
 
-	// Nos conectamos a la base de datos (con los datos de conexión del archivo
-	// jdbc.properties)
 	public static Connection getConnection() {
 		try {
 			if (con == null) {
@@ -38,8 +36,6 @@ public class BDConexion {
 	}
 
 	public static class MiShDwnHook extends Thread {
-		// justo antes de finalizar el programa la JVM invocara
-		// a este metodo donde podemos cerrar la conexion
 		public void run() {
 			try {
 				Connection con = BDConexion.getConnection();
