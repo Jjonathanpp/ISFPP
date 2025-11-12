@@ -4,7 +4,6 @@ import colectivo.aplicacion.Configuracion;
 import colectivo.aplicacion.Coordinador;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
-import colectivo.util.Tiempo;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
@@ -131,7 +130,7 @@ public class Controler {
                 sb.append(bundle.getString("route.separator")).append("\n");
             }
 
-            sb.append(MessageFormat.format(bundle.getString("route.totalDuration"), Tiempo.segundosATiempo(totalSeg)));
+            sb.append(MessageFormat.format(bundle.getString("route.totalDuration"), LocalTime.ofSecondOfDay(Math.max(0, totalSeg))));
             if (reloj != null) {
                 sb.append(MessageFormat.format(bundle.getString("route.arrivalTimeSuffix"), reloj));
             } else if (horaLlegadaParada != null) {
@@ -164,7 +163,7 @@ public class Controler {
         sb.append(MessageFormat.format(bundle.getString("route.departure"), horaSalida)).append("\n");
 
         int durSeg = Math.max(0, r.getDuracion());
-        sb.append(MessageFormat.format(bundle.getString("route.duration"), Tiempo.segundosATiempo(durSeg)));
+        sb.append(MessageFormat.format(bundle.getString("route.duration"), LocalTime.ofSecondOfDay(durSeg)));
 
         return sb.toString();
     }
