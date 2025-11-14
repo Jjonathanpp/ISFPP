@@ -1,6 +1,6 @@
 package colectivo.aplicacion;
 
-import colectivo.interfaz.Controler;
+import colectivo.conexion.Factory;
 import colectivo.interfaz.VistaInterfaz;
 import colectivo.logica.Calculo;
 import colectivo.logica.Empresa;
@@ -12,23 +12,31 @@ import java.util.Map;
 
 public class Coordinador {
     private static final Logger LOGGER = Logger.getLogger(Coordinador.class);
-    private VistaInterfaz vista = new VistaInterfaz();
-    private Controler controlerMVC = new Controler(vista, this);
+    private final VistaInterfaz vista;
     private Empresa empresa;
 
-    public void construirVistaConControler() {
-        getControlerMVC().construirVista();
+    public Coordinador() {
+        this.vista = Factory.getInstancia("UI", VistaInterfaz.class);
+        this.vista.setCoordinador(this);
     }
+
+    public void inicializarInterfaz() {
+        vista.construirVista();
+        vista.inicializar();
+    }
+
     public VistaInterfaz getVista() {
         return vista;
     }
-    public Controler getControlerMVC() {
-        return controlerMVC;
-    }
-    public void desacopladorLogica(Parada origen, Parada destino, int dia, LocalTime hora) {
-        LOGGER.debug("Invocando buscarRecorridos con parámetros: dia=" + dia + ", hora=" + hora);
-        getControlerMVC().buscarYMostrar(Calculo.calcularRecorrido(origen, destino, dia, hora, empresa.getTramos()),
-                origen, destino, hora);
+
+    public void calcularRecorrido(Parada origen, Parada destino, int dia, LocalTime hora) {
+        LOGGER.debug("Invocando calcularRecorrido con parámetros: dia=" + dia + ", hora=" + hora);
+        vista.mostrarRecorridos(
+                Calculo.calcularRecorrido(origen, destino, dia, hora, empresa.getTramos()),
+                origen,
+                destino,
+                hora
+        );
     }
 
     public void setEmpresa(Empresa empresa) {

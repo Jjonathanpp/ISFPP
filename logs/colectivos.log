@@ -3371,3 +3371,43 @@ Caused by: java.util.MissingResourceException: Can't find bundle for base name f
 2025-11-14 11:54:51,176 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-14 11:54:51,256 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-14 11:54:53,398 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-14 12:20:04,952 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:20:04,964 ERROR [colectivo.conexion.Factory] - Error creando instancia para: UI
+java.lang.IllegalArgumentException: Clave no encontrada en factory: UI
+	at colectivo.conexion.Factory.crearInstancia(Factory.java:68)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724)
+	at colectivo.conexion.Factory.getInstancia(Factory.java:31)
+	at colectivo.aplicacion.Coordinador.<init>(Coordinador.java:19)
+	at colectivo.aplicacion.AplicacionPrincipal.<init>(AplicacionPrincipal.java:10)
+	at colectivo.interfaz.LanzadorJavaFX.start(LanzadorJavaFX.java:18)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+2025-11-14 12:20:04,969 ERROR [colectivo.interfaz.LanzadorJavaFX] - Error al iniciar JavaFX
+java.lang.RuntimeException: Error Factory al crear: UI
+	at colectivo.conexion.Factory.crearInstancia(Factory.java:77)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724)
+	at colectivo.conexion.Factory.getInstancia(Factory.java:31)
+	at colectivo.aplicacion.Coordinador.<init>(Coordinador.java:19)
+	at colectivo.aplicacion.AplicacionPrincipal.<init>(AplicacionPrincipal.java:10)
+	at colectivo.interfaz.LanzadorJavaFX.start(LanzadorJavaFX.java:18)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.lang.IllegalArgumentException: Clave no encontrada en factory: UI
+	at colectivo.conexion.Factory.crearInstancia(Factory.java:68)
+	... 12 more
+2025-11-14 12:20:16,861 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:20:18,820 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 12:20:18,820 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 12:20:18,825 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-14 12:20:19,498 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-14 12:20:19,503 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO

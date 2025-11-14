@@ -58,7 +58,7 @@ public class Controler {
                         return;
                     }
                     LOGGER.info("Búsqueda iniciada: origen=" + origen + ", destino=" + destino + ", día=" + diaTexto + ", hora=" + hora);
-                    cordinador.desacopladorLogica(origen, destino, dia, hora);
+                    cordinador.calcularRecorrido(origen, destino, dia, hora);
                     LOGGER.info("Búsqueda completada con éxito.");
                 } catch (Exception e) {
                     vista.setEstado(tr("error.searchRoutes", e.getMessage()));

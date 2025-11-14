@@ -1,6 +1,7 @@
 package colectivo.interfaz;
 
 import colectivo.aplicacion.Configuracion;
+import colectivo.aplicacion.Coordinador;
 import colectivo.modelo.Parada;
 import colectivo.modelo.Recorrido;
 import javafx.geometry.Insets;
@@ -12,7 +13,7 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.util.StringConverter;
 
-
+import java.time.LocalTime;
 import java.util.*;
 
 public class VistaInterfaz {
@@ -26,6 +27,9 @@ public class VistaInterfaz {
             "weekday.saturday",
             "weekday.sunday"
     );
+
+    private Coordinador coordinador;
+    private Controler controler;
 
     private final ComboBox<Parada> cbOrigen = new ComboBox<>();
     private final ComboBox<Parada> cbDestino = new ComboBox<>();
@@ -65,6 +69,25 @@ public class VistaInterfaz {
         this.titulo = new Label();
         this.root = new BorderPane();
         this.mapDialog = new MapRouteDialog(configuracion.getBundle());
+    }
+
+    public void setCoordinador(Coordinador coordinador) {
+        this.coordinador = Objects.requireNonNull(coordinador, "coordinador no puede ser nulo");
+        this.controler = new Controler(this, this.coordinador);
+    }
+
+    public void inicializar() {
+        if (controler == null) {
+            throw new IllegalStateException("La interfaz no tiene controlador asociado. Llamar a setCoordinador primero.");
+        }
+        controler.inicializar();
+    }
+
+    public void mostrarRecorridos(List<List<Recorrido>> rutas, Parada origen, Parada destino, LocalTime hora) {
+        if (controler == null) {
+            throw new IllegalStateException("No hay controlador disponible para mostrar recorridos.");
+        }
+        controler.buscarYMostrar(rutas, origen, destino, hora);
     }
 
     public void construirVista() {

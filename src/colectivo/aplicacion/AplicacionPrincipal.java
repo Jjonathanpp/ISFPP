@@ -13,9 +13,7 @@ public class AplicacionPrincipal {
     public void iniciar() {
         coordinador.setEmpresa(Empresa.getEmpresa());
 
-        coordinador.construirVistaConControler();
-
-        coordinador.getControlerMVC().inicializar();
+        coordinador.inicializarInterfaz();
     }
 
     public Coordinador getCoordinador() {
