@@ -13,6 +13,16 @@ public class Conexion {
 
     private static Conexion instancia;
 
+    static {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            try {
+                LOGGER.info("ShutdownHook: cerrando subsistema de conexión...");
+                Conexion.cerrar();
+            } catch (Exception e) {
+                LOGGER.error("Error durante el cierre de la conexión", e);
+            }
+        }));
+    }
 
     private final String url;
 
