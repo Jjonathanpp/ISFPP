@@ -7,6 +7,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/colectivo/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/out/production/ISFPP/test/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/out/production/ISFPP/i18n" />
     </content>
     <orderEntry type="inheritedJdk" />
