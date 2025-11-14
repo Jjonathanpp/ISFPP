@@ -3299,3 +3299,66 @@ org.postgresql.util.PSQLException: ERROR: no existe la columna «is_deleted»
 2025-11-07 17:32:31,356 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-07 17:32:32,721 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
 2025-11-07 17:34:09,654 INFO  [colectivo.conexion.Conexion] - Conexion.cerrar() llamado. No hay conexión singleton que cerrar en la implementación actual.
+2025-11-12 20:04:32,785 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-12 20:04:32,786 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-12 20:04:44,599 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Martes, hora=14:30
+2025-11-12 20:04:44,917 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-12 20:04:44,994 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-12 20:04:47,167 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-12 20:06:46,623 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-12 20:06:46,623 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-12 20:06:57,568 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Martes, hora=19:24
+2025-11-12 20:06:57,865 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-12 20:06:57,940 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-12 20:07:00,168 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-14 11:24:50,649 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:24:50,650 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:25:01,415 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Martes, hora=19:33
+2025-11-14 11:25:01,708 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-14 11:25:01,778 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 11:25:04,207 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-14 11:25:42,118 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:25:42,119 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:25:54,781 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:25:54,782 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:26:03,334 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='1', direccion='1 De Marzo, 405'}, destino=Parada{codigo='2', direccion='1 De Marzo, 499'}, día=Martes, hora=18:26
+2025-11-14 11:26:03,420 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-14 11:26:03,494 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 11:26:06,830 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Rojo
+2025-11-14 11:26:06,831 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #2 en color Verde oscuro
+2025-11-14 11:28:27,870 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:28:27,873 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:28:33,060 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:28:33,060 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:28:33,068 ERROR [colectivo.interfaz.LanzadorJavaFX] - Error al iniciar JavaFX
+java.lang.IllegalStateException: No se encontró el archivo factory.properties en el classpath.
+	at colectivo.conexion.Factory.loadResourceBundle(Factory.java:87)
+	at colectivo.conexion.Factory.createInstance(Factory.java:54)
+	at colectivo.conexion.Factory.lambda$getInstancia$0(Factory.java:24)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1724)
+	at colectivo.conexion.Factory.getInstancia(Factory.java:24)
+	at colectivo.conexion.Factory.getInstancia(Factory.java:36)
+	at colectivo.logica.Empresa.<init>(Empresa.java:33)
+	at colectivo.logica.Empresa.getEmpresa(Empresa.java:26)
+	at colectivo.aplicacion.AplicacionPrincipal.iniciar(AplicacionPrincipal.java:14)
+	at colectivo.interfaz.LanzadorJavaFX.start(LanzadorJavaFX.java:21)
+	at javafx.graphics@25/com.sun.javafx.application.LauncherImpl.lambda$launchApplication1$4(LauncherImpl.java:845)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runAndWait$0(PlatformImpl.java:449)
+	at javafx.graphics@25/com.sun.javafx.application.PlatformImpl.lambda$runLater$0(PlatformImpl.java:424)
+	at javafx.graphics@25/com.sun.glass.ui.InvokeLaterDispatcher$Future.run(InvokeLaterDispatcher.java:95)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication._runLoop(Native Method)
+	at javafx.graphics@25/com.sun.glass.ui.win.WinApplication.lambda$runLoop$0(WinApplication.java:168)
+	at java.base/java.lang.Thread.run(Thread.java:1474)
+Caused by: java.util.MissingResourceException: Can't find bundle for base name factory, locale es_ES
+	at java.base/java.util.ResourceBundle.throwMissingResourceException(ResourceBundle.java:2012)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1664)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1574)
+	at java.base/java.util.ResourceBundle.getBundleImpl(ResourceBundle.java:1529)
+	at java.base/java.util.ResourceBundle.getBundle(ResourceBundle.java:848)
+	at colectivo.conexion.Factory.loadResourceBundle(Factory.java:85)
+	... 16 more
+2025-11-14 11:28:51,980 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:28:51,980 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:29:04,627 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='181', direccion='9 De Julio 891'}, destino=Parada{codigo='179', direccion='9 De Julio 595'}, día=Viernes, hora=19:26
+2025-11-14 11:29:04,989 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
+2025-11-14 11:29:05,084 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
