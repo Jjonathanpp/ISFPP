@@ -3362,3 +3362,12 @@ Caused by: java.util.MissingResourceException: Can't find bundle for base name f
 2025-11-14 11:29:04,627 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='181', direccion='9 De Julio 891'}, destino=Parada{codigo='179', direccion='9 De Julio 595'}, día=Viernes, hora=19:26
 2025-11-14 11:29:04,989 INFO  [colectivo.interfaz.Controler] - Se encontraron 0 rutas posibles.
 2025-11-14 11:29:05,084 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 11:54:41,105 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 11:54:41,108 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 11:54:41,115 INFO  [colectivo.conexion.Factory] - Creando instancia para: {}
+2025-11-14 11:54:41,595 INFO  [colectivo.conexion.Factory] - Creando instancia para: {}
+2025-11-14 11:54:41,599 INFO  [colectivo.conexion.Factory] - Creando instancia para: {}
+2025-11-14 11:54:50,887 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Jueves, hora=13:20
+2025-11-14 11:54:51,176 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-14 11:54:51,256 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 11:54:53,398 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)

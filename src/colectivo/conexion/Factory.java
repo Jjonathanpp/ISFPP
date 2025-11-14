@@ -5,44 +5,48 @@ import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+
 public final class Factory {
 
     private static final String FACTORY_BUNDLE_NAME = "factory";
-    private static final ConcurrentMap<String, Object> INSTANCIAS = new ConcurrentHashMap<>();
+    private static final ConcurrentHashMap<String, Object> INSTANCIAS = new ConcurrentHashMap<>();
+    private static final Logger LOG = LogManager.getLogger(Factory.class);
 
     private Factory() {
-        throw new AssertionError("La clase Factory no debe instanciarse.");
+        throw new AssertionError("No instanciable");
     }
 
+    /**
+     * Obtiene una instancia type-safe del componente configurado
+     */
+    @SuppressWarnings("unchecked")
     public static <T> T getInstancia(String objName, Class<T> expectedType) {
         String key = normalizeKey(objName);
         if (expectedType == null) {
             throw new IllegalArgumentException("El tipo esperado no puede ser nulo.");
         }
 
-        Object instance = INSTANCIAS.get(key);
-        if (instance == null) {
-            instance = createInstance(key);
-            Object previous = INSTANCIAS.putIfAbsent(key, instance);
-            if (previous != null) {
-                instance = previous;
-            }
-        }
+        Object instance = INSTANCIAS.computeIfAbsent(key, Factory::crearInstancia);
 
         if (!expectedType.isInstance(instance)) {
-            throw new IllegalStateException("La instancia asociada a '" + key + "' es de tipo "
-                    + instance.getClass().getName() + " y no del tipo esperado " + expectedType.getName() + ".");
+            String error = String.format("ERROR CONFIGURACIÓN: %s → Esperado: %s, Obtenido: %s", key,
+                    expectedType.getName(), instance.getClass().getName());
+            LOG.error(error);
+            throw new ClassCastException(error);
         }
 
-        return expectedType.cast(instance);
+        return (T) instance;
     }
 
     public static Object getInstancia(String objName) {
-        return getInstancia(objName, Object .class);
+        return getInstancia(objName, Object.class);
     }
 
     public static void clearCache() {
         INSTANCIAS.clear();
+        LOG.info("Cache de Factory limpiado");
     }
 
     public static <T> T reloadInstancia(String objName, Class<T> expectedType) {
@@ -55,44 +59,25 @@ public final class Factory {
         return reloadInstancia(objName, Object.class);
     }
 
-    private static Object createInstance(String key) {
-        ResourceBundle resourceBundle = loadResourceBundle();
-        if (!resourceBundle.containsKey(key)) {
-            throw new IllegalArgumentException(
-                    "La clave '" + key + "' no existe en " + FACTORY_BUNDLE_NAME + ".properties.");
-        }
-
-        String className = resourceBundle.getString(key);
-        if (className == null || className.trim().isEmpty()) {
-            throw new IllegalArgumentException(
-                    "La clave '" + key + "' en " + FACTORY_BUNDLE_NAME + ".properties no define una clase válida.");
-        }
-
-        String trimmedClassName = className.trim();
-        try{
-            Class<?> clazz = Class.forName(trimmedClassName);
-            return clazz.getDeclaredConstructor().newInstance();
-        } catch (ClassNotFoundException ex) {
-            throw new IllegalArgumentException("No se encontró la clase '" + trimmedClassName
-                    + "' configurada para la clave '" + key + "'.", ex);
-        } catch (ReflectiveOperationException ex) {
-            throw new IllegalStateException(
-                    "No se pudo crear una instancia de la clase '" + trimmedClassName + "' para la clave '"
-                            + key + "'.",
-                    ex);
-            }
-        }
-
-
-
-    private static ResourceBundle loadResourceBundle() {
+    private static Object crearInstancia(String clave) {
         try {
-            return ResourceBundle.getBundle(FACTORY_BUNDLE_NAME);
-        } catch (MissingResourceException ex) {
-            throw new IllegalStateException(
-                    "No se encontró el archivo " + FACTORY_BUNDLE_NAME + ".properties en el classpath.", ex);
+            LOG.info("Creando instancia para: " + clave);
+            ResourceBundle resourceBundle = ResourceBundle.getBundle(FACTORY_BUNDLE_NAME);
+
+            if (!resourceBundle.containsKey(clave)) {
+                throw new IllegalArgumentException("Clave no encontrada en " + FACTORY_BUNDLE_NAME + ": " + clave);
+            }
+
+            String className = resourceBundle.getString(clave);
+            Object instance = Class.forName(className).getDeclaredConstructor().newInstance();
+            LOG.debug("Instancia creada: " + clave + " → " + className);
+            return instance;
+        } catch (Exception ex) {
+            LOG.error("Error creando instancia para: " + clave, ex);
+            throw new RuntimeException("Error Factory al crear: " + clave, ex);
         }
     }
+
 
     private static String normalizeKey(String objName) {
         if (objName == null) {
