@@ -3411,3 +3411,35 @@ Caused by: java.lang.IllegalArgumentException: Clave no encontrada en factory: U
 2025-11-14 12:20:18,825 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
 2025-11-14 12:20:19,498 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
 2025-11-14 12:20:19,503 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-14 12:38:48,597 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-14 12:38:49,042 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-14 12:38:49,046 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-14 12:38:49,321 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:38:50,863 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 12:38:50,863 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 12:39:02,151 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-14 12:39:02,511 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-14 12:39:02,513 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-14 12:39:02,698 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:39:03,721 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 12:39:03,721 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 12:39:17,991 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Sábado, hora=07:11
+2025-11-14 12:39:18,250 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-14 12:39:18,329 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 12:39:20,540 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-14 12:43:44,022 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-14 12:43:44,479 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-14 12:43:44,484 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-14 12:43:44,744 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:43:46,289 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 12:43:46,289 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 12:43:49,660 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-14 12:43:50,128 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-14 12:43:50,131 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-14 12:43:50,348 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-14 12:43:51,336 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-14 12:43:51,336 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-14 12:43:59,979 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Jueves, hora=16:00
+2025-11-14 12:44:00,214 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-14 12:44:00,285 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-14 12:44:02,389 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)

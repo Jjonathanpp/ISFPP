@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public final class Factory {
+public class Factory {
 
     private static final String FACTORY_BUNDLE_NAME = "factory";
     private static final ConcurrentHashMap<String, Object> INSTANCIAS = new ConcurrentHashMap<>();
