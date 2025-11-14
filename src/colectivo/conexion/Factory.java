@@ -1,9 +1,9 @@
 package colectivo.conexion;
 
-import java.util.MissingResourceException;
+
 import java.util.ResourceBundle;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
+
 
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
