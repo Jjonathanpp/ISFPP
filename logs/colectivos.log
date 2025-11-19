@@ -3453,3 +3453,13 @@ Caused by: java.lang.IllegalArgumentException: Clave no encontrada en factory: U
 2025-11-14 17:36:34,238 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
 2025-11-14 17:36:34,381 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
 2025-11-14 17:36:36,623 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)
+2025-11-19 13:47:44,325 INFO  [colectivo.conexion.Factory] - Creando instancia para: LINEA
+2025-11-19 13:47:48,062 INFO  [colectivo.conexion.Factory] - Creando instancia para: TRAMO
+2025-11-19 13:47:48,126 INFO  [colectivo.conexion.Factory] - Creando instancia para: PARADA
+2025-11-19 13:47:48,527 INFO  [colectivo.conexion.Factory] - Creando instancia para: UI
+2025-11-19 13:47:51,715 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine color method: setColor
+2025-11-19 13:47:51,716 INFO  [colectivo.interfaz.MapRouteDialog] - CoordinateLine width(int) method: setWidth
+2025-11-19 13:48:14,408 INFO  [colectivo.interfaz.Controler] - Búsqueda iniciada: origen=Parada{codigo='179', direccion='9 De Julio 595'}, destino=Parada{codigo='180', direccion='9 De Julio 749'}, día=Martes, hora=14:09
+2025-11-19 13:48:14,820 INFO  [colectivo.interfaz.Controler] - Se encontraron 1 rutas posibles.
+2025-11-19 13:48:14,872 INFO  [colectivo.interfaz.Controler] - Búsqueda completada con éxito.
+2025-11-19 13:48:17,192 INFO  [colectivo.interfaz.MapRouteDialog] - Se dibujó la línea #1 en color Azul (directo)

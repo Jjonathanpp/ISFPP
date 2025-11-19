@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mapa">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../Estructuras de datos POO/ISFPP/mapa" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../Estructuras de datos POO/ISFPP/mapa" recursive="false" />
+  </library>
+</component>
